@@ -18,12 +18,12 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
+
     - name: Setup Java
       uses: actions/setup-java@v3
       with:
         java-version: '17'
         distribution: 'temurin'
-      id: java
 
     - name: Verify Java installation
       run: |
@@ -112,17 +112,18 @@ jobs:
         cp -rv src/*.java "$PLUGIN_DIR/src/"
         cp -rv build/* "$PLUGIN_DIR/build/"
         
-        - name: Create module manifest
-        run: |
-          cat > "$PLUGIN_DIR/module.manifest" <<EOL
-          ModuleName: $PLUGIN_NAME
-          Author: $(git log -1 --pretty=format:'%an')
-          Description: $(grep -A1 "description" README.md 2>/dev/null | tail -n1 || echo "A Ghidra plugin for looking up information")
-          Version: $(git describe --tags --always 2>/dev/null || echo "1.0")
-          GhidraVersion: $GHIDRA_VER
-          Created: $(date +%Y-%m-%d) EOL
-          echo "Plugin contents:"
-          find "$PLUGIN_DIR" -type f | xargs ls -la
+                # Create module manifest
+        cat > "$PLUGIN_DIR/module.manifest" <<'EOL'
+        ModuleName: $PLUGIN_NAME
+        Author: $(git log -1 --pretty=format:'%an')
+        Description: $(grep -A1 "description" README.md 2>/dev/null | tail -n1 || echo "A Ghidra plugin for looking up information")
+        Version: $(git describe --tags --always 2>/dev/null || echo "1.0")
+        GhidraVersion: $GHIDRA_VER
+        Created: $(date +%Y-%m-%d)
+        EOL
+
+        echo "Plugin contents:"
+        find "$PLUGIN_DIR" -type f | xargs ls -la
 
         # Create zip with version info
         VERSION=$(git describe --tags --always 2>/dev/null || echo "1.0")
@@ -132,7 +133,6 @@ jobs:
         echo "ZIP_PATH=$(pwd)/$ZIP_NAME" >> $GITHUB_ENV
         echo "Created plugin zip: $ZIP_NAME"
         ls -la
-
     - name: Upload artifact
       uses: actions/upload-artifact@v3
       with:
