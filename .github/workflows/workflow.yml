@@ -1,5 +1,4 @@
-
-name: Build Ghidra Plugin
+name: Build and Release Ghidra Plugin
 
 on:
   push:
@@ -40,12 +39,31 @@ jobs:
           unzip -q "$GHIDRA_ZIP"
           echo "GHIDRA_INSTALL_DIR=$(pwd)/ghidra_${GHIDRA_VER}_PUBLIC" >> $GITHUB_ENV
           echo "Ghidra installed to $GHIDRA_INSTALL_DIR"
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-         distribution: 'temurin'
-         java-version: 17
+          distribution: 'temurin'
+          java-version: 17
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+
       - name: Build with Gradle
-        run: gradle
+        run: gradle build
+
+      - name: Zip Plugin
+        run: |
+          # Assuming the built plugin is in the dist folder (adjust as needed)
+          cd dist
+          zip -r ../${PLUGIN_NAME}.zip *
+          echo "PLUGIN_ZIP=${PLUGIN_NAME}.zip" >> $GITHUB_ENV
+
+      - name: Create Release
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.PLUGIN_NAME }}.zip
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
