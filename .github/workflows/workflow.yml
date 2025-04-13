@@ -1,4 +1,4 @@
-name: Build Ghidra Plugin
+name: Ghidra Plugin CI
 
 on:
   push:
@@ -11,15 +11,20 @@ env:
   GHIDRA_RELEASE_DATE: "20230510"
   PLUGIN_NAME: "GhidraLookup"
 
+permissions:
+  contents: write  # Needed for dependency submission
+
 jobs:
-  build:
+  setup:
     runs-on: ubuntu-latest
+    outputs:
+      ghidra_dir: ${{ steps.setup-ghidra.outputs.ghidra_dir }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Download Ghidra
-        id: download-ghidra
+      - name: Download and setup Ghidra
+        id: setup-ghidra
         run: |
           echo "Downloading Ghidra ${GHIDRA_VER} (${GHIDRA_RELEASE_DATE})"
           GHIDRA_ZIP="ghidra_${GHIDRA_VER}_PUBLIC_${GHIDRA_RELEASE_DATE}.zip"
@@ -29,7 +34,7 @@ jobs:
             echo "::error::Ghidra download URL not found: $GHIDRA_URL"
             exit 1
           fi
-
+          
           wget --progress=dot:giga "$GHIDRA_URL"
           echo "Download complete, verifying zip..."
           
@@ -37,16 +42,58 @@ jobs:
             echo "::error::Downloaded Ghidra zip is corrupted"
             exit 1
           fi
-
+          
           unzip -q "$GHIDRA_ZIP"
-          echo "GHIDRA_INSTALL_DIR=$(pwd)/ghidra_${GHIDRA_VER}_PUBLIC" >> $GITHUB_ENV
-          echo "Ghidra installed to $GHIDRA_INSTALL_DIR"
+          GHIDRA_DIR="$(pwd)/ghidra_${GHIDRA_VER}_PUBLIC"
+          echo "ghidra_dir=$GHIDRA_DIR" >> $GITHUB_OUTPUT
+          echo "Ghidra installed to $GHIDRA_DIR"
+
+  build:
+    needs: setup
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
-         distribution: 'temurin'
-         java-version: 17
+          distribution: 'temurin'
+          java-version: 17
+
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
+
+      - name: Restore Ghidra installation
+        run: |
+          echo "GHIDRA_INSTALL_DIR=${{ needs.setup.outputs.ghidra_dir }}" >> $GITHUB_ENV
+          ls -la $GHIDRA_INSTALL_DIR
+
       - name: Build with Gradle
-        run: gradle
+        run: gradle build
+
+      - name: Generate and submit dependency graph
+        uses: gradle/actions/dependency-submission@v4
+
+  test:
+    needs: [setup, build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: 17
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Restore Ghidra installation
+        run: |
+          echo "GHIDRA_INSTALL_DIR=${{ needs.setup.outputs.ghidra_dir }}" >> $GITHUB_ENV
+
+      - name: Run tests
+        run: gradle test
