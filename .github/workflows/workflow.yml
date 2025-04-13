@@ -12,7 +12,7 @@ env:
   PLUGIN_NAME: "GhidraLookup"
 
 jobs:
-  build:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -25,20 +25,9 @@ jobs:
           GHIDRA_ZIP="ghidra_${GHIDRA_VER}_PUBLIC_${GHIDRA_RELEASE_DATE}.zip"
           GHIDRA_URL="https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${GHIDRA_VER}_build/${GHIDRA_ZIP}"
           
-          if ! wget -q --spider "$GHIDRA_URL"; then
-            echo "::error::Ghidra download URL not found: $GHIDRA_URL"
-            exit 1
-          fi
           wget --progress=dot:giga "$GHIDRA_URL"
-          echo "Download complete, verifying zip..."
-          
-          if ! unzip -q -t "$GHIDRA_ZIP"; then
-            echo "::error::Downloaded Ghidra zip is corrupted"
-            exit 1
-          fi
           unzip -q "$GHIDRA_ZIP"
           echo "GHIDRA_INSTALL_DIR=$(pwd)/ghidra_${GHIDRA_VER}_PUBLIC" >> $GITHUB_ENV
-          echo "Ghidra installed to $GHIDRA_INSTALL_DIR"
 
       - name: Setup Java
         uses: actions/setup-java@v4
@@ -49,21 +38,17 @@ jobs:
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v4
 
-      - name: Build with Gradle
+      - name: Build Ghidra Extension
         run: gradle
 
-      - name: Zip Plugin
-        run: |
-          # Assuming the built plugin is in the dist folder (adjust as needed)
-          cd dist
-          zip -r ../${PLUGIN_NAME}.zip *
-          echo "PLUGIN_ZIP=${PLUGIN_NAME}.zip" >> $GITHUB_ENV
+      - name: List Built Artifacts
+        run: ls -l dist/
 
       - name: Create Release
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
         uses: softprops/action-gh-release@v1
         with:
-          files: ${{ env.PLUGIN_NAME }}.zip
+          files: dist/*.zip
           generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
