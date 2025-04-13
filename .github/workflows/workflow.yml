@@ -70,7 +70,7 @@ jobs:
           ls -la $GHIDRA_INSTALL_DIR
 
       - name: Build with Gradle
-        run: gradle build
+        run: gradle
 
       - name: Generate and submit dependency graph
         uses: gradle/actions/dependency-submission@v4
