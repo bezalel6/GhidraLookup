@@ -1,20 +1,6 @@
-name: Build Ghidra Plugin
-
-on:
-  push:
-    branches: [main, master]
-  pull_request:
-    branches: [main, master]
-
-env:
-  GHIDRA_VER: "10.3"
-  GHIDRA_RELEASE_DATE: "20230510"
-  PLUGIN_NAME: "GhidraLookup"
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
