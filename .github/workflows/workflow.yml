@@ -7,7 +7,7 @@ on:
     branches: [main, master]
 
 env:
-  GHIDRA_VER: "10.3"
+  GHIDRA_VER: "11.3.1"
   GHIDRA_RELEASE_DATE: "20230510"
   PLUGIN_NAME: "GhidraLookup"
 
