@@ -18,12 +18,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Java
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
       - name: Download Ghidra
         id: download-ghidra
         run: |
@@ -47,17 +41,5 @@ jobs:
           unzip -q "$GHIDRA_ZIP"
           echo "GHIDRA_INSTALL_DIR=$(pwd)/ghidra_${GHIDRA_VER}_PUBLIC" >> $GITHUB_ENV
           echo "Ghidra installed to $GHIDRA_INSTALL_DIR"
-
-      - name: Verify Ghidra installation
-        run: |
-          if [ ! -d "$GHIDRA_INSTALL_DIR" ]; then
-            echo "::error::Ghidra installation directory not found"
-            exit 1
-          fi
-          echo "Ghidra found at: $GHIDRA_INSTALL_DIR"
-          ls -la "$GHIDRA_INSTALL_DIR/Ghidra/Features/Base/lib/"
-
-      - name: Compile plugin
-        run: |
-          echo "Compiling plugin sources..."
-          gradle
+      - name: Build with Gradle
+        uses: gradle/actions@v4.3.1
