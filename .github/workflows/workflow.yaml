@@ -2,9 +2,9 @@ name: Build Ghidra Plugin
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [main, master]
   pull_request:
-    branches: [ main, master ]
+    branches: [main, master]
 
 env:
   GHIDRA_VER: "10.3"
@@ -115,18 +115,18 @@ jobs:
         cp -rv src/*.java "$PLUGIN_DIR/src/"
         cp -rv build/* "$PLUGIN_DIR/build/"
         
-        # Create module manifest
-        cat > "$PLUGIN_DIR/module.manifest" <<EOL
-ModuleName: $PLUGIN_NAME
-Author: $(git log -1 --pretty=format:'%an')
-Description: $(grep -A1 "description" README.md 2>/dev/null | tail -n1 || echo "A Ghidra plugin for looking up information")
-Version: $(git describe --tags --always 2>/dev/null || echo "1.0")
-GhidraVersion: $GHIDRA_VER
-Created: $(date +%Y-%m-%d)
-EOL
-        echo "Plugin contents:"
-        find "$PLUGIN_DIR" -type f | xargs ls -la
-        
+        - name: Create module manifest
+        run: |
+          cat > "$PLUGIN_DIR/module.manifest" <<EOL
+          ModuleName: $PLUGIN_NAME
+          Author: $(git log -1 --pretty=format:'%an')
+          Description: $(grep -A1 "description" README.md 2>/dev/null | tail -n1 || echo "A Ghidra plugin for looking up information")
+          Version: $(git describe --tags --always 2>/dev/null || echo "1.0")
+          GhidraVersion: $GHIDRA_VER
+          Created: $(date +%Y-%m-%d) EOL
+          echo "Plugin contents:"
+          find "$PLUGIN_DIR" -type f | xargs ls -la
+
         # Create zip with version info
         VERSION=$(git describe --tags --always 2>/dev/null || echo "1.0")
         ZIP_NAME="${PLUGIN_NAME}_${VERSION}.zip"
