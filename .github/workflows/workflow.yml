@@ -85,9 +85,9 @@ jobs:
 
           echo "Detected plugin class: $CLASS_NAME"
           
-          # Verify the class contains required plugin methods
-          if ! grep -q 'getPluginDescription' "$PLUGIN_CLASS"; then
-            echo "::error::Plugin class missing required getPluginDescription method"
+          # Verify the class contains required plugin info
+          if ! grep -q '@PluginInfo' "$PLUGIN_CLASS"; then
+            echo "::error::Plugin class missing required @PluginInfo annotation"
             exit 1
           fi
 
