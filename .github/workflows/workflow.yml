@@ -1,0 +1,67 @@
+name: Build Ghidra Plugin
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Download Ghidra
+      run: |
+        GHIDRA_VER=10.3
+        wget https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${GHIDRA_VER}_build/ghidra_${GHIDRA_VER}_PUBLIC_20230510.zip
+        unzip ghidra_${GHIDRA_VER}_PUBLIC_20230510.zip
+        echo "GHIDRA_INSTALL_DIR=$(pwd)/ghidra_${GHIDRA_VER}_PUBLIC" >> $GITHUB_ENV
+
+    - name: Build plugin
+      run: |
+        # Create dist directory if it doesn't exist
+        mkdir -p dist
+        
+        # Find the plugin name from the .java files
+        PLUGIN_NAME=$(grep -l "extends GhidraScript" src/*.java | head -1 | xargs basename -s .java)
+        
+        # Compile the plugin
+        javac -cp "$GHIDRA_INSTALL_DIR/Ghidra/Features/Base/lib/Help.jar:$GHIDRA_INSTALL_DIR/Ghidra/Framework/Utility/lib/utility.jar" \
+              -d build \
+              src/*.java
+        
+        # Create the plugin structure
+        mkdir -p dist/GhidraLookup
+        cp -r data dist/GhidraLookup/
+        cp -r src dist/GhidraLookup/
+        cp -r build dist/GhidraLookup/
+        
+        # Create module manifest
+        cat > dist/GhidraLookup/module.manifest <<EOL
+        ModuleName: GhidraLookup
+        Author: XYFC128
+        Description: A Ghidra plugin for looking up information.
+        Version: 1.0
+        GhidraVersion: 10.3
+        EOL
+        
+        # Zip the plugin
+        cd dist
+        zip -r GhidraLookup.zip GhidraLookup
+        cd ..
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: GhidraLookup-plugin
+        path: dist/GhidraLookup.zip
