@@ -122,15 +122,15 @@ jobs:
           cp -rv src/*.java "$PLUGIN_DIR/src/"
           cp -rv build/* "$PLUGIN_DIR/build/"
           
-          # Create module manifest (properly formatted)
-          cat > "$PLUGIN_DIR/module.manifest" <<EOL
-ModuleName: $PLUGIN_NAME
-Author: $(git log -1 --pretty=format:'%an')
-Description: $(grep -A1 "description" README.md 2>/dev/null | tail -n1 || echo "A Ghidra plugin for looking up information")
-Version: $(git describe --tags --always 2>/dev/null || echo "1.0")
-GhidraVersion: $GHIDRA_VER
-Created: $(date +%Y-%m-%d)
-EOL
+          # Create module manifest using printf to avoid heredoc indentation issues
+          printf "ModuleName: %s\nAuthor: %s\nDescription: %s\nVersion: %s\nGhidraVersion: %s\nCreated: %s\n" \
+            "$PLUGIN_NAME" \
+            "$(git log -1 --pretty=format:'%an')" \
+            "$(grep -A1 "description" README.md 2>/dev/null | tail -n1 || echo 'A Ghidra plugin for looking up information')" \
+            "$(git describe --tags --always 2>/dev/null || echo '1.0')" \
+            "$GHIDRA_VER" \
+            "$(date +%Y-%m-%d)" \
+            > "$PLUGIN_DIR/module.manifest"
 
           echo "Plugin contents:"
           find "$PLUGIN_DIR" -type f | xargs ls -la
