@@ -99,7 +99,7 @@ jobs:
           echo "Compiling plugin sources..."
           CLASS_PATH="$GHIDRA_INSTALL_DIR/Ghidra/Features/Base/lib/Help.jar:$GHIDRA_INSTALL_DIR/Ghidra/Framework/Utility/lib/utility.jar"
           
-          if ! javac -cp "$CLASS_PATH" -d build -Xlint:unchecked -Xlint:deprecation src/*.java; then
+          if ! javac -cp "$CLASS_PATH" -d build -Xlint:unchecked -Xlint:deprecation src/**.java; then
             echo "::error::Compilation failed"
             exit 1
           fi
