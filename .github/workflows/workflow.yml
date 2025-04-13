@@ -1,138 +1,145 @@
+name: Build Ghidra Plugin
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+env:
+  GHIDRA_VER: "10.3"
+  GHIDRA_RELEASE_DATE: "20230510"
+  PLUGIN_NAME: "GhidraLookup"
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-    - name: Setup Java
-      uses: actions/setup-java@v3
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      - name: Download Ghidra
+        id: download-ghidra
+        run: |
+          echo "Downloading Ghidra ${GHIDRA_VER} (${GHIDRA_RELEASE_DATE})"
+          GHIDRA_ZIP="ghidra_${GHIDRA_VER}_PUBLIC_${GHIDRA_RELEASE_DATE}.zip"
+          GHIDRA_URL="https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${GHIDRA_VER}_build/${GHIDRA_ZIP}"
+          
+          if ! wget -q --spider "$GHIDRA_URL"; then
+            echo "::error::Ghidra download URL not found: $GHIDRA_URL"
+            exit 1
+          fi
 
-    - name: Download Ghidra
-      id: download-ghidra
-      run: |
-        echo "Downloading Ghidra ${GHIDRA_VER} (${GHIDRA_RELEASE_DATE})"
-        GHIDRA_ZIP="ghidra_${GHIDRA_VER}_PUBLIC_${GHIDRA_RELEASE_DATE}.zip"
-        GHIDRA_URL="https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${GHIDRA_VER}_build/${GHIDRA_ZIP}"
-        
-        if ! wget -q --spider "$GHIDRA_URL"; then
-          echo "::error::Ghidra download URL not found: $GHIDRA_URL"
-          exit 1
-        fi
+          wget --progress=dot:giga "$GHIDRA_URL"
+          echo "Download complete, verifying zip..."
+          
+          if ! unzip -q -t "$GHIDRA_ZIP"; then
+            echo "::error::Downloaded Ghidra zip is corrupted"
+            exit 1
+          fi
 
-        wget --progress=dot:giga "$GHIDRA_URL"
-        echo "Download complete, verifying zip..."
-        
-        if ! unzip -q -t "$GHIDRA_ZIP"; then
-          echo "::error::Downloaded Ghidra zip is corrupted"
-          exit 1
-        fi
+          unzip -q "$GHIDRA_ZIP"
+          echo "GHIDRA_INSTALL_DIR=$(pwd)/ghidra_${GHIDRA_VER}_PUBLIC" >> $GITHUB_ENV
+          echo "Ghidra installed to $GHIDRA_INSTALL_DIR"
 
-        unzip -q "$GHIDRA_ZIP"
-        echo "GHIDRA_INSTALL_DIR=$(pwd)/ghidra_${GHIDRA_VER}_PUBLIC" >> $GITHUB_ENV
-        echo "Ghidra installed to $GHIDRA_INSTALL_DIR"
+      - name: Verify Ghidra installation
+        run: |
+          if [ ! -d "$GHIDRA_INSTALL_DIR" ]; then
+            echo "::error::Ghidra installation directory not found"
+            exit 1
+          fi
+          echo "Ghidra found at: $GHIDRA_INSTALL_DIR"
+          ls -la "$GHIDRA_INSTALL_DIR/Ghidra/Features/Base/lib/"
 
-    - name: Verify Ghidra installation
-      run: |
-        if [ ! -d "$GHIDRA_INSTALL_DIR" ]; then
-          echo "::error::Ghidra installation directory not found"
-          exit 1
-        fi
-        echo "Ghidra found at: $GHIDRA_INSTALL_DIR"
-        ls -la "$GHIDRA_INSTALL_DIR/Ghidra/Features/Base/lib/"
+      - name: Prepare build environment
+        run: |
+          mkdir -p build dist
+          echo "Build directories created"
 
-    - name: Prepare build environment
-      run: |
-        mkdir -p build dist
-        echo "Build directories created"
+      - name: Detect plugin main class
+        id: detect-plugin-class
+        run: |
+          set -euo pipefail  # Enable strict error handling
+          
+          # Search for plugin entry point using proper Ghidra conventions
+          PLUGIN_CLASS=$(find src/main/java/ -name "*.java" -print0 | \
+            xargs -0 grep -l -m 1 '@Plugin\|extends Plugin' | \
+            head -1)
 
-        - name: Detect plugin main class
-    - name: detect-plugin-class
-      run: |
-        set -euo pipefail  # Enable strict error handling
-        
-        # Search for plugin entry point using proper Ghidra conventions
-        PLUGIN_CLASS=$(find src/main/java/ -name "*.java" -print0 | \
-          xargs -0 grep -l -m 1 '@Plugin\|extends Plugin' | \
-          head -1)
+          if [[ -z "$PLUGIN_CLASS" ]]; then
+            echo "::error::No plugin class found (looking for @Plugin annotation or Plugin extension)"
+            exit 1
+          fi
 
-        if [[ -z "$PLUGIN_CLASS" ]]; then
-          echo "::error::No plugin class found (looking for @Plugin annotation or Plugin extension)"
-          exit 1
-        fi
+          # Convert path to fully qualified class name
+          CLASS_NAME=$(echo "$PLUGIN_CLASS" | \
+            sed 's/^src\/main\/java\///' | \
+            sed 's/\.java$//' | \
+            tr '/' '.')
 
-        # Convert path to fully qualified class name
-        CLASS_NAME=$(echo "$PLUGIN_CLASS" | \
-          sed 's/^src\/main\/java\///' | \
-          sed 's/\.java$//' | \
-          tr '/' '.')
+          echo "Detected plugin class: $CLASS_NAME"
+          
+          # Verify the class contains required plugin methods
+          if ! grep -q 'getPluginDescription' "$PLUGIN_CLASS"; then
+            echo "::error::Plugin class missing required getPluginDescription method"
+            exit 1
+          fi
 
-        echo "Detected plugin class: $CLASS_NAME"
-        
-        # Verify the class contains required plugin methods
-        if ! grep -q 'getPluginDescription' "$PLUGIN_CLASS"; then
-          echo "::error::Plugin class missing required getPluginDescription method"
-          exit 1
-        fi
+          echo "PLUGIN_MAIN_CLASS=$CLASS_NAME" >> $GITHUB_ENV
+          echo "PLUGIN_ENTRY_FILE=$PLUGIN_CLASS" >> $GITHUB_ENV
 
-        echo "PLUGIN_MAIN_CLASS=$CLASS_NAME" >> $GITHUB_ENV
-        echo "PLUGIN_ENTRY_FILE=$PLUGIN_CLASS" >> $GITHUB_ENV
-        
-    - name: Compile plugin
-    run: |
-        echo "Compiling plugin sources..."
-        CLASS_PATH="$GHIDRA_INSTALL_DIR/Ghidra/Features/Base/lib/Help.jar:$GHIDRA_INSTALL_DIR/Ghidra/Framework/Utility/lib/utility.jar"
-        
-        if ! javac -cp "$CLASS_PATH" -d build -Xlint:unchecked -Xlint:deprecation src/*.java; then
-          echo "::error::Compilation failed"
-          exit 1
-        fi
-        
-        echo "Compilation successful"
-        echo "Class files:"
-        find build -type f | xargs ls -la
-        echo "Packaging plugin..."
-        PLUGIN_DIR="dist/$PLUGIN_NAME"
-        
-        mkdir -p "$PLUGIN_DIR/data" "$PLUGIN_DIR/src" "$PLUGIN_DIR/build"
-        
-        # Copy necessary files with verification
-        if [ -d "data" ]; then
-          cp -rv data "$PLUGIN_DIR/"
-        else
-          echo "No data directory found, skipping"
-        fi
-        
-        cp -rv src/*.java "$PLUGIN_DIR/src/"
-        cp -rv build/* "$PLUGIN_DIR/build/"
-        
-                # Create module manifest
-        cat > "$PLUGIN_DIR/module.manifest" <<'EOL'
-        ModuleName: $PLUGIN_NAME
-        Author: $(git log -1 --pretty=format:'%an')
-        Description: $(grep -A1 "description" README.md 2>/dev/null | tail -n1 || echo "A Ghidra plugin for looking up information")
-        Version: $(git describe --tags --always 2>/dev/null || echo "1.0")
-        GhidraVersion: $GHIDRA_VER
-        Created: $(date +%Y-%m-%d)
-        EOL
+      - name: Compile plugin
+        run: |
+          echo "Compiling plugin sources..."
+          CLASS_PATH="$GHIDRA_INSTALL_DIR/Ghidra/Features/Base/lib/Help.jar:$GHIDRA_INSTALL_DIR/Ghidra/Framework/Utility/lib/utility.jar"
+          
+          if ! javac -cp "$CLASS_PATH" -d build -Xlint:unchecked -Xlint:deprecation src/*.java; then
+            echo "::error::Compilation failed"
+            exit 1
+          fi
+          
+          echo "Compilation successful"
+          echo "Class files:"
+          find build -type f | xargs ls -la
+          echo "Packaging plugin..."
+          PLUGIN_DIR="dist/$PLUGIN_NAME"
+          
+          mkdir -p "$PLUGIN_DIR/data" "$PLUGIN_DIR/src" "$PLUGIN_DIR/build"
+          
+          # Copy necessary files with verification
+          if [ -d "data" ]; then
+            cp -rv data "$PLUGIN_DIR/"
+          else
+            echo "No data directory found, skipping"
+          fi
+          
+          cp -rv src/*.java "$PLUGIN_DIR/src/"
+          cp -rv build/* "$PLUGIN_DIR/build/"
+          
+          # Create module manifest (properly formatted)
+          cat > "$PLUGIN_DIR/module.manifest" <<EOL
+ModuleName: $PLUGIN_NAME
+Author: $(git log -1 --pretty=format:'%an')
+Description: $(grep -A1 "description" README.md 2>/dev/null | tail -n1 || echo "A Ghidra plugin for looking up information")
+Version: $(git describe --tags --always 2>/dev/null || echo "1.0")
+GhidraVersion: $GHIDRA_VER
+Created: $(date +%Y-%m-%d)
+EOL
 
-        echo "Plugin contents:"
-        find "$PLUGIN_DIR" -type f | xargs ls -la
+          echo "Plugin contents:"
+          find "$PLUGIN_DIR" -type f | xargs ls -la
 
-        # Create zip with version info
-        VERSION=$(git describe --tags --always 2>/dev/null || echo "1.0")
-        ZIP_NAME="${PLUGIN_NAME}_${VERSION}.zip"
-        cd dist
-        zip -r "$ZIP_NAME" "$PLUGIN_NAME"
-        echo "ZIP_PATH=$(pwd)/$ZIP_NAME" >> $GITHUB_ENV
-        echo "Created plugin zip: $ZIP_NAME"
-        ls -la
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ env.PLUGIN_NAME }}_plugin
-        path: ${{ env.ZIP_PATH }}
+          # Create zip with version info
+          VERSION=$(git describe --tags --always 2>/dev/null || echo "1.0")
+          ZIP_NAME="${PLUGIN_NAME}_${VERSION}.zip"
+          cd dist
+          zip -r "$ZIP_NAME" "$PLUGIN_NAME"
+          echo "ZIP_PATH=$(pwd)/$ZIP_NAME" >> $GITHUB_ENV
+          echo "Created plugin zip: $ZIP_NAME"
+          ls -la
