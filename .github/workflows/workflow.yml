@@ -64,20 +64,40 @@ jobs:
         mkdir -p build dist
         echo "Build directories created"
 
-    - name: Find main plugin class
-      id: find-main-class
+        - name: Detect plugin main class
+    - name: detect-plugin-class
       run: |
-        MAIN_CLASS=$(find src -name "*.java" -exec grep -l "extends GhidraScript" {} + | head -1)
-        if [ -z "$MAIN_CLASS" ]; then
-          echo "::error::No plugin main class found (looking for class extending GhidraScript)"
+        set -euo pipefail  # Enable strict error handling
+        
+        # Search for plugin entry point using proper Ghidra conventions
+        PLUGIN_CLASS=$(find src/main/java/ -name "*.java" -print0 | \
+          xargs -0 grep -l -m 1 '@Plugin\|extends Plugin' | \
+          head -1)
+
+        if [[ -z "$PLUGIN_CLASS" ]]; then
+          echo "::error::No plugin class found (looking for @Plugin annotation or Plugin extension)"
           exit 1
         fi
-        MAIN_CLASS_NAME=$(basename "$MAIN_CLASS" .java)
-        echo "Found main class: $MAIN_CLASS_NAME"
-        echo "MAIN_CLASS_NAME=$MAIN_CLASS_NAME" >> $GITHUB_ENV
 
+        # Convert path to fully qualified class name
+        CLASS_NAME=$(echo "$PLUGIN_CLASS" | \
+          sed 's/^src\/main\/java\///' | \
+          sed 's/\.java$//' | \
+          tr '/' '.')
+
+        echo "Detected plugin class: $CLASS_NAME"
+        
+        # Verify the class contains required plugin methods
+        if ! grep -q 'getPluginDescription' "$PLUGIN_CLASS"; then
+          echo "::error::Plugin class missing required getPluginDescription method"
+          exit 1
+        fi
+
+        echo "PLUGIN_MAIN_CLASS=$CLASS_NAME" >> $GITHUB_ENV
+        echo "PLUGIN_ENTRY_FILE=$PLUGIN_CLASS" >> $GITHUB_ENV
+        
     - name: Compile plugin
-      run: |
+    run: |
         echo "Compiling plugin sources..."
         CLASS_PATH="$GHIDRA_INSTALL_DIR/Ghidra/Features/Base/lib/Help.jar:$GHIDRA_INSTALL_DIR/Ghidra/Framework/Utility/lib/utility.jar"
         
@@ -89,9 +109,6 @@ jobs:
         echo "Compilation successful"
         echo "Class files:"
         find build -type f | xargs ls -la
-
-    - name: Package plugin
-      run: |
         echo "Packaging plugin..."
         PLUGIN_DIR="dist/$PLUGIN_NAME"
         
