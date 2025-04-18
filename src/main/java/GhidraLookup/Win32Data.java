@@ -73,6 +73,9 @@ public class Win32Data {
 		loadData(root_dir + "/data/shellapi.json");
 		loadData(root_dir + "/data/heapapi.json");
 		loadData(root_dir + "/data/processthreadsapi.json");
+		loadData(root_dir + "/data/stringapiset.json");  // For MultiByteToWideChar, WideCharToMultiByte, etc.
+		loadData(root_dir + "/data/shlwapi.json");       // For StrCpy, StrCat, etc.
+		loadData(root_dir + "/data/winbase.json");       // For lstrlen, lstrcpy, etc.
 	}
 	
 	private void loadData(String file_name) {

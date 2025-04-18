@@ -1,0 +1,3294 @@
+{
+    "functions": [
+        {
+            "name": "_lclose",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-_lclose",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "_lcreat",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-_lcreat",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "_llseek",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-_llseek",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "_lopen",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-_lopen",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "_lread",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-_lread",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "_lwrite",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-_lwrite",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AccessCheckAndAuditAlarmA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-accesscheckandauditalarma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AccessCheckByTypeAndAuditAlarmA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-accesscheckbytypeandauditalarma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AccessCheckByTypeResultListAndAuditAlarmA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-accesscheckbytyperesultlistandauditalarma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AccessCheckByTypeResultListAndAuditAlarmByHandleA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-accesscheckbytyperesultlistandauditalarmbyhandlea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ActivateActCtx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-activateactctx",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AddAtomA",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-addatoma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AddAtomW",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-addatomw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AddConditionalAce",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-addconditionalace",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AddIntegrityLabelToBoundaryDescriptor",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-addintegritylabeltoboundarydescriptor",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AddRefActCtx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-addrefactctx",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AddSecureMemoryCacheCallback",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-addsecurememorycachecallback",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ApplicationRecoveryFinished",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-applicationrecoveryfinished",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ApplicationRecoveryInProgress",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-applicationrecoveryinprogress",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BackupEventLogA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-backupeventloga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BackupEventLogW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-backupeventlogw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BackupRead",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-backupread",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BackupSeek",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-backupseek",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BackupWrite",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-backupwrite",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BeginUpdateResourceA",
+            "return_type": "HANDLE",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-beginupdateresourcea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BeginUpdateResourceW",
+            "return_type": "HANDLE",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-beginupdateresourcew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BindIoCompletionCallback",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-bindiocompletioncallback",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BuildCommDCBA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-buildcommdcba",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BuildCommDCBAndTimeoutsA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-buildcommdcbandtimeoutsa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BuildCommDCBAndTimeoutsW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-buildcommdcbandtimeoutsw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "BuildCommDCBW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-buildcommdcbw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CallNamedPipeA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-callnamedpipea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CheckNameLegalDOS8Dot3A",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-checknamelegaldos8dot3a",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CheckNameLegalDOS8Dot3W",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-checknamelegaldos8dot3w",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ClearCommBreak",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-clearcommbreak",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ClearCommError",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-clearcommerror",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ClearEventLogA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-cleareventloga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ClearEventLogW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-cleareventlogw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CloseEncryptedFileRaw",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-closeencryptedfileraw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CloseEventLog",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-closeeventlog",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CommConfigDialogA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-commconfigdialoga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CommConfigDialogW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-commconfigdialogw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ConvertFiberToThread",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-convertfibertothread",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ConvertThreadToFiber",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-convertthreadtofiber",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ConvertThreadToFiberEx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-convertthreadtofiberex",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyContext",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copycontext",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyFile",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfile",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyFile2",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfile2",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyFileA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfilea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyFileExA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfileexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyFileExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfileexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyFileTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfiletransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyFileTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfiletransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CopyFileW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-copyfilew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateActCtxA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createactctxa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateActCtxW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createactctxw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateBoundaryDescriptorA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createboundarydescriptora",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateDirectory",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createdirectory",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateDirectoryExA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createdirectoryexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateDirectoryExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createdirectoryexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateDirectoryTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createdirectorytransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateDirectoryTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createdirectorytransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateFiber",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfiber",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateFiberEx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfiberex",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateFileMappingA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfilemappinga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateFileMappingNumaA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfilemappingnumaa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateFileTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfiletransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateFileTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createfiletransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateHardLinkA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createhardlinka",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateHardLinkTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createhardlinktransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateHardLinkTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createhardlinktransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateHardLinkW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createhardlinkw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateJobObjectA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createjobobjecta",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateMailslotA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createmailslota",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateMailslotW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createmailslotw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateNamedPipeA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createnamedpipea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreatePrivateNamespaceA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createprivatenamespacea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateProcessWithLogonW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createprocesswithlogonw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateProcessWithTokenW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createprocesswithtokenw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateSemaphoreA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createsemaphorea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateSemaphoreExA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createsemaphoreexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateSymbolicLinkA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createsymboliclinka",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateSymbolicLinkTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createsymboliclinktransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateSymbolicLinkTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createsymboliclinktransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateSymbolicLinkW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createsymboliclinkw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateTapePartition",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createtapepartition",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateUmsCompletionList",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createumscompletionlist",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CreateUmsThreadContext",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-createumsthreadcontext",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeactivateActCtx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deactivateactctx",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DebugBreakProcess",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-debugbreakprocess",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DebugSetProcessKillOnExit",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-debugsetprocesskillonexit",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DecryptFileA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-decryptfilea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DecryptFileW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-decryptfilew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DefineDosDeviceA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-definedosdevicea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeleteAtom",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deleteatom",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeleteFiber",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deletefiber",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeleteFile",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deletefile",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeleteFileTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deletefiletransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeleteFileTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deletefiletransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeleteUmsCompletionList",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deleteumscompletionlist",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeleteUmsThreadContext",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deleteumsthreadcontext",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeleteVolumeMountPointA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deletevolumemountpointa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DequeueUmsCompletionListItems",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-dequeueumscompletionlistitems",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DeregisterEventSource",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-deregistereventsource",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DestroyThreadpoolEnvironment",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-destroythreadpoolenvironment",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DisableThreadProfiling",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-disablethreadprofiling",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DnsHostnameToComputerNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-dnshostnametocomputernamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DnsHostnameToComputerNameW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-dnshostnametocomputernamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DosDateTimeToFileTime",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-dosdatetimetofiletime",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EnableProcessOptionalXStateFeatures",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-enableprocessoptionalxstatefeatures",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EnableThreadProfiling",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-enablethreadprofiling",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EncryptFileA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-encryptfilea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EncryptFileW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-encryptfilew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EndUpdateResourceA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-endupdateresourcea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EndUpdateResourceW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-endupdateresourcew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EnterUmsSchedulingMode",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-enterumsschedulingmode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EnumResourceLanguagesA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-enumresourcelanguagesa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EnumResourceLanguagesW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-enumresourcelanguagesw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EnumResourceTypesA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-enumresourcetypesa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EnumResourceTypesW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-enumresourcetypesw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EraseTape",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-erasetape",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "EscapeCommFunction",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-escapecommfunction",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ExecuteUmsThread",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-executeumsthread",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FatalExit",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-fatalexit",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FileEncryptionStatusA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-fileencryptionstatusa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FileEncryptionStatusW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-fileencryptionstatusw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FileTimeToDosDateTime",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-filetimetodosdatetime",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindActCtxSectionGuid",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findactctxsectionguid",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindActCtxSectionStringA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findactctxsectionstringa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindActCtxSectionStringW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findactctxsectionstringw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindAtomA",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findatoma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindAtomW",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findatomw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindFirstFileNameTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findfirstfilenametransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindFirstFileTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findfirstfiletransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindFirstFileTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findfirstfiletransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindFirstStreamTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findfirststreamtransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindFirstVolumeA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findfirstvolumea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindFirstVolumeMountPointA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findfirstvolumemountpointa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindFirstVolumeMountPointW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findfirstvolumemountpointw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindNextVolumeA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findnextvolumea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindNextVolumeMountPointA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findnextvolumemountpointa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindNextVolumeMountPointW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findnextvolumemountpointw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindResourceA",
+            "return_type": "HRSRC",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findresourcea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindResourceExA",
+            "return_type": "HRSRC",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findresourceexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FindVolumeMountPointClose",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-findvolumemountpointclose",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FormatMessage",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-formatmessage",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FormatMessageA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-formatmessagea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FormatMessageW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-formatmessagew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetActiveProcessorCount",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getactiveprocessorcount",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetActiveProcessorGroupCount",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getactiveprocessorgroupcount",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetApplicationRecoveryCallback",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getapplicationrecoverycallback",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetApplicationRestartSettings",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getapplicationrestartsettings",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetAtomNameA",
+            "return_type": "UINT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getatomnamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetAtomNameW",
+            "return_type": "UINT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getatomnamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetBinaryTypeA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getbinarytypea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetBinaryTypeW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getbinarytypew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCommConfig",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommconfig",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCommMask",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommmask",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCommModemStatus",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommmodemstatus",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCommPorts",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommports",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCommProperties",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommproperties",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCommState",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommstate",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCommTimeouts",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcommtimeouts",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCompressedFileSizeTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcompressedfilesizetransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCompressedFileSizeTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcompressedfilesizetransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetComputerNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcomputernamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetComputerNameW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcomputernamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCurrentActCtx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcurrentactctx",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCurrentDirectory",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcurrentdirectory",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCurrentHwProfileA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcurrenthwprofilea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCurrentHwProfileW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcurrenthwprofilew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetCurrentUmsThread",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getcurrentumsthread",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetDefaultCommConfigA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getdefaultcommconfiga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetDefaultCommConfigW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getdefaultcommconfigw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetDevicePowerState",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getdevicepowerstate",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetDllDirectoryA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getdlldirectorya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetDllDirectoryW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getdlldirectoryw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetEnabledXStateFeatures",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenabledxstatefeatures",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetEnvironmentVariable",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getenvironmentvariable",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetEventLogInformation",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-geteventloginformation",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFileAttributesTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfileattributestransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFileAttributesTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfileattributestransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFileBandwidthReservation",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfilebandwidthreservation",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFileInformationByHandleEx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfileinformationbyhandleex",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFileInformationByName",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfileinformationbyname",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFileSecurityA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfilesecuritya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFirmwareEnvironmentVariableA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfirmwareenvironmentvariablea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFirmwareEnvironmentVariableExA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfirmwareenvironmentvariableexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFirmwareEnvironmentVariableExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfirmwareenvironmentvariableexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFirmwareEnvironmentVariableW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfirmwareenvironmentvariablew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFirmwareType",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfirmwaretype",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFullPathNameTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfullpathnametransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetFullPathNameTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getfullpathnametransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetLogicalDriveStringsA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getlogicaldrivestringsa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetLongPathNameTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getlongpathnametransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetLongPathNameTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getlongpathnametransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetMailslotInfo",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getmailslotinfo",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetMaximumProcessorCount",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getmaximumprocessorcount",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetMaximumProcessorGroupCount",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getmaximumprocessorgroupcount",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNamedPipeClientComputerNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnamedpipeclientcomputernamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNamedPipeClientProcessId",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnamedpipeclientprocessid",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNamedPipeClientSessionId",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnamedpipeclientsessionid",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNamedPipeHandleStateA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnamedpipehandlestatea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNamedPipeServerProcessId",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnamedpipeserverprocessid",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNamedPipeServerSessionId",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnamedpipeserversessionid",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNextUmsListItem",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnextumslistitem",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNumaAvailableMemoryNode",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnumaavailablememorynode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNumaAvailableMemoryNodeEx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnumaavailablememorynodeex",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNumaNodeNumberFromHandle",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnumanodenumberfromhandle",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNumaNodeProcessorMask",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnumanodeprocessormask",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNumaProcessorNode",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnumaprocessornode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNumaProcessorNodeEx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnumaprocessornodeex",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNumaProximityNode",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnumaproximitynode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetNumberOfEventLogRecords",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getnumberofeventlogrecords",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetOldestEventLogRecord",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getoldesteventlogrecord",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileInt",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofileint",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileIntA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofileinta",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileIntW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofileintw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileSection",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilesection",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileSectionA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilesectiona",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileSectionNames",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilesectionnames",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileSectionNamesA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilesectionnamesa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileSectionNamesW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilesectionnamesw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileSectionW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilesectionw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileString",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilestring",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileStringA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilestringa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileStringW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilestringw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileStruct",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilestruct",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileStructA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilestructa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetPrivateProfileStructW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprivateprofilestructw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProcessAffinityMask",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprocessaffinitymask",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProcessDEPPolicy",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprocessdeppolicy",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProcessIoCounters",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprocessiocounters",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProfileIntA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprofileinta",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProfileIntW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprofileintw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProfileSectionA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprofilesectiona",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProfileSectionW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprofilesectionw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProfileStringA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprofilestringa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProfileStringW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getprofilestringw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetShortPathNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getshortpathnamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetSystemDEPPolicy",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getsystemdeppolicy",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetSystemPowerStatus",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getsystempowerstatus",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetSystemRegistryQuota",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getsystemregistryquota",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetTapeParameters",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-gettapeparameters",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetTapePosition",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-gettapeposition",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetTapeStatus",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-gettapestatus",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetTempFileName",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-gettempfilename",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetThreadEnabledXStateFeatures",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getthreadenabledxstatefeatures",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetThreadSelectorEntry",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getthreadselectorentry",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetUmsCompletionListEvent",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getumscompletionlistevent",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetUmsSystemThreadInformation",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getumssystemthreadinformation",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetUserNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getusernamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetUserNameW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getusernamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetVolumeNameForVolumeMountPointA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getvolumenameforvolumemountpointa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetVolumePathNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getvolumepathnamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetVolumePathNamesForVolumeNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getvolumepathnamesforvolumenamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetXStateFeaturesMask",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-getxstatefeaturesmask",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalAddAtomA",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globaladdatoma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalAddAtomExA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globaladdatomexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalAddAtomExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globaladdatomexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalAddAtomW",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globaladdatomw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalAlloc",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalalloc",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalDeleteAtom",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globaldeleteatom",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalDiscard",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globaldiscard",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalFindAtomA",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalfindatoma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalFindAtomW",
+            "return_type": "ATOM",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalfindatomw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalFlags",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalflags",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalFree",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalfree",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalGetAtomNameA",
+            "return_type": "UINT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalgetatomnamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalGetAtomNameW",
+            "return_type": "UINT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalgetatomnamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalHandle",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalhandle",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalLock",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globallock",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalMemoryStatus",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalmemorystatus",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalReAlloc",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalrealloc",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalSize",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalsize",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GlobalUnlock",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-globalunlock",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "HasOverlappedIoCompleted",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-hasoverlappediocompleted",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "InitAtomTable",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-initatomtable",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "InitializeContext",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-initializecontext",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "InitializeContext2",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-initializecontext2",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "InitializeThreadpoolEnvironment",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-initializethreadpoolenvironment",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "InterlockedExchangeSubtract",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-interlockedexchangesubtract",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsBadCodePtr",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-isbadcodeptr",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsBadReadPtr",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-isbadreadptr",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsBadStringPtrA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-isbadstringptra",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsBadStringPtrW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-isbadstringptrw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsBadWritePtr",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-isbadwriteptr",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsNativeVhdBoot",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-isnativevhdboot",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsSystemResumeAutomatic",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-issystemresumeautomatic",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsTextUnicode",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-istextunicode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LoadModule",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-loadmodule",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LoadPackagedLibrary",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-loadpackagedlibrary",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocalAlloc",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localalloc",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocalFlags",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localflags",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocalFree",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localfree",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocalHandle",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localhandle",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocalLock",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-locallock",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocalReAlloc",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localrealloc",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocalSize",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localsize",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocalUnlock",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-localunlock",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LocateXStateFeature",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-locatexstatefeature",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LogonUserA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonusera",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LogonUserExA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonuserexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LogonUserExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonuserexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LogonUserW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-logonuserw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupAccountNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupaccountnamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupAccountNameW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupaccountnamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupAccountSidA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupaccountsida",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupAccountSidLocalA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupaccountsidlocala",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupAccountSidLocalW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupaccountsidlocalw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupAccountSidW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupaccountsidw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupPrivilegeDisplayNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupprivilegedisplaynamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupPrivilegeDisplayNameW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupprivilegedisplaynamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupPrivilegeNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupprivilegenamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupPrivilegeNameW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupprivilegenamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupPrivilegeValueA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupprivilegevaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "LookupPrivilegeValueW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lookupprivilegevaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcatA",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcata",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcatW",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcatw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcmpA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcmpa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcmpiA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcmpia",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcmpiW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcmpiw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcmpW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcmpw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcpyA",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcpya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcpynA",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcpyna",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcpynW",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcpynw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrcpyW",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrcpyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrlenA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrlena",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "lstrlenW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-lstrlenw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MAKEINTATOM",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-makeintatom",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MapUserPhysicalPagesScatter",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-mapuserphysicalpagesscatter",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MapViewOfFileExNuma",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-mapviewoffileexnuma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFile",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefile",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFileA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefilea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFileExA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefileexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFileExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefileexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFileTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefiletransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFileTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefiletransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFileW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefilew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFileWithProgressA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefilewithprogressa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MoveFileWithProgressW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefilewithprogressw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MulDiv",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-muldiv",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "NotifyChangeEventLog",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-notifychangeeventlog",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ObjectCloseAuditAlarmA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-objectcloseauditalarma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ObjectDeleteAuditAlarmA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-objectdeleteauditalarma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ObjectOpenAuditAlarmA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-objectopenauditalarma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ObjectPrivilegeAuditAlarmA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-objectprivilegeauditalarma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenBackupEventLogA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openbackupeventloga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenBackupEventLogW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openbackupeventlogw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenCommPort",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-opencommport",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenEncryptedFileRawA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openencryptedfilerawa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenEncryptedFileRawW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openencryptedfileraww",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenEventLogA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openeventloga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenEventLogW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openeventlogw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenFile",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openfile",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenFileById",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openfilebyid",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenFileMappingA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openfilemappinga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenJobObjectA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openjobobjecta",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OpenPrivateNamespaceA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-openprivatenamespacea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OperationEnd",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-operationend",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "OperationStart",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-operationstart",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PowerClearRequest",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-powerclearrequest",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PowerCreateRequest",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-powercreaterequest",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PowerSetRequest",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-powersetrequest",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PrepareTape",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-preparetape",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PrivilegedServiceAuditAlarmA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-privilegedserviceauditalarma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PulseEvent",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-pulseevent",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PurgeComm",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-purgecomm",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "QueryActCtxSettingsW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-queryactctxsettingsw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "QueryActCtxW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-queryactctxw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "QueryDosDeviceA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-querydosdevicea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "QueryFullProcessImageNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-queryfullprocessimagenamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "QueryFullProcessImageNameW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-queryfullprocessimagenamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "QueryThreadProfiling",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-querythreadprofiling",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "QueryUmsThreadInformation",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-queryumsthreadinformation",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReadDirectoryChangesExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readdirectorychangesexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReadDirectoryChangesW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readdirectorychangesw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReadEncryptedFileRaw",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readencryptedfileraw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReadEventLogA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readeventloga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReadEventLogW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readeventlogw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReadThreadProfilingData",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-readthreadprofilingdata",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RegisterApplicationRecoveryCallback",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-registerapplicationrecoverycallback",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RegisterApplicationRestart",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-registerapplicationrestart",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RegisterEventSourceA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-registereventsourcea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RegisterEventSourceW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-registereventsourcew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RegisterWaitForSingleObject",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-registerwaitforsingleobject",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReleaseActCtx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-releaseactctx",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RemoveDirectoryTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-removedirectorytransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RemoveDirectoryTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-removedirectorytransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RemoveSecureMemoryCacheCallback",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-removesecurememorycachecallback",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReOpenFile",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-reopenfile",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReplaceFileA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-replacefilea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReplaceFileW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-replacefilew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReportEventA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-reporteventa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ReportEventW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-reporteventw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "RequestWakeupLatency",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-requestwakeuplatency",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetCommBreak",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommbreak",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetCommConfig",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommconfig",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetCommMask",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommmask",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetCommState",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommstate",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetCommTimeouts",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcommtimeouts",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetCurrentDirectory",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setcurrentdirectory",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetDefaultCommConfigA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setdefaultcommconfiga",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetDefaultCommConfigW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setdefaultcommconfigw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetDllDirectoryA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setdlldirectorya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetDllDirectoryW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setdlldirectoryw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetEnvironmentVariable",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setenvironmentvariable",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFileAttributesTransactedA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfileattributestransacteda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFileAttributesTransactedW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfileattributestransactedw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFileBandwidthReservation",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfilebandwidthreservation",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFileCompletionNotificationModes",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfilecompletionnotificationmodes",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFileSecurityA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfilesecuritya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFileShortNameA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfileshortnamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFileShortNameW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfileshortnamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFirmwareEnvironmentVariableA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfirmwareenvironmentvariablea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFirmwareEnvironmentVariableExA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfirmwareenvironmentvariableexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFirmwareEnvironmentVariableExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfirmwareenvironmentvariableexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetFirmwareEnvironmentVariableW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setfirmwareenvironmentvariablew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetHandleCount",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-sethandlecount",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetMailslotInfo",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setmailslotinfo",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetProcessAffinityMask",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessaffinitymask",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetProcessDEPPolicy",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setprocessdeppolicy",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetSearchPathMode",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setsearchpathmode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetSystemPowerState",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setsystempowerstate",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetTapeParameters",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-settapeparameters",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetTapePosition",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-settapeposition",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetThreadAffinityMask",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadaffinitymask",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetThreadExecutionState",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadexecutionstate",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetThreadpoolCallbackCleanupGroup",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadpoolcallbackcleanupgroup",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetThreadpoolCallbackLibrary",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadpoolcallbacklibrary",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetThreadpoolCallbackPersistent",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadpoolcallbackpersistent",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetThreadpoolCallbackPool",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadpoolcallbackpool",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetThreadpoolCallbackPriority",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadpoolcallbackpriority",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetThreadpoolCallbackRunsLong",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setthreadpoolcallbackrunslong",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetUmsThreadInformation",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setumsthreadinformation",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetupComm",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setupcomm",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetVolumeLabelA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setvolumelabela",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetVolumeLabelW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setvolumelabelw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetVolumeMountPointA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setvolumemountpointa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetVolumeMountPointW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setvolumemountpointw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetXStateFeaturesMask",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setxstatefeaturesmask",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SwitchToFiber",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-switchtofiber",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "TransmitCommChar",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-transmitcommchar",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UmsThreadYield",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-umsthreadyield",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UnregisterApplicationRecoveryCallback",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-unregisterapplicationrecoverycallback",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UnregisterApplicationRestart",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-unregisterapplicationrestart",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UnregisterWait",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-unregisterwait",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UpdateResourceA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-updateresourcea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UpdateResourceW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-updateresourcew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "VerifyVersionInfoA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-verifyversioninfoa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "VerifyVersionInfoW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-verifyversioninfow",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WaitCommEvent",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-waitcommevent",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WaitNamedPipeA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-waitnamedpipea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WinExec",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-winexec",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WinMain",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-winmain",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "Wow64GetThreadSelectorEntry",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-wow64getthreadselectorentry",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WriteEncryptedFileRaw",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeencryptedfileraw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WritePrivateProfileSectionA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprivateprofilesectiona",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WritePrivateProfileSectionW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprivateprofilesectionw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WritePrivateProfileStringA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprivateprofilestringa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WritePrivateProfileStringW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprivateprofilestringw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WritePrivateProfileStructA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprivateprofilestructa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WritePrivateProfileStructW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprivateprofilestructw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WriteProfileSectionA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprofilesectiona",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WriteProfileSectionW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprofilesectionw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WriteProfileStringA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprofilestringa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WriteProfileStringW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writeprofilestringw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WriteTapemark",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-writetapemark",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WTSGetActiveConsoleSessionId",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-wtsgetactiveconsolesessionid",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ZombifyActCtx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-zombifyactctx",
+            "description": "",
+            "parameters": []
+        }
+    ]
+}

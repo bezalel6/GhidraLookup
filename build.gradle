@@ -46,3 +46,34 @@ else {
 	throw new GradleException("GHIDRA_INSTALL_DIR is not defined!")
 }
 //----------------------END "DO NOT MODIFY" SECTION-------------------------------
+
+// Quick development task
+task quickDeploy {
+    doLast {
+        def extensionDir = new File(System.getProperty("user.home"), ".ghidra/.ghidra_11.3.1_PUBLIC/Extensions/GhidraLookup")
+        extensionDir.mkdirs()
+        
+        // Copy compiled classes
+        copy {
+            from 'build/classes/java/main'
+            into "${extensionDir}/classes"
+        }
+        
+        // Copy data files
+        copy {
+            from 'data'
+            into "${extensionDir}/data"
+        }
+        
+        // Copy extension.properties
+        copy {
+            from 'extension.properties'
+            into extensionDir
+        }
+        
+        println "Quick deployed to: ${extensionDir}"
+    }
+}
+
+// Make quickDeploy depend on build
+quickDeploy.dependsOn build

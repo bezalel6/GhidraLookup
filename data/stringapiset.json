@@ -1,0 +1,67 @@
+{
+    "functions": [
+        {
+            "name": "CompareStringEx",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringex",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CompareStringOrdinal",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringordinal",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "CompareStringW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "FoldStringW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-foldstringw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetStringTypeExW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-getstringtypeexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetStringTypeW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-getstringtypew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MultiByteToWideChar",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-multibytetowidechar",
+            "description": "",
+            "parameters": [
+                {
+                    "name": "MB_PRECOMPOSED",
+                    "type": "",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ]
+        },
+        {
+            "name": "WideCharToMultiByte",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-widechartomultibyte",
+            "description": "",
+            "parameters": []
+        }
+    ]
+}

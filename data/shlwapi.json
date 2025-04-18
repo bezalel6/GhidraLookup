@@ -1,0 +1,2657 @@
+{
+    "functions": [
+        {
+            "name": "AssocCreate",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-assoccreate",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AssocGetPerceivedType",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-assocgetperceivedtype",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AssocIsDangerous",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-associsdangerous",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AssocQueryKeyA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-assocquerykeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AssocQueryKeyW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-assocquerykeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AssocQueryStringA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-assocquerystringa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AssocQueryStringByKeyA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-assocquerystringbykeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AssocQueryStringByKeyW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-assocquerystringbykeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "AssocQueryStringW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-assocquerystringw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ChrCmpIA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-chrcmpia",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ChrCmpIW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-chrcmpiw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ColorAdjustLuma",
+            "return_type": "COLORREF",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-coloradjustluma",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ColorHLSToRGB",
+            "return_type": "COLORREF",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-colorhlstorgb",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ColorRGBToHLS",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-colorrgbtohls",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ConnectToConnectionPoint",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-connecttoconnectionpoint",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "DllInstall",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-dllinstall",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetAcceptLanguagesA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-getacceptlanguagesa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetAcceptLanguagesW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-getacceptlanguagesw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetMenuPosFromID",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-getmenuposfromid",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "GetProcessReference",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-getprocessreference",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "HashData",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-hashdata",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IntlStrEqNA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-intlstreqna",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IntlStrEqNIA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-intlstreqnia",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IntlStrEqNIW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-intlstreqniw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IntlStrEqNW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-intlstreqnw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IntlStrEqWorkerA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-intlstreqworkera",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IntlStrEqWorkerW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-intlstreqworkerw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsCharSpaceA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-ischarspacea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsCharSpaceW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-ischarspacew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsInternetESCEnabled",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-isinternetescenabled",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IsOS",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-isos",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_Copy",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_copy",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_Read",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_read",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_ReadPidl",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_readpidl",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_ReadStr",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_readstr",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_Reset",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_reset",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_Size",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_size",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_Write",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_write",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_WritePidl",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_writepidl",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IStream_WriteStr",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-istream_writestr",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IUnknown_AtomicRelease",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-iunknown_atomicrelease",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IUnknown_GetSite",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-iunknown_getsite",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IUnknown_GetWindow",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-iunknown_getwindow",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IUnknown_QueryService",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-iunknown_queryservice",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IUnknown_Set",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-iunknown_set",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "IUnknown_SetSite",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-iunknown_setsite",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "MAKEDLLVERULL",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-makedllverull",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "ParseURLA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-parseurla",
+            "description": "Performs rudimentary parsing of a URL.",
+            "parameters": []
+        },
+        {
+            "name": "ParseURLW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-parseurlw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathAddBackslashA",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathaddbackslasha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathAddBackslashW",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathaddbackslashw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathAddExtensionA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathaddextensiona",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathAddExtensionW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathaddextensionw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathAppendA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathappenda",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathAppendW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathappendw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathBuildRootA",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathbuildroota",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathBuildRootW",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathbuildrootw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCanonicalizeA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcanonicalizea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCanonicalizeW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcanonicalizew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCombineA",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcombinea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCombineW",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcombinew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCommonPrefixA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcommonprefixa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCommonPrefixW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcommonprefixw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCompactPathA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcompactpatha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCompactPathExA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcompactpathexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCompactPathExW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcompactpathexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCompactPathW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcompactpathw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCreateFromUrlA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcreatefromurla",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCreateFromUrlAlloc",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcreatefromurlalloc",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathCreateFromUrlW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathcreatefromurlw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFileExistsA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfileexistsa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFileExistsW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfileexistsw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindExtensionA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindextensiona",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindExtensionW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindextensionw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindFileNameA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindFileNameW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindfilenamew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindNextComponentA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindnextcomponenta",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindNextComponentW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindnextcomponentw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindOnPathA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindonpatha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindOnPathW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindonpathw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindSuffixArrayA",
+            "return_type": "LPCTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindsuffixarraya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathFindSuffixArrayW",
+            "return_type": "LPCTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathfindsuffixarrayw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathGetArgsA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathgetargsa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathGetArgsW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathgetargsw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathGetCharTypeA",
+            "return_type": "UINT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathgetchartypea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathGetCharTypeW",
+            "return_type": "UINT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathgetchartypew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathGetDriveNumberA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathgetdrivenumbera",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathGetDriveNumberW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathgetdrivenumberw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsContentTypeA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathiscontenttypea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsContentTypeW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathiscontenttypew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsDirectoryA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisdirectorya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsDirectoryEmptyA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisdirectoryemptya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsDirectoryEmptyW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisdirectoryemptyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsDirectoryW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisdirectoryw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsFileSpecA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisfilespeca",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsFileSpecW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisfilespecw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsHTMLFileA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathishtmlfilea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsHTMLFileW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathishtmlfilew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsLFNFileSpecA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathislfnfilespeca",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsLFNFileSpecW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathislfnfilespecw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsNetworkPathA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisnetworkpatha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsNetworkPathW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisnetworkpathw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsPrefixA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisprefixa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsPrefixW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisprefixw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsRelativeA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisrelativea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsRelativeW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisrelativew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsRootA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisroota",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsRootW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisrootw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsSameRootA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathissameroota",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsSameRootW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathissamerootw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsSystemFolderA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathissystemfoldera",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsSystemFolderW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathissystemfolderw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsUNCA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisunca",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsUNCServerA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisuncservera",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsUNCServerShareA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisuncserversharea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsUNCServerShareW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisuncserversharew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsUNCServerW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisuncserverw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsUNCW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisuncw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsURLA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisurla",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathIsURLW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathisurlw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathMakePrettyA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathmakeprettya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathMakePrettyW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathmakeprettyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathMakeSystemFolderA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathmakesystemfoldera",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathMakeSystemFolderW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathmakesystemfolderw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathMatchSpecA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathmatchspeca",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathMatchSpecExA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathmatchspecexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathMatchSpecExW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathmatchspecexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathMatchSpecW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathmatchspecw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathParseIconLocationA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathparseiconlocationa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathParseIconLocationW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathparseiconlocationw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathQuoteSpacesA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathquotespacesa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathQuoteSpacesW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathquotespacesw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRelativePathToA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathrelativepathtoa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRelativePathToW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathrelativepathtow",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveArgsA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremoveargsa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveArgsW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremoveargsw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveBackslashA",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremovebackslasha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveBackslashW",
+            "return_type": "LPTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremovebackslashw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveBlanksA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremoveblanksa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveBlanksW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremoveblanksw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveExtensionA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremoveextensiona",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveExtensionW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremoveextensionw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveFileSpecA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremovefilespeca",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRemoveFileSpecW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathremovefilespecw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRenameExtensionA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathrenameextensiona",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathRenameExtensionW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathrenameextensionw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathSearchAndQualifyA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathsearchandqualifya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathSearchAndQualifyW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathsearchandqualifyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathSetDlgItemPathA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathsetdlgitempatha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathSetDlgItemPathW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathsetdlgitempathw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathSkipRootA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathskiproota",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathSkipRootW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathskiprootw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathStripPathA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathstrippatha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathStripPathW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathstrippathw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathStripToRootA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathstriptoroota",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathStripToRootW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathstriptorootw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathUndecorateA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathundecoratea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathUndecorateW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathundecoratew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathUnExpandEnvStringsA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathunexpandenvstringsa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathUnExpandEnvStringsW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathunexpandenvstringsw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathUnmakeSystemFolderA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathunmakesystemfoldera",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathUnmakeSystemFolderW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathunmakesystemfolderw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathUnquoteSpacesA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathunquotespacesa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "PathUnquoteSpacesW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-pathunquotespacesw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "QISearch",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-qisearch",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SetProcessReference",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-setprocessreference",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHAllocShared",
+            "return_type": "HANDLE",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shallocshared",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHAnsiToAnsi",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shansitoansi",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHAnsiToUnicode",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shansitounicode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHAutoComplete",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shautocomplete",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCopyKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcopykeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCopyKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcopykeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCreateMemStream",
+            "return_type": "IStream*",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcreatememstream",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCreateShellPalette",
+            "return_type": "HPALETTE",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcreateshellpalette",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCreateStreamOnFileA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcreatestreamonfilea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCreateStreamOnFileEx",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcreatestreamonfileex",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCreateStreamOnFileW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcreatestreamonfilew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCreateThread",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcreatethread",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCreateThreadRef",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcreatethreadref",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHCreateThreadWithHandle",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shcreatethreadwithhandle",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHDeleteEmptyKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shdeleteemptykeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHDeleteEmptyKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shdeleteemptykeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHDeleteKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shdeletekeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHDeleteKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shdeletekeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHDeleteValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shdeletevaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHDeleteValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shdeletevaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHEnumKeyExA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shenumkeyexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHEnumKeyExW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shenumkeyexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHEnumValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shenumvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHEnumValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shenumvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHFormatDateTimeA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shformatdatetimea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHFormatDateTimeW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shformatdatetimew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHFreeShared",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shfreeshared",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGetAssocKeys",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shgetassockeys",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGetInverseCMAP",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shgetinversecmap",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGetThreadRef",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shgetthreadref",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGetValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shgetvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGetValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shgetvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGetViewStatePropertyBag",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shgetviewstatepropertybag",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGlobalCounterDecrement",
+            "return_type": "long",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shglobalcounterdecrement",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGlobalCounterGetValue",
+            "return_type": "long",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shglobalcountergetvalue",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHGlobalCounterIncrement",
+            "return_type": "long",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shglobalcounterincrement",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHIsLowMemoryMachine",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shislowmemorymachine",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHLoadIndirectString",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shloadindirectstring",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHLocalStrDupA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shlocalstrdupa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHLocalStrDupW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shlocalstrdupw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHLockShared",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shlockshared",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHMessageBoxCheckA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shmessageboxchecka",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHMessageBoxCheckW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shmessageboxcheckw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHOpenRegStream2A",
+            "return_type": "IStream*",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shopenregstream2a",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHOpenRegStream2W",
+            "return_type": "IStream*",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shopenregstream2w",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHOpenRegStreamA",
+            "return_type": "IStream*",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shopenregstreama",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHOpenRegStreamW",
+            "return_type": "IStream*",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shopenregstreamw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHQueryInfoKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shqueryinfokeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHQueryInfoKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shqueryinfokeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHQueryValueExA",
+            "return_type": "DWORD",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shqueryvalueexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHQueryValueExW",
+            "return_type": "DWORD",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shqueryvalueexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegCloseUSKey",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregcloseuskey",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegCreateUSKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregcreateuskeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegCreateUSKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregcreateuskeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegDeleteEmptyUSKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregdeleteemptyuskeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegDeleteEmptyUSKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregdeleteemptyuskeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegDeleteUSValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregdeleteusvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegDeleteUSValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregdeleteusvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegDuplicateHKey",
+            "return_type": "HKEY",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregduplicatehkey",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegEnumUSKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregenumuskeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegEnumUSKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregenumuskeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegEnumUSValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregenumusvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegEnumUSValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregenumusvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetBoolUSValueA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetboolusvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetBoolUSValueW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetboolusvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetBoolValueFromHKCUHKLM",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetboolvaluefromhkcuhklm",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetIntW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetintw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetPathA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetpatha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetPathW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetpathw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetUSValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetusvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetUSValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetusvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetValueFromHKCUHKLM",
+            "return_type": "LONG",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetvaluefromhkcuhklm",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegGetValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreggetvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegOpenUSKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregopenuskeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegOpenUSKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregopenuskeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegQueryInfoUSKeyA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregqueryinfouskeya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegQueryInfoUSKeyW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregqueryinfouskeyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegQueryUSValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregqueryusvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegQueryUSValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregqueryusvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegSetPathA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregsetpatha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegSetPathW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregsetpathw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegSetUSValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregsetusvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegSetUSValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregsetusvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegSetValue",
+            "return_type": "LONG",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregsetvalue",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegWriteUSValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregwriteusvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHRegWriteUSValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shregwriteusvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHReleaseThreadRef",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shreleasethreadref",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHSendMessageBroadcastA",
+            "return_type": "LRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shsendmessagebroadcasta",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHSendMessageBroadcastW",
+            "return_type": "LRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shsendmessagebroadcastw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHSetThreadRef",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shsetthreadref",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHSetValueA",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shsetvaluea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHSetValueW",
+            "return_type": "LSTATUS",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shsetvaluew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHSkipJunction",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shskipjunction",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHStrDupA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shstrdupa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHStrDupW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shstrdupw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHStripMneumonicA",
+            "return_type": "TCHAR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shstripmneumonica",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHStripMneumonicW",
+            "return_type": "TCHAR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shstripmneumonicw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHUnicodeToAnsi",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shunicodetoansi",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHUnicodeToUnicode",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shunicodetounicode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "SHUnlockShared",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-shunlockshared",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StopWatchFlush",
+            "return_type": "DWORD",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-stopwatchflush",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StopWatchMode",
+            "return_type": "DWORD",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-stopwatchmode",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCatBuffA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcatbuffa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCatBuffW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcatbuffw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCatChainW",
+            "return_type": "DWORD",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcatchainw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCatW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcatw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrChrA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strchra",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrChrIA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strchria",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrChrIW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strchriw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrChrNIW",
+            "return_type": "PWSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strchrniw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrChrNW",
+            "return_type": "PWSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strchrnw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrChrW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strchrw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpCA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpca",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpCW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpcw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpICA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpica",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpICW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpicw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpIW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpiw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpLogicalW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmplogicalw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpNA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpna",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpNCA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpnca",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpNCW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpncw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpNIA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpnia",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpNICA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpnica",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpNICW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpnicw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpNIW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpniw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpNW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpnw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCmpW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcmpw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCpyNW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcpynw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCpyW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcpyw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCSpnA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcspna",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCSpnIA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcspnia",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCSpnIW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcspniw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrCSpnW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strcspnw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrDupA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strdupa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrDupW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strdupw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrFormatByteSize64A",
+            "return_type": "PSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strformatbytesize64a",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrFormatByteSizeA",
+            "return_type": "PSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strformatbytesizea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrFormatByteSizeEx",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strformatbytesizeex",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrFormatByteSizeW",
+            "return_type": "PWSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strformatbytesizew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrFormatKBSizeA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strformatkbsizea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrFormatKBSizeW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strformatkbsizew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrFromTimeIntervalA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strfromtimeintervala",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrFromTimeIntervalW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strfromtimeintervalw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrIsIntlEqualA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strisintlequala",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrIsIntlEqualW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strisintlequalw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrNCatA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strncata",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrNCatW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strncatw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrPBrkA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strpbrka",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrPBrkW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strpbrkw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRChrA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrchra",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRChrIA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrchria",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRChrIW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrchriw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRChrW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrchrw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRetToBSTR",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrettobstr",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRetToBufA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrettobufa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRetToBufW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrettobufw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRetToStrA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrettostra",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRetToStrW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrettostrw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRStrIA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrstria",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrRStrIW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strrstriw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrSpnA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strspna",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrSpnW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strspnw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrStrA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strstra",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrStrIA",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strstria",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrStrIW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strstriw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrStrNIW",
+            "return_type": "PWSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strstrniw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrStrNW",
+            "return_type": "PWSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strstrnw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrStrW",
+            "return_type": "PTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strstrw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrToInt64ExA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strtoint64exa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrToInt64ExW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strtoint64exw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrToIntA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strtointa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrToIntExA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strtointexa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrToIntExW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strtointexw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrToIntW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strtointw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrTrimA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strtrima",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "StrTrimW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-strtrimw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlApplySchemeA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlapplyschemea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlApplySchemeW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlapplyschemew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlCanonicalizeA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlcanonicalizea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlCanonicalizeW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlcanonicalizew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlCombineA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlcombinea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlCombineW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlcombinew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlCompareA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlcomparea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlCompareW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlcomparew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlCreateFromPathA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlcreatefrompatha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlCreateFromPathW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlcreatefrompathw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlEscapeA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlescapea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlEscapeSpaces",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlescapespaces",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlEscapeW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlescapew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlFixupW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlfixupw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlGetLocationA",
+            "return_type": "LPCTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlgetlocationa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlGetLocationW",
+            "return_type": "LPCTSTR",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlgetlocationw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlGetPartA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlgetparta",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlGetPartW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlgetpartw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlHashA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlhasha",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlHashW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlhashw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlIsA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlisa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlIsFileUrlA",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlisfileurla",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlIsFileUrlW",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlisfileurlw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlIsNoHistoryA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlisnohistorya",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlIsNoHistoryW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlisnohistoryw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlIsOpaqueA",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlisopaquea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlIsOpaqueW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlisopaquew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlIsW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlisw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlUnescapeA",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlunescapea",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlUnescapeInPlace",
+            "return_type": "",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlunescapeinplace",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "UrlUnescapeW",
+            "return_type": "HRESULT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-urlunescapew",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "WhichPlatform",
+            "return_type": "UINT",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-whichplatform",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "wnsprintfA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-wnsprintfa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "wnsprintfW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-wnsprintfw",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "wvnsprintfA",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-wvnsprintfa",
+            "description": "",
+            "parameters": []
+        },
+        {
+            "name": "wvnsprintfW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shlwapi/nf-shlwapi-wvnsprintfw",
+            "description": "",
+            "parameters": []
+        }
+    ]
+}
