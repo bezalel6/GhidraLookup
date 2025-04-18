@@ -10,10 +10,13 @@ import javax.swing.BoxLayout;
 import javax.swing.DefaultListModel;
 import javax.swing.JComponent;
 import javax.swing.JEditorPane;
+import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.border.BevelBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.HyperlinkEvent;
@@ -31,15 +34,28 @@ class UIProvider extends ComponentProvider {
 	private Win32Data database;
 	private DefaultListModel<String> listmodel = new DefaultListModel<String>();
 	private JList<String> candidateResults = new JList<String>(listmodel);
+	private JLabel statusLabel;
+	private JLabel statsLabel;
 
 	public UIProvider(Plugin plugin, String owner) {
 		super(plugin.getTool(), owner, owner);
-		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
 		database = new Win32Data();
 		result = new JEditorPane();
 		result.setEditorKit(JEditorPane.createEditorKitForContentType("text/html"));
 		result.setEditable(false);
 		buildPanel();
+		updateStatusBar();
+	}
+	
+	private void updateStatusBar() {
+		int totalFunctions = database.getFunctionCount();
+		int totalParameters = database.getTotalParameterCount();
+		String stage = "Development Stage: Alpha";
+		
+		String stats = String.format("Functions: %d | Parameters: %d", totalFunctions, totalParameters);
+		statusLabel.setText(stage);
+		statsLabel.setText(stats);
 	}
 	
 	private void openLink(String url) {
@@ -81,6 +97,26 @@ class UIProvider extends ComponentProvider {
 	}
 
 	private void buildPanel() {
+		// Create status bar panel
+		JPanel statusBar = new JPanel();
+		statusBar.setLayout(new BoxLayout(statusBar, BoxLayout.X_AXIS));
+		statusBar.setBorder(new BevelBorder(BevelBorder.LOWERED));
+		statusBar.setMaximumSize(new Dimension(Short.MAX_VALUE, 25));
+		
+		statusLabel = new JLabel();
+		statusLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		statusLabel.setForeground(java.awt.Color.BLUE);
+		
+		statsLabel = new JLabel();
+		statsLabel.setHorizontalAlignment(SwingConstants.RIGHT);
+		
+		statusBar.add(statusLabel);
+		statusBar.add(statsLabel);
+		
+		// Main content panel
+		JPanel contentPanel = new JPanel();
+		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.X_AXIS));
+		
 		findTextField = new JTextField(30);
 		findTextField.getDocument().addDocumentListener(new DocumentListener() {
 			@Override
@@ -126,8 +162,6 @@ class UIProvider extends ComponentProvider {
 		});
 		
 		// layout
-		
-		
 		findTextField.setMaximumSize(new Dimension(Short.MAX_VALUE, 15));
 		JPanel leftPane = new JPanel();
 		leftPane.setLayout(new BoxLayout(leftPane, BoxLayout.Y_AXIS));
@@ -139,8 +173,11 @@ class UIProvider extends ComponentProvider {
 		JScrollPane scrollPane2 = new JScrollPane(result);
 		scrollPane2.setPreferredSize(new Dimension(500, 500));
 		
-		panel.add(leftPane);
-        panel.add(scrollPane2);
+		contentPanel.add(leftPane);
+		contentPanel.add(scrollPane2);
+		
+		panel.add(statusBar);
+		panel.add(contentPanel);
 	}
 	
 	public void openWindowByClicking(String token) {

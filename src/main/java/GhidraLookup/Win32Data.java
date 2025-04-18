@@ -240,4 +240,24 @@ public class Win32Data {
 		}
 		return null;
 	}
+	
+	/**
+	 * Returns the total number of functions in the database
+	 * @return number of functions
+	 */
+	public int getFunctionCount() {
+		return m_functions.size();
+	}
+	
+	/**
+	 * Returns the total number of parameters across all functions
+	 * @return total number of parameters
+	 */
+	public int getTotalParameterCount() {
+		int total = 0;
+		for(Function f : m_functions.values()) {
+			total += f.parameters.size();
+		}
+		return total;
+	}
 }

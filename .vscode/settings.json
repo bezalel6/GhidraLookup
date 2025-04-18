@@ -1,0 +1,12 @@
+{
+    "java.project.referencedLibraries": [
+        "${env:GHIDRA_INSTALL_DIR}/Ghidra/Framework/Generic/lib/*.jar",
+        "${env:GHIDRA_INSTALL_DIR}/Ghidra/Framework/Generic/lib/third-party/*.jar",
+        "${env:GHIDRA_INSTALL_DIR}/Ghidra/Features/Base/lib/*.jar"
+    ],
+    "java.project.sourcePaths": [
+        "src/main/java"
+    ],
+    "java.project.outputPath": "build/classes/java/main",
+    "java.project.explorer.showNonJavaResources": true
+}
