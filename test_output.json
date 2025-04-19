@@ -1,0 +1,114 @@
+{
+  "name": "CompareStringEx",
+  "return_type": "int",
+  "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringex",
+  "description": "",
+  "parameters": [
+    {
+      "name": "lpLocaleName",
+      "type": "LPCWSTR",
+      "description": "Pointer to a locale name, or one of the following predefined values.",
+      "possible_constants": []
+    },
+    {
+      "name": "dwCmpFlags",
+      "type": "DWORD",
+      "description": "Flags that indicate how the function compares the two strings. By default, these flags are not set. This parameter can specify a combination of any of the following values, or it can be set to 0 to obtain the default behavior.",
+      "possible_constants": []
+    },
+    {
+      "name": "lpString1",
+      "type": "LPCWCH",
+      "description": "Pointer to the first string to compare.",
+      "possible_constants": []
+    },
+    {
+      "name": "cchCount1",
+      "type": "int",
+      "description": "Length of the string indicated by lpString1, excluding the terminating null character. The application can supply a negative value if the string is null-terminated. In this case, the function determines the length automatically.",
+      "possible_constants": []
+    },
+    {
+      "name": "lpString2",
+      "type": "LPCWCH",
+      "description": "Pointer to the second string to compare.",
+      "possible_constants": []
+    },
+    {
+      "name": "cchCount2",
+      "type": "int",
+      "description": "Length of the string indicated by lpString2, excluding the terminating null character. The application can supply a negative value if the string is null-terminated. In this case, the function determines the length automatically.",
+      "possible_constants": []
+    },
+    {
+      "name": "lpVersionInformation",
+      "type": "LPNLSVERSIONINFO",
+      "description": "Pointer to an NLSVERSIONINFOEX structure that contains the version information about the relevant NLS capability; usually retrieved from GetNLSVersionEx. Windows\u00a0Vista, Windows\u00a07: Reserved; must set to NULL.",
+      "possible_constants": []
+    },
+    {
+      "name": "lpReserved",
+      "type": "LPVOID",
+      "description": "Reserved; must set to NULL.",
+      "possible_constants": []
+    },
+    {
+      "name": "lParam",
+      "type": "LPARAM",
+      "description": "Reserved; must be set to 0.",
+      "possible_constants": []
+    }
+  ],
+  "flags": [
+    {
+      "name": "LINGUISTIC_IGNORECASE",
+      "description": "Ignore case, as linguistically appropriate.",
+      "value": -1
+    },
+    {
+      "name": "LINGUISTIC_IGNOREDIACRITIC",
+      "description": "Ignore nonspacing characters, as linguistically appropriate.\nNote\u00a0\u00a0This flag does not always produce predictable results when used with decomposed characters, that is, characters in which a base character and one or more nonspacing characters each have distinct code point values.",
+      "value": -1
+    },
+    {
+      "name": "NORM_IGNORECASE",
+      "description": "Ignore case. For many scripts (notably Latin scripts), NORM_IGNORECASE coincides with LINGUISTIC_IGNORECASE.\nNote\u00a0\u00a0NORM_IGNORECASE ignores any tertiary distinction, whether it is actually linguistic case or not. For example, in Arabic and Indic scripts, this distinguishes alternate forms of a character, but the differences do not correspond to linguistic case. LINGUISTIC_IGNORECASE causes the function to ignore only actual linguistic casing, instead of ignoring the third sorting weight.\n\u00a0\nNote\u00a0\u00a0With this flag set, the function ignores the distinction between the wide and narrow forms of the CJK compatibility characters.",
+      "value": -1
+    },
+    {
+      "name": "NORM_IGNOREKANATYPE",
+      "description": "Do not differentiate between hiragana and katakana characters. Corresponding hiragana and katakana characters compare as equal.",
+      "value": -1
+    },
+    {
+      "name": "NORM_IGNORENONSPACE",
+      "description": "Ignore nonspacing characters. For many scripts (notably Latin scripts), NORM_IGNORENONSPACE coincides with LINGUISTIC_IGNOREDIACRITIC.\nNote\u00a0\u00a0NORM_IGNORENONSPACE ignores any secondary distinction, whether it is a diacritic or not. Scripts for Korean, Japanese, Chinese, and Indic languages, among others, use this distinction for purposes other than diacritics. LINGUISTIC_IGNOREDIACRITIC causes the function to ignore only actual diacritics, instead of ignoring the second sorting weight.\n\u00a0\nNote\u00a0\u00a0NORM_IGNORENONSPACE only has an effect for locales in which accented characters are sorted in a second pass from main characters. Normally all characters in the string are first compared without regard to accents and, if the strings are equal, a second pass over the strings is performed to compare accents. This flag causes the second pass to not be performed. For locales that sort accented characters in the first pass, this flag has no effect.",
+      "value": -1
+    },
+    {
+      "name": "NORM_IGNORESYMBOLS",
+      "description": "Ignore symbols and punctuation.",
+      "value": -1
+    },
+    {
+      "name": "NORM_IGNOREWIDTH",
+      "description": "Ignore the difference between half-width and full-width characters, for example, C a t == cat. The full-width form is a formatting distinction used in Chinese and Japanese scripts.",
+      "value": -1
+    },
+    {
+      "name": "NORM_LINGUISTIC_CASING",
+      "description": "Use the default linguistic rules for casing, instead of file system rules. Note that most scenarios for CompareStringEx use this flag. This flag does not have to be used when your application calls CompareStringOrdinal.",
+      "value": -1
+    },
+    {
+      "name": "SORT_DIGITSASNUMBERS",
+      "description": "Windows\u00a07: Treat digits as numbers during sorting, for example, sort \"2\" before \"10\".",
+      "value": -1
+    },
+    {
+      "name": "SORT_STRINGSORT",
+      "description": "Treat punctuation the same as symbols.",
+      "value": -1
+    }
+  ]
+}
