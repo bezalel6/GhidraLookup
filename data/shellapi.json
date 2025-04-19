@@ -2,500 +2,1878 @@
     "functions": [
         {
             "name": "AssocCreateForClasses",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-assoccreateforclasses",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "*rgClasses",
+                    "type": "const ASSOCIATIONELEMENT",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cClasses",
+                    "type": "ULONG",
+                    "description": "Type: ULONG The number of elements in the array pointed to by rgClasses.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "riid",
+                    "type": "REFIID",
+                    "description": "Type: REFIID Reference to the desired IID, normally IID_IQueryAssociations. [out] ppv Type: void** When this method returns, contains the interface pointer requested in riid. This is normally IQueryAssociations.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "**ppv",
+                    "type": "void",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "CommandLineToArgvW",
-            "return_type": "LPWSTR*",
+            "return_type": "LPWSTR *",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpCmdLine",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCWSTR Pointer to a null-terminated Unicode string that contains the full command line. If this parameter is an empty string the function returns the path to the current executable file. [out] pNumArgs Type: int* Pointer to an int that receives the number of array elements returned, similar to argc.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pNumArgs",
+                    "type": "int",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DoEnvironmentSubstA",
             "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-doenvironmentsubsta",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszSrc",
+                    "type": "LPSTR",
+                    "description": "Type: LPTSTR A pointer to a null-terminated string that contains references to one or more environment variables, each in the following form. Case is ignored. Any character in the string that is not enclosed in '%' characters is ignored and returned unchanged. Therefore, if your string contains multiple environment variables, you can use any character other than '%' as a separator, including spaces or no separator. When this function returns successfully, each %VariableName% is replaced with its expanded value. The replacement rules are the same as those used by the command interpreter. If the variable name is not found on the system, the %variableName% is left as it was submitted on entry. If this function fails due to the expanded string being too large for the buffer, the contents of this buffer are left unchanged.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchSrc",
+                    "type": "UINT",
+                    "description": " Type: UINT The size, in characters, of the buffer pointed to by pszSrc. Note that the buffer must be large enough to hold the returned string.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DoEnvironmentSubstW",
             "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-doenvironmentsubstw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszSrc",
+                    "type": "LPWSTR",
+                    "description": "Type: LPTSTR A pointer to a null-terminated string that contains references to one or more environment variables, each in the following form. Case is ignored. Any character in the string that is not enclosed in '%' characters is ignored and returned unchanged. Therefore, if your string contains multiple environment variables, you can use any character other than '%' as a separator, including spaces or no separator. When this function returns successfully, each %VariableName% is replaced with its expanded value. The replacement rules are the same as those used by the command interpreter. If the variable name is not found on the system, the %variableName% is left as it was submitted on entry. If this function fails due to the expanded string being too large for the buffer, the contents of this buffer are left unchanged.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchSrc",
+                    "type": "UINT",
+                    "description": " Type: UINT The size, in characters, of the buffer pointed to by pszSrc. Note that the buffer must be large enough to hold the returned string.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DragAcceptFiles",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-dragacceptfiles",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hWnd",
+                    "type": "HWND",
+                    "description": " Type: HWND The identifier of the window that is registering whether it will accept dropped files.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "fAccept",
+                    "type": "BOOL",
+                    "description": " Type: BOOL A value that indicates if the window identified by the hWnd parameter accepts dropped files. This value is TRUE to accept dropped files or FALSE to discontinue accepting dropped files.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DragFinish",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-dragfinish",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hDrop",
+                    "type": "HDROP",
+                    "description": " Type: HDROP Identifier of the structure that describes dropped files. This handle is retrieved from the wParam parameter of the WM_DROPFILES message.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DragQueryFileA",
             "return_type": "UINT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-dragqueryfilea",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hDrop",
+                    "type": "HDROP",
+                    "description": "Type: HDROP Identifier of the structure that contains the file names of the dropped files.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "iFile",
+                    "type": "UINT",
+                    "description": "Type: UINT Index of the file to query. If the value of this parameter is 0xFFFFFFFF, DragQueryFile returns a count of the files dropped. If the value of this parameter is between zero and the total number of files dropped, DragQueryFile copies the file name with the corresponding value to the buffer pointed to by the lpszFile parameter. [out] lpszFile Type: LPTSTR The address of a buffer that receives the file name of a dropped file when the function returns. This file name is a null-terminated string. If this parameter is NULL, DragQueryFile returns the required size, in characters, of this buffer.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpszFile",
+                    "type": "LPSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cch",
+                    "type": "UINT",
+                    "description": " Type: UINT The size, in characters, of the lpszFile buffer.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DragQueryFileW",
             "return_type": "UINT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-dragqueryfilew",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hDrop",
+                    "type": "HDROP",
+                    "description": "Type: HDROP Identifier of the structure that contains the file names of the dropped files.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "iFile",
+                    "type": "UINT",
+                    "description": "Type: UINT Index of the file to query. If the value of this parameter is 0xFFFFFFFF, DragQueryFile returns a count of the files dropped. If the value of this parameter is between zero and the total number of files dropped, DragQueryFile copies the file name with the corresponding value to the buffer pointed to by the lpszFile parameter. [out] lpszFile Type: LPTSTR The address of a buffer that receives the file name of a dropped file when the function returns. This file name is a null-terminated string. If this parameter is NULL, DragQueryFile returns the required size, in characters, of this buffer.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpszFile",
+                    "type": "LPWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cch",
+                    "type": "UINT",
+                    "description": " Type: UINT The size, in characters, of the lpszFile buffer.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DragQueryPoint",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-dragquerypoint",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hDrop",
+                    "type": "HDROP",
+                    "description": "Type: HDROP Handle of the drop structure that describes the dropped file. [out] ppt Type: POINT* Pointer to a POINT structure that, when this function returns successfully, receives the coordinates of the mouse pointer at the time the file was dropped.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*ppt",
+                    "type": "POINT",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DuplicateIcon",
             "return_type": "HICON",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-duplicateicon",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE",
+                    "possible_constants": []
+                },
+                {
+                    "name": "hIcon",
+                    "type": "HICON",
+                    "description": "Type: HICON Handle to the icon to be duplicated.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExtractAssociatedIconA",
             "return_type": "HICON",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extractassociatedicona",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE A handle to the instance of the calling application.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszIconPath",
+                    "type": "LPSTR",
+                    "description": "Type: LPTSTR Pointer to a string that, on entry, specifies the full path and file name of the file that contains the icon. The function extracts the icon handle from that file, or from an executable file associated with that file. When this function returns, if the icon handle was obtained from an executable file (either an executable file pointed to by lpIconPath or an associated executable file) the function stores the full path and file name of that executable in the buffer pointed to by this parameter. [in, out] piIcon Type: LPWORD Pointer to a WORD value that, on entry, specifies the index of the icon whose handle is to be obtained. When the function returns, if the icon handle was obtained from an executable file (either an executable file pointed to by lpIconPath or an associated executable file), this value points to the icon's index in that file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*piIcon",
+                    "type": "WORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExtractAssociatedIconExA",
             "return_type": "HICON",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extractassociatediconexa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE The handle of the module from which to extract the icon.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszIconPath",
+                    "type": "LPSTR",
+                    "description": "Type: LPTSTR Pointer to a string that, on entry, specifies the full path and file name of the file that contains the icon. The function extracts the icon handle from that file, or from an executable file associated with that file. When this function returns, if the icon handle was obtained from an executable file (either an executable file directly pointed to by this parameter or an associated executable file) the function stores the full path and file name of that executable in the buffer pointed to by this parameter. [in, out] piIconIndex Type: LPWORD Pointer to a WORD value that, on entry, specifies the index of the icon whose handle is to be obtained. When the function returns, if the icon handle was obtained from an executable file (either an executable file pointed to by lpIconPath or an associated executable file), this value points to the icon's index in that file. [in, out] piIconId Type: LPWORD Pointer to a WORD value that, on entry, specifies the ID of the icon whose handle is to be obtained. When the function returns, if the icon handle was obtained from an executable file (either an executable file pointed to by lpIconPath or an associated executable file), this value points to the icon's ID within that file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*piIconIndex",
+                    "type": "WORD",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*piIconId",
+                    "type": "WORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExtractAssociatedIconExW",
             "return_type": "HICON",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extractassociatediconexw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE The handle of the module from which to extract the icon.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszIconPath",
+                    "type": "LPWSTR",
+                    "description": "Type: LPTSTR Pointer to a string that, on entry, specifies the full path and file name of the file that contains the icon. The function extracts the icon handle from that file, or from an executable file associated with that file. When this function returns, if the icon handle was obtained from an executable file (either an executable file directly pointed to by this parameter or an associated executable file) the function stores the full path and file name of that executable in the buffer pointed to by this parameter. [in, out] piIconIndex Type: LPWORD Pointer to a WORD value that, on entry, specifies the index of the icon whose handle is to be obtained. When the function returns, if the icon handle was obtained from an executable file (either an executable file pointed to by lpIconPath or an associated executable file), this value points to the icon's index in that file. [in, out] piIconId Type: LPWORD Pointer to a WORD value that, on entry, specifies the ID of the icon whose handle is to be obtained. When the function returns, if the icon handle was obtained from an executable file (either an executable file pointed to by lpIconPath or an associated executable file), this value points to the icon's ID within that file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*piIconIndex",
+                    "type": "WORD",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*piIconId",
+                    "type": "WORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExtractAssociatedIconW",
             "return_type": "HICON",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extractassociatediconw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE A handle to the instance of the calling application.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszIconPath",
+                    "type": "LPWSTR",
+                    "description": "Type: LPTSTR Pointer to a string that, on entry, specifies the full path and file name of the file that contains the icon. The function extracts the icon handle from that file, or from an executable file associated with that file. When this function returns, if the icon handle was obtained from an executable file (either an executable file pointed to by lpIconPath or an associated executable file) the function stores the full path and file name of that executable in the buffer pointed to by this parameter. [in, out] piIcon Type: LPWORD Pointer to a WORD value that, on entry, specifies the index of the icon whose handle is to be obtained. When the function returns, if the icon handle was obtained from an executable file (either an executable file pointed to by lpIconPath or an associated executable file), this value points to the icon's index in that file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*piIcon",
+                    "type": "WORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExtractIconA",
             "return_type": "HICON",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extracticona",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE Handle to the instance of the application that calls the function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszExeFileName",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR Pointer to a null-terminated string that specifies the name of an executable file, DLL, or icon file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nIconIndex",
+                    "type": "UINT",
+                    "description": " Type: UINT Specifies the zero-based index of the icon to retrieve. For example, if this value is 0, the function returns a handle to the first icon in the specified file. If this value is -1, the function returns the total number of icons in the specified file. If the file is an executable file or DLL, the return value is the number of RT_GROUP_ICON resources. If the file is an .ICO file, the return value is 1. If this value is a negative number not equal to \u00e2\u0080\u00931, the function returns a handle to the icon in the specified file whose resource identifier is equal to the absolute value of nIconIndex. For example, you should use \u00e2\u0080\u00933 to extract the icon whose resource identifier is 3. To extract the icon whose resource identifier is 1, use the ExtractIconEx function.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExtractIconExA",
             "return_type": "UINT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extracticonexa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpszFile",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR Pointer to a null-terminated string that specifies the name of an executable file, DLL, or icon file from which icons will be extracted.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nIconIndex",
+                    "type": "int",
+                    "description": "Type: int Specifies the zero-based index of the first icon to extract. For example, if this value is zero, the function extracts the first icon in the specified file. If this value is \u00e2\u0080\u00931 and phiconLarge and phiconSmall are both NULL, the function returns the total number of icons in the specified file. If the file is an executable file or DLL, the return value is the number of RT_GROUP_ICON resources. If the file is an .ico file, the return value is 1. If this value is a negative number and either phiconLarge or phiconSmall is not NULL, the function begins by extracting the icon whose resource identifier is equal to the absolute value of nIconIndex. For example, use -3 to extract the icon whose resource identifier is 3. [out] phiconLarge Type: HICON* Pointer to an array of icon handles that receives handles to the large icons extracted from the file. If this parameter is NULL, no large icons are extracted from the file. [out] phiconSmall Type: HICON* Pointer to an array of icon handles that receives handles to the small icons extracted from the file. If this parameter is NULL, no small icons are extracted from the file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*phiconLarge",
+                    "type": "HICON",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*phiconSmall",
+                    "type": "HICON",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nIcons",
+                    "type": "UINT",
+                    "description": " Type: UINT The number of icons to extract from the file.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExtractIconExW",
             "return_type": "UINT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extracticonexw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpszFile",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR Pointer to a null-terminated string that specifies the name of an executable file, DLL, or icon file from which icons will be extracted.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nIconIndex",
+                    "type": "int",
+                    "description": "Type: int Specifies the zero-based index of the first icon to extract. For example, if this value is zero, the function extracts the first icon in the specified file. If this value is \u00e2\u0080\u00931 and phiconLarge and phiconSmall are both NULL, the function returns the total number of icons in the specified file. If the file is an executable file or DLL, the return value is the number of RT_GROUP_ICON resources. If the file is an .ico file, the return value is 1. If this value is a negative number and either phiconLarge or phiconSmall is not NULL, the function begins by extracting the icon whose resource identifier is equal to the absolute value of nIconIndex. For example, use -3 to extract the icon whose resource identifier is 3. [out] phiconLarge Type: HICON* Pointer to an array of icon handles that receives handles to the large icons extracted from the file. If this parameter is NULL, no large icons are extracted from the file. [out] phiconSmall Type: HICON* Pointer to an array of icon handles that receives handles to the small icons extracted from the file. If this parameter is NULL, no small icons are extracted from the file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*phiconLarge",
+                    "type": "HICON",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*phiconSmall",
+                    "type": "HICON",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nIcons",
+                    "type": "UINT",
+                    "description": " Type: UINT The number of icons to extract from the file.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExtractIconW",
             "return_type": "HICON",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-extracticonw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE Handle to the instance of the application that calls the function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszExeFileName",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR Pointer to a null-terminated string that specifies the name of an executable file, DLL, or icon file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nIconIndex",
+                    "type": "UINT",
+                    "description": " Type: UINT Specifies the zero-based index of the icon to retrieve. For example, if this value is 0, the function returns a handle to the first icon in the specified file. If this value is -1, the function returns the total number of icons in the specified file. If the file is an executable file or DLL, the return value is the number of RT_GROUP_ICON resources. If the file is an .ICO file, the return value is 1. If this value is a negative number not equal to \u00e2\u0080\u00931, the function returns a handle to the icon in the specified file whose resource identifier is equal to the absolute value of nIconIndex. For example, you should use \u00e2\u0080\u00933 to extract the icon whose resource identifier is 3. To extract the icon whose resource identifier is 1, use the ExtractIconEx function.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "FindExecutableA",
             "return_type": "HINSTANCE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-findexecutablea",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpFile",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR The address of a null-terminated string that specifies a file name. This file should be a document.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpDirectory",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR The address of a null-terminated string that specifies the default directory. This value can be NULL. [out] lpResult Type: LPTSTR The address of a buffer that receives the file name of the associated executable file. This file name is a null-terminated string that specifies the executable file started when an \"open\" by association is run on the file specified in the lpFile parameter. Put simply, this is the application that is launched when the document file is directly double-clicked or when Open is chosen from the file's shortcut menu. This parameter must contain a valid non-null value and is assumed to be of length MAX_PATH. Responsibility for validating the value is left to the programmer.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpResult",
+                    "type": "LPSTR",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "FindExecutableW",
             "return_type": "HINSTANCE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-findexecutablew",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpFile",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR The address of a null-terminated string that specifies a file name. This file should be a document.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpDirectory",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR The address of a null-terminated string that specifies the default directory. This value can be NULL. [out] lpResult Type: LPTSTR The address of a buffer that receives the file name of the associated executable file. This file name is a null-terminated string that specifies the executable file started when an \"open\" by association is run on the file specified in the lpFile parameter. Put simply, this is the application that is launched when the document file is directly double-clicked or when Open is chosen from the file's shortcut menu. This parameter must contain a valid non-null value and is assumed to be of length MAX_PATH. Responsibility for validating the value is left to the programmer.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpResult",
+                    "type": "LPWSTR",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "InitNetworkAddressControl",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-initnetworkaddresscontrol",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "NetAddr_DisplayErrorTip",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-netaddr_displayerrortip",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "NetAddr_GetAddress",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-netaddr_getaddress",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "NetAddr_GetAllowType",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-netaddr_getallowtype",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "NetAddr_SetAllowType",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-netaddr_setallowtype",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "SHAppBarMessage",
             "return_type": "UINT_PTR",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shappbarmessage",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwMessage",
+                    "type": "DWORD",
+                    "description": "Type: DWORD Appbar message value to send. This parameter can be one of the following values. Registers a new appbar and specifies the message identifier that the system should use to send notification messages to the appbar. Unregisters an appbar, removing the bar from the system's internal list. Requests a size and screen position for an appbar. Sets the size and screen position of an appbar. Retrieves the autohide and always-on-top states of the Windows taskbar. Retrieves the bounding rectangle of the Windows taskbar. Note that this applies only to the system taskbar. Other objects, particularly toolbars supplied with third-party software, also can be present. As a result, some of the screen area not covered by the Windows taskbar might not be visible to the user. To retrieve the area of the screen not covered by both the taskbar and other app bars\u00e2\u0080\u0094the working area available to your application\u00e2\u0080\u0094, use the GetMonitorInfo function. Notifies the system to activate or deactivate an appbar. The lParam member of the APPBARDATA pointed to by pData is set to TRUE to activate or FALSE to deactivate. Retrieves the handle to the autohide appbar associated with a particular edge of the screen. Registers or unregisters an autohide appbar for an edge of the screen. Notifies the system when an appbar's position has changed. Windows\u00a0XP and later: Sets the state of the appbar's autohide and always-on-top attributes. Windows\u00a0XP and later: Retrieves the handle to the autohide appbar associated with a particular edge of a particular monitor. Windows\u00a0XP and later: Registers or unregisters an autohide appbar for an edge of a particular monitor.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pData",
+                    "type": "PAPPBARDATA",
+                    "description": "Type: PAPPBARDATA A pointer to an APPBARDATA structure. The content of the structure on entry and on exit depends on the value set in the dwMessage parameter. See the individual message pages for specifics.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHCreateProcessAsUserW",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shcreateprocessasuserw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pscpi",
+                    "type": "PSHCREATEPROCESSINFOW",
+                    "description": "Type: PSHCREATEPROCESSINFOW A pointer to an SHCREATEPROCESSINFOW structure with information on how to create the process.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "Shell_NotifyIconA",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shell_notifyicona",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwMessage",
+                    "type": "DWORD",
+                    "description": "Type: DWORD A value that specifies the action to be taken by this function. It can have one of the following values: 0x00000000. Adds an icon to the status area. The icon is given an identifier in the NOTIFYICONDATA structure pointed to by lpdata\u00e2\u0080\u0094either through its uID or guidItem member. This identifier is used in subsequent calls to Shell_NotifyIcon to perform later actions on the icon. 0x00000001. Modifies an icon in the status area. NOTIFYICONDATA structure pointed to by lpdata uses the ID originally assigned to the icon when it was added to the notification area (NIM_ADD) to identify the icon to be modified. 0x00000002. Deletes an icon from the status area. NOTIFYICONDATA structure pointed to by lpdata uses the ID originally assigned to the icon when it was added to the notification area (NIM_ADD) to identify the icon to be deleted. 0x00000003. Shell32.dll version 5.0 and later only. Returns focus to the taskbar notification area. Notification area icons should use this message when they have completed their UI operation. For example, if the icon displays a shortcut menu, but the user presses ESC to cancel it, use NIM_SETFOCUS to return focus to the notification area. 0x00000004. Shell32.dll version 5.0 and later only. Instructs the notification area to behave according to the version number specified in the uVersion member of the structure pointed to by lpdata. The version number specifies which members are recognized. NIM_SETVERSION must be called every time a notification area icon is added (NIM_ADD). It does not need to be called with NIM_MODIFY. The version setting is not persisted once a user logs off. For details, see the Remarks section.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpData",
+                    "type": "PNOTIFYICONDATAA",
+                    "description": "Type: PNOTIFYICONDATA A pointer to a NOTIFYICONDATA structure. The content of the structure depends on the value of dwMessage. It can define an icon to add to the notification area, cause that icon to display a notification, or identify an icon to modify or delete.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "Shell_NotifyIconGetRect",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shell_notifyicongetrect",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "*identifier",
+                    "type": "const NOTIFYICONIDENTIFIER",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*iconLocation",
+                    "type": "RECT",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "Shell_NotifyIconW",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shell_notifyiconw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwMessage",
+                    "type": "DWORD",
+                    "description": "Type: DWORD A value that specifies the action to be taken by this function. It can have one of the following values: 0x00000000. Adds an icon to the status area. The icon is given an identifier in the NOTIFYICONDATA structure pointed to by lpdata\u00e2\u0080\u0094either through its uID or guidItem member. This identifier is used in subsequent calls to Shell_NotifyIcon to perform later actions on the icon. 0x00000001. Modifies an icon in the status area. NOTIFYICONDATA structure pointed to by lpdata uses the ID originally assigned to the icon when it was added to the notification area (NIM_ADD) to identify the icon to be modified. 0x00000002. Deletes an icon from the status area. NOTIFYICONDATA structure pointed to by lpdata uses the ID originally assigned to the icon when it was added to the notification area (NIM_ADD) to identify the icon to be deleted. 0x00000003. Shell32.dll version 5.0 and later only. Returns focus to the taskbar notification area. Notification area icons should use this message when they have completed their UI operation. For example, if the icon displays a shortcut menu, but the user presses ESC to cancel it, use NIM_SETFOCUS to return focus to the notification area. 0x00000004. Shell32.dll version 5.0 and later only. Instructs the notification area to behave according to the version number specified in the uVersion member of the structure pointed to by lpdata. The version number specifies which members are recognized. NIM_SETVERSION must be called every time a notification area icon is added (NIM_ADD). It does not need to be called with NIM_MODIFY. The version setting is not persisted once a user logs off. For details, see the Remarks section.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpData",
+                    "type": "PNOTIFYICONDATAW",
+                    "description": "Type: PNOTIFYICONDATA A pointer to a NOTIFYICONDATA structure. The content of the structure depends on the value of dwMessage. It can define an icon to add to the notification area, cause that icon to display a notification, or identify an icon to modify or delete.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ShellAboutA",
-            "return_type": "int",
+            "return_type": "INT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellabouta",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hWnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A window handle to a parent window. This parameter can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "szApp",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that contains text to be displayed in the title bar of the ShellAbout dialog box and on the first line of the dialog box after the text \"Microsoft\". If the text contains a separator (#) that divides it into two parts, the function displays the first part in the title bar and the second part on the first line after the text \"Microsoft\". Windows\u00a02000, Windows\u00a0XP, Windows Server\u00a02003: If the string pointed to by this parameter contains a separator (#), then the string must be writable. Windows\u00a0Vista, Windows Server\u00a02008: This string cannot exceed 200 characters in length. The contents of szApp will no longer show after \"Microsoft\", unless there is a # separator, in which case the part after the # will completely replace the first line.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "szOtherStuff",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that contains text to be displayed in the dialog box after the version and copyright information. This parameter can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "hIcon",
+                    "type": "HICON",
+                    "description": "Type: HICON The handle of an icon that the function displays in the dialog box. This parameter can be NULL, in which case the function displays the Windows icon.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ShellAboutW",
-            "return_type": "int",
+            "return_type": "INT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellaboutw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hWnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A window handle to a parent window. This parameter can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "szApp",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCWSTR A pointer to a null-terminated string that contains text to be displayed in the title bar of the ShellAbout dialog box and on the first line of the dialog box after the text \"Microsoft\". If the text contains a separator (#) that divides it into two parts, the function displays the first part in the title bar and the second part on the first line after the text \"Microsoft\". Windows\u00a02000, Windows\u00a0XP, Windows Server\u00a02003: If the string pointed to by this parameter contains a separator (#), then the string must be writable. Windows\u00a0Vista, Windows Server\u00a02008: This string cannot exceed 200 characters in length. The contents of szApp will no longer show after \"Microsoft\", unless there is a # separator, in which case the part after the # will completely replace the first line.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "szOtherStuff",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCWSTR A pointer to a null-terminated string that contains text to be displayed in the dialog box after the version and copyright information. This parameter can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "hIcon",
+                    "type": "HICON",
+                    "description": "Type: HICON The handle of an icon that the function displays in the dialog box. This parameter can be NULL, in which case the function displays the Windows icon.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ShellExecuteA",
             "return_type": "HINSTANCE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutea",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hwnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A handle to the parent window used for displaying a UI or error messages. This value can be NULL if the operation is not associated with a window.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpOperation",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string, referred to in this case as a verb, that specifies the action to be performed. The set of available verbs depends on the particular file or folder. Generally, the actions available from an object's shortcut menu are available verbs. The following verbs are commonly used: Launches an editor and opens the document for editing. If lpFile is not a document file, the function will fail. Explores a folder specified by lpFile. Initiates a search beginning in the directory specified by lpDirectory. Opens the item specified by the lpFile parameter. The item can be a file or folder. Prints the file specified by lpFile. If lpFile is not a document file, the function fails. Launches an application as Administrator. User Account Control (UAC) will prompt the user for consent to run the application elevated or enter the credentials of an administrator account used to run the application. The default verb is used, if available. If not, the \"open\" verb is used. If neither verb is available, the system uses the first verb listed in the registry.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpFile",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that specifies the file or object on which to execute the specified verb. To specify a Shell namespace object, pass the fully qualified parse name. Note that not all verbs are supported on all objects. For example, not all document types support the \"print\" verb. If a relative path is used for the lpDirectory parameter do not use a relative path for lpFile.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpParameters",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR If lpFile specifies an executable file, this parameter is a pointer to a null-terminated string that specifies the parameters to be passed to the application. The format of this string is determined by the verb that is to be invoked. If lpFile specifies a document file, lpParameters should be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpDirectory",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that specifies the default (working) directory for the action. If this value is NULL, the current working directory is used. If a relative path is provided at lpFile, do not use a relative path for lpDirectory.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nShowCmd",
+                    "type": "INT",
+                    "description": "Type: INT The flags that specify how an application is to be displayed when it is opened. If lpFile specifies a document file, the flag is simply passed to the associated application. It is up to the application to decide how to handle it. It can be any of the values that can be specified in the nCmdShow parameter for the ShowWindow function.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ShellExecuteExA",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecuteexa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "*pExecInfo",
+                    "type": "SHELLEXECUTEINFOA",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ShellExecuteExW",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecuteexw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "*pExecInfo",
+                    "type": "SHELLEXECUTEINFOW",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ShellExecuteW",
             "return_type": "HINSTANCE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellexecutew",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hwnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A handle to the parent window used for displaying a UI or error messages. This value can be NULL if the operation is not associated with a window.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpOperation",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string, referred to in this case as a verb, that specifies the action to be performed. The set of available verbs depends on the particular file or folder. Generally, the actions available from an object's shortcut menu are available verbs. The following verbs are commonly used: Launches an editor and opens the document for editing. If lpFile is not a document file, the function will fail. Explores a folder specified by lpFile. Initiates a search beginning in the directory specified by lpDirectory. Opens the item specified by the lpFile parameter. The item can be a file or folder. Prints the file specified by lpFile. If lpFile is not a document file, the function fails. Launches an application as Administrator. User Account Control (UAC) will prompt the user for consent to run the application elevated or enter the credentials of an administrator account used to run the application. The default verb is used, if available. If not, the \"open\" verb is used. If neither verb is available, the system uses the first verb listed in the registry.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpFile",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that specifies the file or object on which to execute the specified verb. To specify a Shell namespace object, pass the fully qualified parse name. Note that not all verbs are supported on all objects. For example, not all document types support the \"print\" verb. If a relative path is used for the lpDirectory parameter do not use a relative path for lpFile.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpParameters",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR If lpFile specifies an executable file, this parameter is a pointer to a null-terminated string that specifies the parameters to be passed to the application. The format of this string is determined by the verb that is to be invoked. If lpFile specifies a document file, lpParameters should be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpDirectory",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that specifies the default (working) directory for the action. If this value is NULL, the current working directory is used. If a relative path is provided at lpFile, do not use a relative path for lpDirectory.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nShowCmd",
+                    "type": "INT",
+                    "description": "Type: INT The flags that specify how an application is to be displayed when it is opened. If lpFile specifies a document file, the flag is simply passed to the associated application. It is up to the application to decide how to handle it. It can be any of the values that can be specified in the nCmdShow parameter for the ShowWindow function.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ShellMessageBoxA",
             "return_type": "int",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellmessageboxa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hAppInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE The handle of the module from which to load a string resource named in pszTitle. If pszTitle does not name a string resource, this parameter is ignored. This value must be valid if pszMsg or pszTitle is a resource ID.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "hWnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A handle to the owner window of the message box to be created. If this variable is not NULL, the title of the owner window is used as the title of the message box.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpcText",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that contains either the message to be displayed or a resource ID specifying where the message is to be retrieved from.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpcTitle",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that contains the dialog box title or a resource ID specifying where the title is to be retrieved. If both this parameter and hWnd are NULL, no title is displayed. If this parameter points to a loadable resource formed with the MAKEINTRESOURCE macro, it overrides hWnd as the title.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "fuStyle",
+                    "type": "UINT",
+                    "description": "Type: UINT Specifies the contents and behavior of the dialog box. For possible values, see MessageBox. ... A variable argument list that is combined with pszMsg to form the full text displayed in the message box.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ShellMessageBoxW",
             "return_type": "int",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shellmessageboxw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hAppInst",
+                    "type": "HINSTANCE",
+                    "description": "Type: HINSTANCE The handle of the module from which to load a string resource named in pszTitle. If pszTitle does not name a string resource, this parameter is ignored. This value must be valid if pszMsg or pszTitle is a resource ID.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "hWnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A handle to the owner window of the message box to be created. If this variable is not NULL, the title of the owner window is used as the title of the message box.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpcText",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that contains either the message to be displayed or a resource ID specifying where the message is to be retrieved from.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpcTitle",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that contains the dialog box title or a resource ID specifying where the title is to be retrieved. If both this parameter and hWnd are NULL, no title is displayed. If this parameter points to a loadable resource formed with the MAKEINTRESOURCE macro, it overrides hWnd as the title.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "fuStyle",
+                    "type": "UINT",
+                    "description": "Type: UINT Specifies the contents and behavior of the dialog box. For possible values, see MessageBox. ... A variable argument list that is combined with pszMsg to form the full text displayed in the message box.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHEmptyRecycleBinA",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shemptyrecyclebina",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hwnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A handle to the parent window of any dialog boxes that might be displayed during the operation. This parameter can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszRootPath",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR The address of a null-terminated string of maximum length MAX_PATH that contains the path of the root drive on which the Recycle Bin is located. This parameter can contain the address of a string formatted with the drive, folder, and subfolder names, for example c:\\windows\\system. It can also contain an empty string or NULL. If this value is an empty string or NULL, all Recycle Bins on all drives will be emptied.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFlags",
+                    "type": "DWORD",
+                    "description": " Type: DWORD One or more of the following values. No dialog box confirming the deletion of the objects will be displayed. No dialog box indicating the progress will be displayed. No sound will be played when the operation is complete.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHEmptyRecycleBinW",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shemptyrecyclebinw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hwnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A handle to the parent window of any dialog boxes that might be displayed during the operation. This parameter can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszRootPath",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR The address of a null-terminated string of maximum length MAX_PATH that contains the path of the root drive on which the Recycle Bin is located. This parameter can contain the address of a string formatted with the drive, folder, and subfolder names, for example c:\\windows\\system. It can also contain an empty string or NULL. If this value is an empty string or NULL, all Recycle Bins on all drives will be emptied.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFlags",
+                    "type": "DWORD",
+                    "description": " Type: DWORD One or more of the following values. No dialog box confirming the deletion of the objects will be displayed. No dialog box indicating the progress will be displayed. No sound will be played when the operation is complete.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHEnumerateUnreadMailAccountsA",
             "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shenumerateunreadmailaccountsa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hKeyUser",
+                    "type": "HKEY",
+                    "description": "Type: HKEY A valid HKEY for a given user.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwIndex",
+                    "type": "DWORD",
+                    "description": " Type: DWORD The index of the user account. [out] pszMailAddress Type: LPTSTR A pointer to a Unicode string that specifies the email address of an account belonging to the specified user.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszMailAddress",
+                    "type": "LPSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchMailAddress",
+                    "type": "int",
+                    "description": " Type: int The number of characters in the email address.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHEnumerateUnreadMailAccountsW",
             "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shenumerateunreadmailaccountsw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hKeyUser",
+                    "type": "HKEY",
+                    "description": "Type: HKEY A valid HKEY for a given user.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwIndex",
+                    "type": "DWORD",
+                    "description": " Type: DWORD The index of the user account. [out] pszMailAddress Type: LPTSTR A pointer to a Unicode string that specifies the email address of an account belonging to the specified user.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszMailAddress",
+                    "type": "LPWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchMailAddress",
+                    "type": "int",
+                    "description": " Type: int The number of characters in the email address.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHEvaluateSystemCommandTemplate",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shevaluatesystemcommandtemplate",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszCmdTemplate",
+                    "type": "PCWSTR",
+                    "description": "Type: PCWSTR A command line, which may or may not include parameters. If the parameters are substitution parameters, then SHEvaluateSystemCommandTemplate should be called before parameters have been replaced. [out] ppszApplication Type: PWSTR* A pointer to the verified path to the application. This value should be passed as the lpApplication parameter in a call to CreateProcess or as the lpFile parameter in a call to ShellExecute. This resource is allocated using CoTaskMemAlloc, and it is the responsibility of the caller to free the resource when it is no longer needed by calling CoTaskMemFree. [out, optional] ppszCommandLine Type: PWSTR* A pointer to a command-line string template to be used in a call to CreateProcess. Command-line parameters should be specified based on this template, and then passed as the lpCommandLine parameter to CreateProcess. It is guaranteed to be of a form that PathGetArgs can always read correctly. This resource is allocated using CoTaskMemAlloc, and it is the responsibility of the caller to free the resource when it is no longer needed by calling CoTaskMemFree. This parameter can be NULL if this function is not being used in association with a call to CreateProcess. [out, optional] ppszParameters Type: PWSTR* A pointer to a command-line string template to be used in a call to ShellExecute. Command-line parameters should be specified based on this template, and then passed as the lpParameters parameter to ShellExecute. This parameter is identical to calling PathGetArgs. This resource is allocated using CoTaskMemAlloc, and it is the responsibility of the caller to free the resource when it is no longer needed by calling CoTaskMemFree. This parameter can be NULL if this function is not being used in association with a call to CreateProcess.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*ppszApplication",
+                    "type": "PWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*ppszCommandLine",
+                    "type": "PWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*ppszParameters",
+                    "type": "PWSTR",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHFileOperationA",
             "return_type": "int",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shfileoperationa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpFileOp",
+                    "type": "LPSHFILEOPSTRUCTA",
+                    "description": "Type: LPSHFILEOPSTRUCT A pointer to an SHFILEOPSTRUCT structure that contains information this function needs to carry out the specified operation. This parameter must contain a valid value that is not NULL. You are responsible for validating the value. If you do not validate it, you will experience unexpected results.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHFileOperationW",
             "return_type": "int",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shfileoperationw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpFileOp",
+                    "type": "LPSHFILEOPSTRUCTW",
+                    "description": "Type: LPSHFILEOPSTRUCT A pointer to an SHFILEOPSTRUCT structure that contains information this function needs to carry out the specified operation. This parameter must contain a valid value that is not NULL. You are responsible for validating the value. If you do not validate it, you will experience unexpected results.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHFreeNameMappings",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shfreenamemappings",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hNameMappings",
+                    "type": "HANDLE",
+                    "description": "Type: HANDLE A handle to the file name mapping object to be freed.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetDiskFreeSpaceExA",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetdiskfreespaceexa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszDirectoryName",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A null-terminated string that specifies the volume for which size information is retrieved. This can be a drive letter, UNC name, or the path of a folder. You cannot use NULL to represent the current drive. [out, optional] pulFreeBytesAvailableToCaller Type: ULARGE_INTEGER* Pointer to a value that receives the number of bytes on the volume available to the calling application. If the operating system implements per-user quotas, this value may be less than the total number of free bytes on the volume. [out, optional] pulTotalNumberOfBytes Type: ULARGE_INTEGER* Pointer to a value that receives the total size of the volume, in bytes. [out, optional] pulTotalNumberOfFreeBytes Type: ULARGE_INTEGER* Pointer to a value that receives the number of bytes of free space on the volume.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pulFreeBytesAvailableToCaller",
+                    "type": "ULARGE_INTEGER",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pulTotalNumberOfBytes",
+                    "type": "ULARGE_INTEGER",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pulTotalNumberOfFreeBytes",
+                    "type": "ULARGE_INTEGER",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetDiskFreeSpaceExW",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetdiskfreespaceexw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszDirectoryName",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A null-terminated string that specifies the volume for which size information is retrieved. This can be a drive letter, UNC name, or the path of a folder. You cannot use NULL to represent the current drive. [out, optional] pulFreeBytesAvailableToCaller Type: ULARGE_INTEGER* Pointer to a value that receives the number of bytes on the volume available to the calling application. If the operating system implements per-user quotas, this value may be less than the total number of free bytes on the volume. [out, optional] pulTotalNumberOfBytes Type: ULARGE_INTEGER* Pointer to a value that receives the total size of the volume, in bytes. [out, optional] pulTotalNumberOfFreeBytes Type: ULARGE_INTEGER* Pointer to a value that receives the number of bytes of free space on the volume.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pulFreeBytesAvailableToCaller",
+                    "type": "ULARGE_INTEGER",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pulTotalNumberOfBytes",
+                    "type": "ULARGE_INTEGER",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pulTotalNumberOfFreeBytes",
+                    "type": "ULARGE_INTEGER",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetDriveMedia",
             "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetdrivemedia",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszDrive",
+                    "type": "PCWSTR",
+                    "description": "Type: PCWSTR The drive in which to check the media type. [out] pdwMediaContent Type: DWORD* A pointer to the type of media in the given drive. A combination of ARCONTENT flags.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pdwMediaContent",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetFileInfoA",
             "return_type": "DWORD_PTR",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetfileinfoa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszPath",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string of maximum length MAX_PATH that contains the path and file name. Both absolute and relative paths are valid. If the uFlags parameter includes the SHGFI_PIDL flag, this parameter must be the address of an ITEMIDLIST (PIDL) structure that contains the list of item identifiers that uniquely identifies the file within the Shell's namespace. The PIDL must be a fully qualified PIDL. Relative PIDLs are not allowed. If the uFlags parameter includes the SHGFI_USEFILEATTRIBUTES flag, this parameter does not have to be a valid file name. The function will proceed as if the file exists with the specified name and with the file attributes passed in the dwFileAttributes parameter. This allows you to obtain information about a file type by passing just the extension for pszPath and passing FILE_ATTRIBUTE_NORMAL in dwFileAttributes. This string can use either short (the 8.3 form) or long file names.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFileAttributes",
+                    "type": "DWORD",
+                    "description": " Type: DWORD A combination of one or more file attribute flags (FILE_ATTRIBUTE_ values as defined in Winnt.h). If uFlags does not include the SHGFI_USEFILEATTRIBUTES flag, this parameter is ignored. [in, out] psfi Type: SHFILEINFO* Pointer to a SHFILEINFO structure to receive the file information.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*psfi",
+                    "type": "SHFILEINFOA",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cbFileInfo",
+                    "type": "UINT",
+                    "description": " Type: UINT The size, in bytes, of the SHFILEINFO structure pointed to by the psfi parameter.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "uFlags",
+                    "type": "UINT",
+                    "description": " Type: UINT The flags that specify the file information to retrieve. This parameter can be a combination of the following values. Version 5.0. Apply the appropriate overlays to the file's icon. The SHGFI_ICON flag must also be set. Modify SHGFI_ATTRIBUTES to indicate that the dwAttributes member of the SHFILEINFO structure at psfi contains the specific attributes that are desired. These attributes are passed to IShellFolder::GetAttributesOf. If this flag is not specified, 0xFFFFFFFF is passed to IShellFolder::GetAttributesOf, requesting all attributes. This flag cannot be specified with the SHGFI_ICON flag. Retrieve the item attributes. The attributes are copied to the dwAttributes member of the structure specified in the psfi parameter. These are the same attributes that are obtained from IShellFolder::GetAttributesOf. Retrieve the display name for the file, which is the name as it appears in Windows Explorer. The name is copied to the szDisplayName member of the structure specified in psfi. The returned display name uses the long file name, if there is one, rather than the 8.3 form of the file name. Note that the display name can be affected by settings such as whether extensions are shown. Retrieve the type of the executable file if pszPath identifies an executable file. The information is packed into the return value. This flag cannot be specified with any other flags. Retrieve the handle to the icon that represents the file and the index of the icon within the system image list. The handle is copied to the hIcon member of the structure specified by psfi, and the index is copied to the iIcon member. Retrieve the name of the file that contains the icon representing the file specified by pszPath, as returned by the IExtractIcon::GetIconLocation method of the file's icon handler. Also retrieve the icon index within that file. The name of the file containing the icon is copied to the szDisplayName member of the structure specified by psfi. The icon's index is copied to that structure's iIcon member. Modify SHGFI_ICON, causing the function to retrieve the file's large icon. The SHGFI_ICON flag must also be set. Modify SHGFI_ICON, causing the function to add the link overlay to the file's icon. The SHGFI_ICON flag must also be set. Modify SHGFI_ICON, causing the function to retrieve the file's open icon. Also used to modify SHGFI_SYSICONINDEX, causing the function to return the handle to the system image list that contains the file's small open icon. A container object displays an open icon to indicate that the container is open. The SHGFI_ICON and/or SHGFI_SYSICONINDEX flag must also be set. Version 5.0. Return the index of the overlay icon. The value of the overlay index is returned in the upper eight bits of the iIcon member of the structure specified by psfi. This flag requires that the SHGFI_ICON be set as well. Indicate that pszPath is the address of an ITEMIDLIST structure rather than a path name. Modify SHGFI_ICON, causing the function to blend the file's icon with the system highlight color. The SHGFI_ICON flag must also be set. Modify SHGFI_ICON, causing the function to retrieve a Shell-sized icon. If this flag is not specified the function sizes the icon according to the system metric values. The SHGFI_ICON flag must also be set. Modify SHGFI_ICON, causing the function to retrieve the file's small icon. Also used to modify SHGFI_SYSICONINDEX, causing the function to return the handle to the system image list that contains small icon images. The SHGFI_ICON and/or SHGFI_SYSICONINDEX flag must also be set. Retrieve the index of a system image list icon. If successful, the index is copied to the iIcon member of psfi. The return value is a handle to the system image list. Only those images whose indices are successfully copied to iIcon are valid. Attempting to access other images in the system image list will result in undefined behavior. Retrieve the string that describes the file's type. The string is copied to the szTypeName member of the structure specified in psfi. Indicates that the function should not attempt to access the file specified by pszPath. Rather, it should act as if the file specified by pszPath exists with the file attributes passed in dwFileAttributes. This flag cannot be combined with the SHGFI_ATTRIBUTES, SHGFI_EXETYPE, or SHGFI_PIDL flags.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetFileInfoW",
             "return_type": "DWORD_PTR",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetfileinfow",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszPath",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string of maximum length MAX_PATH that contains the path and file name. Both absolute and relative paths are valid. If the uFlags parameter includes the SHGFI_PIDL flag, this parameter must be the address of an ITEMIDLIST (PIDL) structure that contains the list of item identifiers that uniquely identifies the file within the Shell's namespace. The PIDL must be a fully qualified PIDL. Relative PIDLs are not allowed. If the uFlags parameter includes the SHGFI_USEFILEATTRIBUTES flag, this parameter does not have to be a valid file name. The function will proceed as if the file exists with the specified name and with the file attributes passed in the dwFileAttributes parameter. This allows you to obtain information about a file type by passing just the extension for pszPath and passing FILE_ATTRIBUTE_NORMAL in dwFileAttributes. This string can use either short (the 8.3 form) or long file names.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFileAttributes",
+                    "type": "DWORD",
+                    "description": " Type: DWORD A combination of one or more file attribute flags (FILE_ATTRIBUTE_ values as defined in Winnt.h). If uFlags does not include the SHGFI_USEFILEATTRIBUTES flag, this parameter is ignored. [in, out] psfi Type: SHFILEINFO* Pointer to a SHFILEINFO structure to receive the file information.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*psfi",
+                    "type": "SHFILEINFOW",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cbFileInfo",
+                    "type": "UINT",
+                    "description": " Type: UINT The size, in bytes, of the SHFILEINFO structure pointed to by the psfi parameter.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "uFlags",
+                    "type": "UINT",
+                    "description": " Type: UINT The flags that specify the file information to retrieve. This parameter can be a combination of the following values. Version 5.0. Apply the appropriate overlays to the file's icon. The SHGFI_ICON flag must also be set. Modify SHGFI_ATTRIBUTES to indicate that the dwAttributes member of the SHFILEINFO structure at psfi contains the specific attributes that are desired. These attributes are passed to IShellFolder::GetAttributesOf. If this flag is not specified, 0xFFFFFFFF is passed to IShellFolder::GetAttributesOf, requesting all attributes. This flag cannot be specified with the SHGFI_ICON flag. Retrieve the item attributes. The attributes are copied to the dwAttributes member of the structure specified in the psfi parameter. These are the same attributes that are obtained from IShellFolder::GetAttributesOf. Retrieve the display name for the file, which is the name as it appears in Windows Explorer. The name is copied to the szDisplayName member of the structure specified in psfi. The returned display name uses the long file name, if there is one, rather than the 8.3 form of the file name. Note that the display name can be affected by settings such as whether extensions are shown. Retrieve the type of the executable file if pszPath identifies an executable file. The information is packed into the return value. This flag cannot be specified with any other flags. Retrieve the handle to the icon that represents the file and the index of the icon within the system image list. The handle is copied to the hIcon member of the structure specified by psfi, and the index is copied to the iIcon member. Retrieve the name of the file that contains the icon representing the file specified by pszPath, as returned by the IExtractIcon::GetIconLocation method of the file's icon handler. Also retrieve the icon index within that file. The name of the file containing the icon is copied to the szDisplayName member of the structure specified by psfi. The icon's index is copied to that structure's iIcon member. Modify SHGFI_ICON, causing the function to retrieve the file's large icon. The SHGFI_ICON flag must also be set. Modify SHGFI_ICON, causing the function to add the link overlay to the file's icon. The SHGFI_ICON flag must also be set. Modify SHGFI_ICON, causing the function to retrieve the file's open icon. Also used to modify SHGFI_SYSICONINDEX, causing the function to return the handle to the system image list that contains the file's small open icon. A container object displays an open icon to indicate that the container is open. The SHGFI_ICON and/or SHGFI_SYSICONINDEX flag must also be set. Version 5.0. Return the index of the overlay icon. The value of the overlay index is returned in the upper eight bits of the iIcon member of the structure specified by psfi. This flag requires that the SHGFI_ICON be set as well. Indicate that pszPath is the address of an ITEMIDLIST structure rather than a path name. Modify SHGFI_ICON, causing the function to blend the file's icon with the system highlight color. The SHGFI_ICON flag must also be set. Modify SHGFI_ICON, causing the function to retrieve a Shell-sized icon. If this flag is not specified the function sizes the icon according to the system metric values. The SHGFI_ICON flag must also be set. Modify SHGFI_ICON, causing the function to retrieve the file's small icon. Also used to modify SHGFI_SYSICONINDEX, causing the function to return the handle to the system image list that contains small icon images. The SHGFI_ICON and/or SHGFI_SYSICONINDEX flag must also be set. Retrieve the index of a system image list icon. If successful, the index is copied to the iIcon member of psfi. The return value is a handle to the system image list. Only those images whose indices are successfully copied to iIcon are valid. Attempting to access other images in the system image list will result in undefined behavior. Retrieve the string that describes the file's type. The string is copied to the szTypeName member of the structure specified in psfi. Indicates that the function should not attempt to access the file specified by pszPath. Rather, it should act as if the file specified by pszPath exists with the file attributes passed in dwFileAttributes. This flag cannot be combined with the SHGFI_ATTRIBUTES, SHGFI_EXETYPE, or SHGFI_PIDL flags.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetImageList",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetimagelist",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "iImageList",
+                    "type": "int",
+                    "description": "Type: int The image type contained in the list. One of the following values: 0x0. The image size is normally 32x32 pixels. However, if the Use large icons option is selected from the Effects section of the Appearance tab in Display Properties, the image is 48x48 pixels. 0x1. These images are the Shell standard small icon size of 16x16, but the size can be customized by the user. 0x2. These images are the Shell standard extra-large icon size. This is typically 48x48, but the size can be customized by the user. 0x3. These images are the size specified by GetSystemMetrics called with SM_CXSMICON and GetSystemMetrics called with SM_CYSMICON. 0x4. Windows\u00a0Vista and later. The image is normally 256x256 pixels. The largest valid flag value, for validation purposes.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "riid",
+                    "type": "REFIID",
+                    "description": "Type: REFIID Reference to the image list interface identifier, normally IID_IImageList. [out] ppvObj Type: void** When this method returns, contains the interface pointer requested in riid. This is typically IImageList.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "**ppvObj",
+                    "type": "void",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetLocalizedName",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetlocalizedname",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszPath",
+                    "type": "PCWSTR",
+                    "description": "Type: PCWSTR A pointer to a string that specifies the fully qualified path of the file. [out] pszResModule Type: PWSTR When this function returns, contains a pointer to a string resource that specifies the localized version of the file name.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszResModule",
+                    "type": "PWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cch",
+                    "type": "UINT",
+                    "description": " Type: UINT When this function returns, contains the size of the string, in WCHARs, at pszResModule. [out] pidsRes Type: int* When this function returns, contains a pointer to the ID of the localized file name in the resource file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pidsRes",
+                    "type": "int",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetNewLinkInfoA",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetnewlinkinfoa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszLinkTo",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to the path and file name of the shortcut's target. If uFlags does not contain the SHGNLI_PIDL value, this parameter is the address of a null-terminated string that contains the target. If uFlags contains the SHGNLI_PIDL value, this parameter is a PIDL that represents the target.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszDir",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that contains the path of the folder in which the shortcut would be created. [out] pszName Type: LPTSTR A pointer to a string that receives the null-terminated path and file name for the shortcut. This buffer is assumed to be at least MAX_PATH characters in size. [out] pfMustCopy Type: BOOL* The address of a BOOL value that receives a flag indicating whether the shortcut would be copied. When a shortcut to another shortcut is created, the Shell simply copies the target shortcut and modifies that copied shortcut appropriately. This parameter receives a nonzero value if the target specified in pszLinkTo specifies a shortcut that will cause the target shortcut to be copied. This parameter receives zero if the target does not specify a shortcut that would be copied.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszName",
+                    "type": "LPSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pfMustCopy",
+                    "type": "BOOL",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "uFlags",
+                    "type": "UINT",
+                    "description": "Type: UINT The options for the function. This can be zero or a combination of the following values. 0x000000001. The target pointed to by pszLinkTo is a PIDL that represents the target. If this flag is not included, pszLinkTo is regarded as the address of a string that contains the path and file name of the target. 0x000000002. Skip the normal checks that ensure that the shortcut name is unique within the destination folder. If this flag is not included, the function creates the shortcut name and then determines whether the name is unique in the destination folder. If a file with the same name already exists in the destination folder, the shortcut name will be modified. This process is repeated until a unique name is found. 0x000000004. The created name will be preceded by the string \"Shortcut to \". 0x000000008. Version 5.0 Do not add the .lnk file name extension. You must set the _WIN32_IE macro to 5.01 or greater to use this flag. For more information about versioning, see Shell and Common Controls Versions. 0x000000010. Windows\u00a0Vista and later. Use the non-localized parsing name of the target pointed to by pszLinkTo as the name of the shortcut file. If this flag is not set, the localized name is used. 0x000000020. Windows\u00a07 and later. Append a .url file name extension (rather than .lnk) to the name pointed to by pszName. If this flag is not set, the shortcut name uses a .lnk extension unless SHGNLI_NOLNK is set.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetNewLinkInfoW",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetnewlinkinfow",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszLinkTo",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to the path and file name of the shortcut's target. If uFlags does not contain the SHGNLI_PIDL value, this parameter is the address of a null-terminated string that contains the target. If uFlags contains the SHGNLI_PIDL value, this parameter is a PIDL that represents the target.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszDir",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a null-terminated string that contains the path of the folder in which the shortcut would be created. [out] pszName Type: LPTSTR A pointer to a string that receives the null-terminated path and file name for the shortcut. This buffer is assumed to be at least MAX_PATH characters in size. [out] pfMustCopy Type: BOOL* The address of a BOOL value that receives a flag indicating whether the shortcut would be copied. When a shortcut to another shortcut is created, the Shell simply copies the target shortcut and modifies that copied shortcut appropriately. This parameter receives a nonzero value if the target specified in pszLinkTo specifies a shortcut that will cause the target shortcut to be copied. This parameter receives zero if the target does not specify a shortcut that would be copied.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszName",
+                    "type": "LPWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pfMustCopy",
+                    "type": "BOOL",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "uFlags",
+                    "type": "UINT",
+                    "description": "Type: UINT The options for the function. This can be zero or a combination of the following values. 0x000000001. The target pointed to by pszLinkTo is a PIDL that represents the target. If this flag is not included, pszLinkTo is regarded as the address of a string that contains the path and file name of the target. 0x000000002. Skip the normal checks that ensure that the shortcut name is unique within the destination folder. If this flag is not included, the function creates the shortcut name and then determines whether the name is unique in the destination folder. If a file with the same name already exists in the destination folder, the shortcut name will be modified. This process is repeated until a unique name is found. 0x000000004. The created name will be preceded by the string \"Shortcut to \". 0x000000008. Version 5.0 Do not add the .lnk file name extension. You must set the _WIN32_IE macro to 5.01 or greater to use this flag. For more information about versioning, see Shell and Common Controls Versions. 0x000000010. Windows\u00a0Vista and later. Use the non-localized parsing name of the target pointed to by pszLinkTo as the name of the shortcut file. If this flag is not set, the localized name is used. 0x000000020. Windows\u00a07 and later. Append a .url file name extension (rather than .lnk) to the name pointed to by pszName. If this flag is not set, the shortcut name uses a .lnk extension unless SHGNLI_NOLNK is set.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetPropertyStoreForWindow",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetpropertystoreforwindow",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hwnd",
+                    "type": "HWND",
+                    "description": "Type: HWND A handle to the window whose properties are being retrieved.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "riid",
+                    "type": "REFIID",
+                    "description": "Type: REFIID A reference to the IID of the property store object to retrieve through ppv. This is typically IID_IPropertyStore. [out] ppv Type: void** When this function returns, contains the interface pointer requested in riid. This is typically IPropertyStore.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "**ppv",
+                    "type": "void",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetStockIconInfo",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetstockiconinfo",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "siid",
+                    "type": "SHSTOCKICONID",
+                    "description": " Type: SHSTOCKICONID One of the values from the SHSTOCKICONID enumeration that specifies which icon should be retrieved.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "uFlags",
+                    "type": "UINT",
+                    "description": " Type: UINT A combination of zero or more of the following flags that specify which information is requested. The szPath and iIcon members of the SHSTOCKICONINFO structure receive the path and icon index of the requested icon, in a format suitable for passing to the ExtractIcon function. The numerical value of this flag is zero, so you always get the icon location regardless of other flags. The hIcon member of the SHSTOCKICONINFO structure receives a handle to the specified icon. The iSysImageImage member of the SHSTOCKICONINFO structure receives the index of the specified icon in the system imagelist. Modifies the SHGSI_ICON value by causing the function to add the link overlay to the file's icon. Modifies the SHGSI_ICON value by causing the function to blend the icon with the system highlight color. Modifies the SHGSI_ICON value by causing the function to retrieve the large version of the icon, as specified by the SM_CXICON and SM_CYICON system metrics. Modifies the SHGSI_ICON value by causing the function to retrieve the small version of the icon, as specified by the SM_CXSMICON and SM_CYSMICON system metrics. Modifies the SHGSI_LARGEICON or SHGSI_SMALLICON values by causing the function to retrieve the Shell-sized icons rather than the sizes specified by the system metrics. [in, out] psii Type: SHSTOCKICONINFO* A pointer to a SHSTOCKICONINFO structure. When this function is called, the cbSize member of this structure needs to be set to the size of the SHSTOCKICONINFO structure. When this function returns, contains a pointer to a SHSTOCKICONINFO structure that contains the requested information.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*psii",
+                    "type": "SHSTOCKICONINFO",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetUnreadMailCountA",
             "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetunreadmailcounta",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hKeyUser",
+                    "type": "HKEY",
+                    "description": "Type: HKEY A valid HKEY for a given user. This parameter should be NULL if the function is called in a user's environment, in which case HKEY_CURRENT_USER is used. This parameter should be NULL if the function is called from the SYSTEM context, in which case HKEY_USERS\\{SID} is used.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszMailAddress",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a string in Unicode that specifies the email address of an account belonging to the specified user. When this parameter is NULL, pdwCount returns the total count of unread messages for all accounts owned by the designated user. [out, optional] pdwCount Type: DWORD* Pointer to a DWORD value which receives the unread message count. [out, optional] pFileTime Type: FILETIME* A pointer to a FILETIME structure.  The use of this parameter is determined by whether pszMailAddress is NULL. If pszMailAddress is NULL, then this parameter is treated as an [in] parameter, which specifies a filter, so that only unread mail newer than the specified time appears. If pszMailAddress is not NULL, then this parameter is treated as an [out] parameter, which points to a FILETIME structure into which the function places the timestamp of the last SHSetUnreadMailCount call for the specified user and email account. [out, optional] pszShellExecuteCommand Type: LPCTSTR A pointer to a string that returns the ShellExecute command statement passed into the last SHSetUnreadMailCount call for the specified user and email account. This command string starts the email application that owns the account referenced by pszMailAddress. If the ShellExecute command is not required, this parameter can be NULL. If pszMailAddress is NULL, this parameter is ignored and must be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pdwCount",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pFileTime",
+                    "type": "FILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszShellExecuteCommand",
+                    "type": "LPSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchShellExecuteCommand",
+                    "type": "int",
+                    "description": " Type: int The maximum size, in characters, of the ShellExecute command buffer pointed to by pszShellExecuteCommand. This parameter must be zero for total counts when pszMailAddress is NULL. It can also be NULL whenever the ShellExecute command string is not required.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHGetUnreadMailCountW",
             "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shgetunreadmailcountw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hKeyUser",
+                    "type": "HKEY",
+                    "description": "Type: HKEY A valid HKEY for a given user. This parameter should be NULL if the function is called in a user's environment, in which case HKEY_CURRENT_USER is used. This parameter should be NULL if the function is called from the SYSTEM context, in which case HKEY_USERS\\{SID} is used.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszMailAddress",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a string in Unicode that specifies the email address of an account belonging to the specified user. When this parameter is NULL, pdwCount returns the total count of unread messages for all accounts owned by the designated user. [out, optional] pdwCount Type: DWORD* Pointer to a DWORD value which receives the unread message count. [out, optional] pFileTime Type: FILETIME* A pointer to a FILETIME structure.  The use of this parameter is determined by whether pszMailAddress is NULL. If pszMailAddress is NULL, then this parameter is treated as an [in] parameter, which specifies a filter, so that only unread mail newer than the specified time appears. If pszMailAddress is not NULL, then this parameter is treated as an [out] parameter, which points to a FILETIME structure into which the function places the timestamp of the last SHSetUnreadMailCount call for the specified user and email account. [out, optional] pszShellExecuteCommand Type: LPCTSTR A pointer to a string that returns the ShellExecute command statement passed into the last SHSetUnreadMailCount call for the specified user and email account. This command string starts the email application that owns the account referenced by pszMailAddress. If the ShellExecute command is not required, this parameter can be NULL. If pszMailAddress is NULL, this parameter is ignored and must be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pdwCount",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pFileTime",
+                    "type": "FILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszShellExecuteCommand",
+                    "type": "LPWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchShellExecuteCommand",
+                    "type": "int",
+                    "description": " Type: int The maximum size, in characters, of the ShellExecute command buffer pointed to by pszShellExecuteCommand. This parameter must be zero for total counts when pszMailAddress is NULL. It can also be NULL whenever the ShellExecute command string is not required.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHInvokePrinterCommandA",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shinvokeprintercommanda",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hwnd",
+                    "type": "HWND",
+                    "description": "Type: HWND The handle of the parent window of any windows or dialog boxes that are created during the operation.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "uAction",
+                    "type": "UINT",
+                    "description": " Type: UINT The type of printer operation to perform. One of the following values: 0x0. Open the printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x1. Display the property pages for the printer specified by lpBuf1. The lpBuf2 parameter can be NULL or can name a specific property sheet to display, either by name or number. If the high WORD of lpBuf2 is nonzero, it is assumed that this parameter is a pointer to a buffer that contains the name of the sheet to open. Otherwise, lpBuf2 is seen as the zero-based index of the property sheet to open. 0x2. Install the network printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x3. Create a shortcut to the network printer specified by lpBuf1. The lpBuf2 parameter specifies the drive and path of the folder in which to create the shortcut. The network printer must already have been installed on the local computer. 0x4. Print a test page on the printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x5. Open the network printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x6. Display the default document properties for the printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x7. Display the properties for the printer server specified by lpBuf1. The lpBuf2 parameter is ignored.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpBuf1",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR Pointer to a null-terminated string that contains additional information for the printer command. The information contained in this parameter depends upon the value of uAction.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpBuf2",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR Pointer to a null-terminated string that contains additional information for the printer command. The information contained in this parameter depends upon the value of uAction.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "fModal",
+                    "type": "BOOL",
+                    "description": " Type: BOOL TRUE to specify that SHInvokePrinterCommand should not return until the command is completed; FALSE if the function should return as soon as the command is initialized.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHInvokePrinterCommandW",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shinvokeprintercommandw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hwnd",
+                    "type": "HWND",
+                    "description": "Type: HWND The handle of the parent window of any windows or dialog boxes that are created during the operation.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "uAction",
+                    "type": "UINT",
+                    "description": " Type: UINT The type of printer operation to perform. One of the following values: 0x0. Open the printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x1. Display the property pages for the printer specified by lpBuf1. The lpBuf2 parameter can be NULL or can name a specific property sheet to display, either by name or number. If the high WORD of lpBuf2 is nonzero, it is assumed that this parameter is a pointer to a buffer that contains the name of the sheet to open. Otherwise, lpBuf2 is seen as the zero-based index of the property sheet to open. 0x2. Install the network printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x3. Create a shortcut to the network printer specified by lpBuf1. The lpBuf2 parameter specifies the drive and path of the folder in which to create the shortcut. The network printer must already have been installed on the local computer. 0x4. Print a test page on the printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x5. Open the network printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x6. Display the default document properties for the printer specified by lpBuf1. The lpBuf2 parameter is ignored. 0x7. Display the properties for the printer server specified by lpBuf1. The lpBuf2 parameter is ignored.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpBuf1",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR Pointer to a null-terminated string that contains additional information for the printer command. The information contained in this parameter depends upon the value of uAction.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpBuf2",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR Pointer to a null-terminated string that contains additional information for the printer command. The information contained in this parameter depends upon the value of uAction.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "fModal",
+                    "type": "BOOL",
+                    "description": " Type: BOOL TRUE to specify that SHInvokePrinterCommand should not return until the command is completed; FALSE if the function should return as soon as the command is initialized.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHIsFileAvailableOffline",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shisfileavailableoffline",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pwszPath",
+                    "type": "PCWSTR",
+                    "description": "Type: PCWSTR A pointer to a string value that specifies the full path to a network file or directory. This path does not need to be in UNC form. If pszPath is not a network path, the function returns E_INVALIDARG. [out, optional] pdwStatus Type: LPDWORD A pointer to a variable of type DWORD that receives one or more of the following flags if the function succeeds. If the file is open, it is open in the cache. If the file is open, it is open on the server. The local copy is currently incomplete. The file cannot be opened in offline mode until it has been synchronized.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pdwStatus",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHLoadNonloadedIconOverlayIdentifiers",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shloadnonloadediconoverlayidentifiers",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "SHQueryRecycleBinA",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shqueryrecyclebina",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszRootPath",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR The address of a null-terminated string of maximum length MAX_PATH to contain the path of the root drive on which the Recycle Bin is located. This parameter can contain the address of a string formatted with the drive, folder, and subfolder names (C:\\Windows\\System...).",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pSHQueryRBInfo",
+                    "type": "LPSHQUERYRBINFO",
+                    "description": "Type: LPSHQUERYRBINFO The address of a SHQUERYRBINFO structure that receives the Recycle Bin information. The cbSize member of the structure must be set to the size of the structure before calling this API.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHQueryRecycleBinW",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shqueryrecyclebinw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszRootPath",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR The address of a null-terminated string of maximum length MAX_PATH to contain the path of the root drive on which the Recycle Bin is located. This parameter can contain the address of a string formatted with the drive, folder, and subfolder names (C:\\Windows\\System...).",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pSHQueryRBInfo",
+                    "type": "LPSHQUERYRBINFO",
+                    "description": "Type: LPSHQUERYRBINFO The address of a SHQUERYRBINFO structure that receives the Recycle Bin information. The cbSize member of the structure must be set to the size of the structure before calling this API.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHQueryUserNotificationState",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shqueryusernotificationstate",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "*pquns",
+                    "type": "QUERY_USER_NOTIFICATION_STATE",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHRemoveLocalizedName",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shremovelocalizedname",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszPath",
+                    "type": "PCWSTR",
+                    "description": "Type: PCWSTR A pointer to a null-terminated, Unicode string that specifies the fully qualified path of the target file.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHSetLocalizedName",
-            "return_type": "HRESULT",
+            "return_type": "SHSTDAPI",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shsetlocalizedname",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszPath",
+                    "type": "PCWSTR",
+                    "description": "Type: PCWSTR A pointer to a string that specifies the fully qualified path of the target file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszResModule",
+                    "type": "PCWSTR",
+                    "description": "Type: PCWSTR A pointer to a string resource that specifies the localized version of the file name.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "idsRes",
+                    "type": "int",
+                    "description": " Type: int An integer ID that specifies the localized file name in the string resource.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHSetUnreadMailCountA",
             "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shsetunreadmailcounta",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszMailAddress",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a string in Unicode that contains the current user's full email address.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCount",
+                    "type": "DWORD",
+                    "description": " Type: DWORD The number of unread messages.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszShellExecuteCommand",
+                    "type": "LPCSTR",
+                    "description": "Type: LPCTSTR A pointer to a string in Unicode that contains the full text of a command that can be passed to ShellExecute. This command should start the email application that owns the account referenced by pszMailAddress.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHSetUnreadMailCountW",
             "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shsetunreadmailcountw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pszMailAddress",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a string in Unicode that contains the current user's full email address.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCount",
+                    "type": "DWORD",
+                    "description": " Type: DWORD The number of unread messages.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pszShellExecuteCommand",
+                    "type": "LPCWSTR",
+                    "description": "Type: LPCTSTR A pointer to a string in Unicode that contains the full text of a command that can be passed to ShellExecute. This command should start the email application that owns the account referenced by pszMailAddress.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SHTestTokenMembership",
             "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/shellapi/nf-shellapi-shtesttokenmembership",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hToken",
+                    "type": "HANDLE",
+                    "description": "Type: HANDLE A handle to the token. This value can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ulRID",
+                    "type": "ULONG",
+                    "description": " Type: ULONG The RID of the local group for which membership is tested.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         }
     ]
 }

@@ -2,66 +2,414 @@
     "functions": [
         {
             "name": "CompareStringEx",
-            "return_type": "",
+            "return_type": "int",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringex",
-            "description": "",
-            "parameters": []
-        },
-        {
-            "name": "CompareStringOrdinal",
-            "return_type": "",
-            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringordinal",
-            "description": "",
-            "parameters": []
-        },
-        {
-            "name": "CompareStringW",
-            "return_type": "",
-            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringw",
-            "description": "",
-            "parameters": []
-        },
-        {
-            "name": "FoldStringW",
-            "return_type": "",
-            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-foldstringw",
-            "description": "",
-            "parameters": []
-        },
-        {
-            "name": "GetStringTypeExW",
-            "return_type": "",
-            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-getstringtypeexw",
-            "description": "",
-            "parameters": []
-        },
-        {
-            "name": "GetStringTypeW",
-            "return_type": "",
-            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-getstringtypew",
-            "description": "",
-            "parameters": []
-        },
-        {
-            "name": "MultiByteToWideChar",
-            "return_type": "",
-            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-multibytetowidechar",
             "description": "",
             "parameters": [
                 {
-                    "name": "MB_PRECOMPOSED",
-                    "type": "",
-                    "description": "",
+                    "name": "lpLocaleName",
+                    "type": "LPCWSTR",
+                    "description": "Pointer to a locale name, or one of the following predefined values.",
                     "possible_constants": []
+                },
+                {
+                    "name": "dwCmpFlags",
+                    "type": "DWORD",
+                    "description": "Flags that indicate how the function compares the two strings. By default, these flags are not set. This parameter can specify a combination of any of the following values, or it can be set to 0 to obtain the default behavior.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpString1",
+                    "type": "LPCWCH",
+                    "description": "Pointer to the first string to compare.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchCount1",
+                    "type": "int",
+                    "description": "Length of the string indicated by lpString1, excluding the terminating null character. The application can supply a negative value if the string is null-terminated. In this case, the function determines the length automatically.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpString2",
+                    "type": "LPCWCH",
+                    "description": "Pointer to the second string to compare.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchCount2",
+                    "type": "int",
+                    "description": "Length of the string indicated by lpString2, excluding the terminating null character. The application can supply a negative value if the string is null-terminated. In this case, the function determines the length automatically.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpVersionInformation",
+                    "type": "LPNLSVERSIONINFO",
+                    "description": "Pointer to an NLSVERSIONINFOEX structure that contains the version information about the relevant NLS capability; usually retrieved from GetNLSVersionEx. Windows\u00a0Vista, Windows\u00a07: Reserved; must set to NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpReserved",
+                    "type": "LPVOID",
+                    "description": "Reserved; must set to NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lParam",
+                    "type": "LPARAM",
+                    "description": "Reserved; must be set to 0.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": [
+                {
+                    "name": "LINGUISTIC_IGNORECASE",
+                    "description": "Ignore case, as linguistically appropriate.",
+                    "value": -1
+                },
+                {
+                    "name": "LINGUISTIC_IGNOREDIACRITIC",
+                    "description": "Ignore nonspacing characters, as linguistically appropriate.\nNote\u00a0\u00a0This flag does not always produce predictable results when used with decomposed characters, that is, characters in which a base character and one or more nonspacing characters each have distinct code point values.",
+                    "value": -1
+                },
+                {
+                    "name": "NORM_IGNORECASE",
+                    "description": "Ignore case. For many scripts (notably Latin scripts), NORM_IGNORECASE coincides with LINGUISTIC_IGNORECASE.\nNote\u00a0\u00a0NORM_IGNORECASE ignores any tertiary distinction, whether it is actually linguistic case or not. For example, in Arabic and Indic scripts, this distinguishes alternate forms of a character, but the differences do not correspond to linguistic case. LINGUISTIC_IGNORECASE causes the function to ignore only actual linguistic casing, instead of ignoring the third sorting weight.\n\u00a0\nNote\u00a0\u00a0With this flag set, the function ignores the distinction between the wide and narrow forms of the CJK compatibility characters.",
+                    "value": -1
+                },
+                {
+                    "name": "NORM_IGNOREKANATYPE",
+                    "description": "Do not differentiate between hiragana and katakana characters. Corresponding hiragana and katakana characters compare as equal.",
+                    "value": -1
+                },
+                {
+                    "name": "NORM_IGNORENONSPACE",
+                    "description": "Ignore nonspacing characters. For many scripts (notably Latin scripts), NORM_IGNORENONSPACE coincides with LINGUISTIC_IGNOREDIACRITIC.\nNote\u00a0\u00a0NORM_IGNORENONSPACE ignores any secondary distinction, whether it is a diacritic or not. Scripts for Korean, Japanese, Chinese, and Indic languages, among others, use this distinction for purposes other than diacritics. LINGUISTIC_IGNOREDIACRITIC causes the function to ignore only actual diacritics, instead of ignoring the second sorting weight.\n\u00a0\nNote\u00a0\u00a0NORM_IGNORENONSPACE only has an effect for locales in which accented characters are sorted in a second pass from main characters. Normally all characters in the string are first compared without regard to accents and, if the strings are equal, a second pass over the strings is performed to compare accents. This flag causes the second pass to not be performed. For locales that sort accented characters in the first pass, this flag has no effect.",
+                    "value": -1
+                },
+                {
+                    "name": "NORM_IGNORESYMBOLS",
+                    "description": "Ignore symbols and punctuation.",
+                    "value": -1
+                },
+                {
+                    "name": "NORM_IGNOREWIDTH",
+                    "description": "Ignore the difference between half-width and full-width characters, for example, C a t == cat. The full-width form is a formatting distinction used in Chinese and Japanese scripts.",
+                    "value": -1
+                },
+                {
+                    "name": "NORM_LINGUISTIC_CASING",
+                    "description": "Use the default linguistic rules for casing, instead of file system rules. Note that most scenarios for CompareStringEx use this flag. This flag does not have to be used when your application calls CompareStringOrdinal.",
+                    "value": -1
+                },
+                {
+                    "name": "SORT_DIGITSASNUMBERS",
+                    "description": "Windows\u00a07: Treat digits as numbers during sorting, for example, sort \"2\" before \"10\".",
+                    "value": -1
+                },
+                {
+                    "name": "SORT_STRINGSORT",
+                    "description": "Treat punctuation the same as symbols.",
+                    "value": -1
                 }
             ]
         },
         {
+            "name": "CompareStringOrdinal",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringordinal",
+            "description": "",
+            "parameters": [
+                {
+                    "name": "lpString1",
+                    "type": "LPCWCH",
+                    "description": "Pointer to the first string to compare.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchCount1",
+                    "type": "int",
+                    "description": "Length of the string indicated by lpString1. The application supplies -1 if the string is null-terminated. In this case, the function determines the length automatically.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpString2",
+                    "type": "LPCWCH",
+                    "description": "Pointer to the second string to compare.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchCount2",
+                    "type": "int",
+                    "description": "Length of the string indicated by lpString2. The application supplies -1 if the string is null-terminated. In this case, the function determines the length automatically.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bIgnoreCase",
+                    "type": "BOOL",
+                    "description": "TRUE if the function is to perform a case-insensitive comparison, using the operating system uppercase table information. The application sets this parameter to FALSE if the function is to compare the strings exactly as they are passed in. Note that 1 is the only numeric value that can be used to specify a true value for this boolean parameter that does not result an invalid parameter error. Boolean values for this parameter work as expected.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
+        },
+        {
+            "name": "CompareStringW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-comparestringw",
+            "description": "",
+            "parameters": [
+                {
+                    "name": "Locale",
+                    "type": "LCID",
+                    "description": "identifier of the locale used for the comparison. You can use the MAKELCID macro to create a locale identifier or use one of the following predefined values.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCmpFlags",
+                    "type": "DWORD",
+                    "description": "Flags that indicate how the function compares the two strings. For detailed definitions, see the dwCmpFlags parameter of CompareStringEx.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpString1",
+                    "type": "PCNZWCH",
+                    "description": "Pointer to the first string to compare.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchCount1",
+                    "type": "int",
+                    "description": "Length of the string indicated by lpString1, excluding the terminating null character. This value represents bytes for the ANSI version of the function and wide characters for the Unicode version. The application can supply a negative value if the string is null-terminated. In this case, the function determines the length automatically.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpString2",
+                    "type": "PCNZWCH",
+                    "description": "Pointer to the second string to compare.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchCount2",
+                    "type": "int",
+                    "description": "Length of the string indicated by lpString2, excluding the terminating null character. This value represents bytes for the ANSI version of the function and wide characters for the Unicode version. The application can supply a negative value if the string is null-terminated. In this case, the function determines the length automatically.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
+        },
+        {
+            "name": "FoldStringW",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-foldstringw",
+            "description": "",
+            "parameters": [
+                {
+                    "name": "dwMapFlags",
+                    "type": "DWORD",
+                    "description": "Flags specifying the type of transformation to use during string mapping. This parameter can be a combination of the following values.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpSrcStr",
+                    "type": "LPCWCH",
+                    "description": "Pointer to a source string that the function maps.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchSrc",
+                    "type": "int",
+                    "description": "Size, in characters, of the source string indicated by lpSrcStr, excluding the terminating null character. The application can set the parameter to any negative value to specify that the source string is null-terminated. In this case, the function calculates the string length automatically, and null-terminates the mapped string indicated by lpDestStr. [out, optional] lpDestStr Pointer to a buffer in which this function retrieves the mapped string.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpDestStr",
+                    "type": "LPWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchDest",
+                    "type": "int",
+                    "description": "Size, in characters, of the destination string indicated by lpDestStr. If space for a terminating null character is included in cchSrc, cchDest must also include space for a terminating null character. The application can set cchDest to 0. In this case, the function does not use the lpDestStr parameter and returns the required buffer size for the mapped string. If the MAP_FOLDDIGITS flag is specified, the return value is the maximum size required, even if the actual number of characters needed is smaller than the maximum size. If the maximum size is not passed, the function fails with ERROR_INSUFFICIENT_BUFFER.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
+        },
+        {
+            "name": "GetStringTypeExW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-getstringtypeexw",
+            "description": "",
+            "parameters": [
+                {
+                    "name": "Locale",
+                    "type": "LCID",
+                    "description": "identifier that specifies the locale. This value uniquely defines the ANSI code page. You can use the MAKELCID macro to create a locale identifier or use one of the following predefined values.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwInfoType",
+                    "type": "DWORD",
+                    "description": "Flags specifying the character type information to retrieve. For possible flag values, see the dwInfoType parameter of GetStringTypeW. For detailed information about the character type bits, see Remarks for GetStringTypeW.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpSrcStr",
+                    "type": "LPCWCH",
+                    "description": "Pointer to the string for which to retrieve the character types. The string is assumed to be null-terminated if cchSrc is set to any negative value.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchSrc",
+                    "type": "int",
+                    "description": "Size, in characters, of the string indicated by lpSrcStr. The size refers to bytes for the ANSI version of the function or wide characters for the Unicode version. If the size includes a terminating null character, the function retrieves character type information for that character. If the application sets the size to any negative integer, the source string is assumed to be null-terminated and the function calculates the size automatically with an additional character for the null termination. [out] lpCharType Pointer to an array of 16-bit values. The length of this array must be large enough to receive one 16-bit value for each character in the source string. If cchSrc is not a negative number, lpCharType should be an array of words with cchSrc elements. If cchSrc is set to a negative number, lpCharType is an array of words with lpSrcStr + 1 elements. When the function returns, this array contains one word corresponding to each character in the source string.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCharType",
+                    "type": "LPWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
+        },
+        {
+            "name": "GetStringTypeW",
+            "return_type": "BOOL",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-getstringtypew",
+            "description": "",
+            "parameters": [
+                {
+                    "name": "dwInfoType",
+                    "type": "DWORD",
+                    "description": "Flags specifying the character type information to retrieve. This parameter can have the following values. The character types are divided into different levels as described in the Remarks section.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpSrcStr",
+                    "type": "LPCWCH",
+                    "description": "Pointer to the Unicode string for which to retrieve the character types. The string is assumed to be null-terminated if cchSrc is set to any negative value.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchSrc",
+                    "type": "int",
+                    "description": "Size, in characters, of the string indicated by lpSrcStr. If the size includes a terminating null character, the function retrieves character type information for that character. If the application sets the size to any negative integer, the source string is assumed to be null-terminated and the function calculates the size automatically with an additional character for the null termination. [out] lpCharType Pointer to an array of 16-bit values. The length of this array must be large enough to receive one 16-bit value for each character in the source string. If cchSrc is not a negative number, lpCharType should be an array of words with cchSrc elements. If cchSrc is set to a negative number, lpCharType is an array of words with lpSrcStr + 1 elements. When the function returns, this array contains one word corresponding to each character in the source string.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCharType",
+                    "type": "LPWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
+        },
+        {
+            "name": "MultiByteToWideChar",
+            "return_type": "int",
+            "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-multibytetowidechar",
+            "description": "",
+            "parameters": [
+                {
+                    "name": "CodePage",
+                    "type": "UINT",
+                    "description": "Code page to use in performing the conversion. This parameter can be set to the value of any code page that is installed or available in the operating system. For a list of code pages, see Code Page Identifiers. Your application can also specify one of the values shown in the following table.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFlags",
+                    "type": "DWORD",
+                    "description": "Flags indicating the conversion type. The application can specify a combination of the following values, with MB_PRECOMPOSED being the default. MB_PRECOMPOSED and MB_COMPOSITE are mutually exclusive. MB_USEGLYPHCHARS and MB_ERR_INVALID_CHARS can be set regardless of the state of the other flags. For the code pages listed below, dwFlags must be set to 0. Otherwise, the function fails with ERROR_INVALID_FLAGS.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpMultiByteStr",
+                    "type": "LPCCH",
+                    "description": "Pointer to the character string to convert.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cbMultiByte",
+                    "type": "int",
+                    "description": "Size, in bytes, of the string indicated by the lpMultiByteStr parameter. Alternatively, this parameter can be set to -1 if the string is null-terminated. Note that, if cbMultiByte is 0, the function fails. If this parameter is -1, the function processes the entire input string, including the terminating null character. Therefore, the resulting Unicode string has a terminating null character, and the length returned by the function includes this character. If this parameter is set to a positive integer, the function processes exactly the specified number of bytes. If the provided size does not include a terminating null character, the resulting Unicode string is not null-terminated, and the returned length does not include this character. [out, optional] lpWideCharStr Pointer to a buffer that receives the converted string.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpWideCharStr",
+                    "type": "LPWSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchWideChar",
+                    "type": "int",
+                    "description": "Size, in characters, of the buffer indicated by lpWideCharStr. If this value is 0, the function returns the required buffer size, in characters, including any terminating null character, and makes no use of the lpWideCharStr buffer.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
+        },
+        {
             "name": "WideCharToMultiByte",
-            "return_type": "",
+            "return_type": "int",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/stringapiset/nf-stringapiset-widechartomultibyte",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "CodePage",
+                    "type": "UINT",
+                    "description": "Code page to use in performing the conversion. This parameter can be set to the value of any code page that is installed or available in the operating system. For a list of code pages, see Code Page Identifiers. Your application can also specify one of the values shown in the following table.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFlags",
+                    "type": "DWORD",
+                    "description": "Flags indicating the conversion type. The application can specify a combination of the following values. The function performs more quickly when none of these flags is set. The application should specify WC_NO_BEST_FIT_CHARS and WC_COMPOSITECHECK with the specific value WC_DEFAULTCHAR to retrieve all possible conversion results. If all three values are not provided, some results will be missing. For the code pages listed below, dwFlags must be 0. Otherwise, the function fails with ERROR_INVALID_FLAGS.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpWideCharStr",
+                    "type": "LPCWCH",
+                    "description": "Pointer to the Unicode string to convert.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cchWideChar",
+                    "type": "int",
+                    "description": "Size, in characters, of the string indicated by lpWideCharStr. Alternatively, this parameter can be set to -1 if the string is null-terminated. If cchWideChar is set to 0, the function fails. If this parameter is -1, the function processes the entire input string, including the terminating null character. Therefore, the resulting character string has a terminating null character, and the length returned by the function includes this character. If this parameter is set to a positive integer, the function processes exactly the specified number of characters. If the provided size does not include a terminating null character, the resulting character string is not null-terminated, and the returned length does not include this character. [out, optional] lpMultiByteStr Pointer to a buffer that receives the converted string.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpMultiByteStr",
+                    "type": "LPSTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cbMultiByte",
+                    "type": "int",
+                    "description": "Size, in bytes, of the buffer indicated by lpMultiByteStr. If this value is 0, the function returns the required buffer size, in bytes, including any terminating null character, and makes no use of the lpMultiByteStr buffer.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpDefaultChar",
+                    "type": "LPCCH",
+                    "description": "Pointer to the character to use if a character cannot be represented in the specified code page. The application sets this parameter to NULL if the function is to use a system default value. To obtain the system default character, the application can call the GetCPInfo or GetCPInfoEx function. For the CP_UTF7 and CP_UTF8 settings for CodePage, this parameter must be set to NULL. Otherwise, the function fails with ERROR_INVALID_PARAMETER. [out, optional] lpUsedDefaultChar Pointer to a flag that indicates if the function has used a default character in the conversion. The flag is set to TRUE if one or more characters in the source string cannot be represented in the specified code page. Otherwise, the flag is set to FALSE. This parameter can be set to NULL. For the CP_UTF7 and CP_UTF8 settings for CodePage, this parameter must be set to NULL. Otherwise, the function fails with ERROR_INVALID_PARAMETER.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpUsedDefaultChar",
+                    "type": "LPBOOL",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         }
     ]
 }

@@ -2,675 +2,2380 @@
     "functions": [
         {
             "name": "CreateProcessA",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessa",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpApplicationName",
+                    "type": "LPCSTR",
+                    "description": "The name of the module to be executed. This module can be a Windows-based application. It can be some other type of module (for example, MS-DOS or OS/2) if the appropriate subsystem is available on the local computer. The string can specify the full path and file name of the module to execute or it can specify a partial name. In the case of a partial name, the function uses the current drive and current directory to complete the specification. The function will not use the search path. This parameter must include the file name extension; no default extension is assumed. The lpApplicationName parameter can be NULL. In that case, the module name must be the first white space\u00e2\u0080\u0093delimited token in the lpCommandLine string. If you are using a long file name that contains a space, use quoted strings to indicate where the file name ends and the arguments begin; otherwise, the file name is ambiguous. For example, consider the string \"c:\\program files\\sub dir\\program name\". This string can be interpreted in a number of ways. The system tries to interpret the possibilities in the following order: If the executable module is a 16-bit application, lpApplicationName should be NULL, and the string pointed to by lpCommandLine should specify the executable module as well as its arguments. To run a batch file, you must start the command interpreter; set lpApplicationName to cmd.exe and set lpCommandLine to the following arguments: /c plus the name of the batch file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCommandLine",
+                    "type": "LPSTR",
+                    "description": "The command line to be executed. The maximum length of this string is 32,767 characters, including the Unicode terminating null character. If lpApplicationName is NULL, the module name portion of lpCommandLine is limited to MAX_PATH characters. The Unicode version of this function, CreateProcessW, can modify the contents of this string. Therefore, this parameter cannot be a pointer to read-only memory (such as a const variable or a literal string). If this parameter is a constant string, the function may cause an access violation. The lpCommandLine parameter can be NULL. In that case, the function uses the string pointed to by lpApplicationName as the command line. If both lpApplicationName and lpCommandLine are non-NULL,  the null-terminated string pointed to by lpApplicationName specifies the module to execute, and the null-terminated string pointed to by  lpCommandLine specifies the command line. The new process can use\nGetCommandLine to retrieve the entire command line. Console processes written in C can use the argc and argv arguments to parse the command line. Because argv[0] is the module name, C programmers generally repeat the module name as the first token in the command line. If lpApplicationName is NULL, the first white space\u00e2\u0080\u0093delimited token of the command line specifies the module name. If you are using a long file name that contains a space, use quoted strings to indicate where the file name ends and the arguments begin (see the explanation for the lpApplicationName parameter). If the file name does not contain an extension, .exe is appended. Therefore, if the file name extension is .com, this parameter must include the .com extension. If the file name ends in a period (.) with no extension, or if the file name contains a path, .exe is not appended. If the file name does not contain a directory path, the system searches for the executable file in the following sequence: The system adds a terminating null character to the command-line string to separate the file name from the arguments. This divides the original string into two strings for internal processing.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpProcessAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a\nSECURITY_ATTRIBUTES structure that determines whether the returned handle to the new process object can be inherited by child processes. If lpProcessAttributes is NULL, the handle cannot be inherited. The lpSecurityDescriptor member of the structure specifies a security descriptor for the new process. If lpProcessAttributes is NULL or lpSecurityDescriptor is NULL, the process gets a default security descriptor. The ACLs in the default security descriptor for a process come from the primary token of the creator. Windows\u00a0XP: The ACLs in the default security descriptor for a process come from the primary or impersonation token of the creator. This behavior changed with Windows\u00a0XP with SP2 and Windows Server\u00a02003.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a\nSECURITY_ATTRIBUTES structure that determines whether the returned handle to the new thread object can be inherited by child processes. If lpThreadAttributes is NULL, the handle cannot be inherited. The lpSecurityDescriptor member of the structure specifies a security descriptor for the main thread. If lpThreadAttributes is NULL or lpSecurityDescriptor is NULL, the thread gets a default security descriptor. The ACLs in the default security descriptor for a thread come from the process token. Windows\u00a0XP: The ACLs in the default security descriptor for a thread come from the primary or impersonation token of the creator. This behavior changed with Windows\u00a0XP with SP2 and Windows Server\u00a02003.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bInheritHandles",
+                    "type": "BOOL",
+                    "description": "If this parameter is TRUE, each inheritable handle in the calling process is inherited by the new process. If the parameter is FALSE, the handles are not inherited. Note that inherited handles have the same value and access rights as the original handles.\nFor additional discussion of inheritable handles, see Remarks. Terminal Services: You cannot inherit handles across sessions. Additionally, if this parameter is TRUE, you must create the process in the same session as the caller. Protected Process Light (PPL) processes: The generic handle inheritance is blocked when a PPL process creates a non-PPL process since PROCESS_DUP_HANDLE is not allowed from a non-PPL process to a PPL process. See Process Security and Access Rights Windows 7: STD_INPUT_HANDLE, STD_OUTPUT_HANDLE, and STD_ERROR_HANDLE are inherited, even when the parameter is FALSE.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCreationFlags",
+                    "type": "DWORD",
+                    "description": "The flags that control the priority class and the creation of the process. For a list of values, see Process Creation Flags. This parameter also controls the new process's priority class, which is used to determine the scheduling priorities of the process's threads. For a list of values, see GetPriorityClass. If none of the priority class flags is specified, the priority class defaults to NORMAL_PRIORITY_CLASS unless the priority class of the creating process is IDLE_PRIORITY_CLASS or BELOW_NORMAL_PRIORITY_CLASS. In this case, the child process receives the default priority class of the calling process. If the dwCreationFlags parameter has a value of 0:",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpEnvironment",
+                    "type": "LPVOID",
+                    "description": "A pointer to the environment block for the new process. If this parameter is NULL, the new process uses the environment of the calling process. An environment block consists of a null-terminated block of null-terminated strings. Each string is in the following form: name=value\\0 Because the equal sign is used as a separator, it must not be used in the name of an environment variable. An environment block can contain either Unicode or ANSI characters. If the environment block pointed to by lpEnvironment contains Unicode characters, be sure that dwCreationFlags includes CREATE_UNICODE_ENVIRONMENT. The ANSI version of this function, CreateProcessA fails if the total size of the environment block for the process exceeds 32,767 characters. Note that an ANSI environment block is terminated by two zero bytes: one for the last string, one more to terminate the block. A Unicode environment block is terminated by four zero bytes: two for the last string, two more to terminate the block.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCurrentDirectory",
+                    "type": "LPCSTR",
+                    "description": "The full path to the current directory for the process. The string can also specify a UNC path. If this parameter is NULL, the new process will have the same current drive and directory as the calling process. (This feature is provided primarily for shells that need to start an application and specify its initial drive and working directory.)",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpStartupInfo",
+                    "type": "LPSTARTUPINFOA",
+                    "description": "A pointer to a\nSTARTUPINFO or STARTUPINFOEX structure. To set extended attributes, use a STARTUPINFOEX structure and specify EXTENDED_STARTUPINFO_PRESENT in the dwCreationFlags parameter. Handles in\nSTARTUPINFO or STARTUPINFOEX must be closed with\nCloseHandle when they are no longer needed. [out] lpProcessInformation A pointer to a\nPROCESS_INFORMATION structure that receives identification information about the new process. Handles in\nPROCESS_INFORMATION must be closed with\nCloseHandle when they are no longer needed.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpProcessInformation",
+                    "type": "LPPROCESS_INFORMATION",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "CreateProcessAsUserA",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasusera",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hToken",
+                    "type": "HANDLE",
+                    "description": "A handle to the primary token that represents a user. The handle must have the TOKEN_QUERY, TOKEN_DUPLICATE, and TOKEN_ASSIGN_PRIMARY access rights. For more information, see\nAccess Rights for Access-Token Objects. The user represented by the token must have read and execute access to the application specified by the lpApplicationName or the lpCommandLine parameter. To get a primary token that represents the specified user, call the\nLogonUser function. Alternatively, you can call the\nDuplicateTokenEx function to convert an impersonation token into a primary token. This allows a server application that is impersonating a client to create a process that has the security context of the client. If hToken is a restricted version of the caller's primary token, the SE_ASSIGNPRIMARYTOKEN_NAME privilege is not required. If the necessary privileges are not already enabled,\nCreateProcessAsUser enables them for the duration of the call. For more information, see\nRunning with Special Privileges. Terminal Services:\u00a0\u00a0The process is run in the session specified in the token. By default, this is the same session that called LogonUser. To change the session, use the\nSetTokenInformation function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpApplicationName",
+                    "type": "LPCSTR",
+                    "description": "The name of the module to be executed. This module can be a Windows-based application. It can be some other type of module (for example, MS-DOS or OS/2) if the appropriate subsystem is available on the local computer. The string can specify the full path and file name of the module to execute or it can specify a partial name. In the case of a partial name, the function uses the current drive and current directory to complete the specification. The function will not use the search path. This parameter must include the file name extension; no default extension is assumed. The lpApplicationName parameter can be NULL. In that case, the module name must be the first white space\u00e2\u0080\u0093delimited token in the lpCommandLine string. If you are using a long file name that contains a space, use quoted strings to indicate where the file name ends and the arguments begin; otherwise, the file name is ambiguous. For example, consider the string \"c:\\program files\\sub dir\\program name\". This string can be interpreted in a number of ways. The system tries to interpret the possibilities in the following order: c:\\program.exe\nc:\\program files\\sub.exe\nc:\\program files\\sub dir\\program.exe\nc:\\program files\\sub dir\\program name.exe\nIf the executable module is a 16-bit application, lpApplicationName should be NULL, and the string pointed to by lpCommandLine should specify the executable module as well as its arguments. By default, all 16-bit Windows-based applications created by\nCreateProcessAsUser are run in a separate VDM (equivalent to CREATE_SEPARATE_WOW_VDM in\nCreateProcess).",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCommandLine",
+                    "type": "LPSTR",
+                    "description": "The command line to be executed. The maximum length of this string is 32K characters. If lpApplicationName is NULL, the module name portion of lpCommandLine is limited to MAX_PATH characters. The Unicode version of this function, CreateProcessAsUserW, can modify the contents of this string. Therefore, this parameter cannot be a pointer to read-only memory (such as a const variable or a literal string). If this parameter is a constant string, the function may cause an access violation. The lpCommandLine parameter can be NULL. In that case, the function uses the string pointed to by lpApplicationName as the command line. If both lpApplicationName and lpCommandLine are non-NULL, *lpApplicationName specifies the module to execute, and *lpCommandLine specifies the command line. The new process can use\nGetCommandLine to retrieve the entire command line. Console processes written in C can use the argc and argv arguments to parse the command line. Because argv[0] is the module name, C programmers generally repeat the module name as the first token in the command line. If lpApplicationName is NULL, the first white space\u00e2\u0080\u0093delimited token of the command line specifies the module name. If you are using a long file name that contains a space, use quoted strings to indicate where the file name ends and the arguments begin (see the explanation for the lpApplicationName parameter). If the file name does not contain an extension, .exe is appended. Therefore, if the file name extension is .com, this parameter must include the .com extension. If the file name ends in a period (.) with no extension, or if the file name contains a path, .exe is not appended. If the file name does not contain a directory path, the system searches for the executable file in the following sequence:",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpProcessAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a\nSECURITY_ATTRIBUTES structure that specifies a security descriptor for the new process object and determines whether child processes can inherit the returned handle to the process. If lpProcessAttributes is NULL or lpSecurityDescriptor is NULL, the process gets a default security descriptor and the handle cannot be inherited. The default security descriptor is that of the user referenced in the hToken parameter. This security descriptor may not allow access for the caller, in which case the process may not be opened again after it is run. The process handle is valid and will continue to have full access rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a SECURITY_ATTRIBUTES structure that specifies a security descriptor for the new thread object and determines whether child processes can inherit the returned handle to the thread. If lpThreadAttributes is NULL or lpSecurityDescriptor is NULL, the thread gets a default security descriptor and the handle cannot be inherited. The default security descriptor is that of the user referenced in the hToken parameter. This security descriptor may not allow access for the caller.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bInheritHandles",
+                    "type": "BOOL",
+                    "description": "If this parameter is TRUE, each inheritable handle in the calling process is inherited by the new process. If the parameter is FALSE, the handles are not inherited. Note that inherited handles have the same value and access rights as the original handles.\nFor additional discussion of inheritable handles, see Remarks. Terminal Services:\u00a0\u00a0You cannot inherit handles across sessions. Additionally, if this parameter is TRUE, you must create the process in the same session as the caller. Protected Process Light (PPL) processes:\u00a0\u00a0The generic handle inheritance is blocked when a PPL process creates a non-PPL process since PROCESS_DUP_HANDLE is not allowed from a non-PPL process to a PPL process. See Process Security and Access Rights",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCreationFlags",
+                    "type": "DWORD",
+                    "description": "The flags that control the priority class and the creation of the process. For a list of values, see\nProcess Creation Flags. This parameter also controls the new process's priority class, which is used to determine the scheduling priorities of the process's threads. For a list of values, see\nGetPriorityClass. If none of the priority class flags is specified, the priority class defaults to NORMAL_PRIORITY_CLASS unless the priority class of the creating process is IDLE_PRIORITY_CLASS or BELOW_NORMAL_PRIORITY_CLASS. In this case, the child process receives the default priority class of the calling process. If the dwCreationFlags parameter has a value of 0:",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpEnvironment",
+                    "type": "LPVOID",
+                    "description": "A pointer to an environment block for the new process. If this parameter is NULL, the new process uses the environment of the calling process. An environment block consists of a null-terminated block of null-terminated strings. Each string is in the following form: name=value\\0 Because the equal sign is used as a separator, it must not be used in the name of an environment variable. An environment block can contain either Unicode or ANSI characters. If the environment block pointed to by lpEnvironment contains Unicode characters, be sure that dwCreationFlags includes CREATE_UNICODE_ENVIRONMENT. The ANSI version of this function, CreateProcessAsUserA fails if the total size of the environment block for the process exceeds 32,767 characters. Note that an ANSI environment block is terminated by two zero bytes: one for the last string, one more to terminate the block. A Unicode environment block is terminated by four zero bytes: two for the last string, two more to terminate the block. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0If the size of the combined user and system environment variable exceeds 8192 bytes, the process created by CreateProcessAsUser no longer runs with the environment block passed to the function by the parent process. Instead, the child process runs with the environment block returned by the CreateEnvironmentBlock function. To retrieve a copy of the environment block for a given user, use the\nCreateEnvironmentBlock function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCurrentDirectory",
+                    "type": "LPCSTR",
+                    "description": "The full path to the current directory for the process. The string can also specify a UNC path. If this parameter is NULL, the new process will have the same current drive and directory as the calling process. (This feature is provided primarily for shells that need to start an application and specify its initial drive and working directory.)",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpStartupInfo",
+                    "type": "LPSTARTUPINFOA",
+                    "description": "A pointer to a\nSTARTUPINFO or STARTUPINFOEX structure. The user must have full access to both the specified window station and desktop. If you want the process to be interactive, specify winsta0\\default. If the lpDesktop member is NULL, the new process inherits the desktop and window station of its parent process.\nIf this member is an empty string, \"\", the new process connects to a window station using the rules described in Process Connection to a Window Station. To set extended attributes, use a STARTUPINFOEX structure and specify EXTENDED_STARTUPINFO_PRESENT in the dwCreationFlags parameter. Handles in\nSTARTUPINFO or STARTUPINFOEX must be closed with\nCloseHandle when they are no longer needed. [out] lpProcessInformation A pointer to a\nPROCESS_INFORMATION structure that receives identification information about the new process. Handles in\nPROCESS_INFORMATION must be closed with\nCloseHandle when they are no longer needed.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpProcessInformation",
+                    "type": "LPPROCESS_INFORMATION",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "CreateProcessAsUserW",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessasuserw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hToken",
+                    "type": "HANDLE",
+                    "description": "A handle to the primary token that represents a user. The handle must have the TOKEN_QUERY, TOKEN_DUPLICATE, and TOKEN_ASSIGN_PRIMARY access rights. For more information, see\nAccess Rights for Access-Token Objects. The user represented by the token must have read and execute access to the application specified by the lpApplicationName or the lpCommandLine parameter. To get a primary token that represents the specified user, call the\nLogonUser function. Alternatively, you can call the\nDuplicateTokenEx function to convert an impersonation token into a primary token. This allows a server application that is impersonating a client to create a process that has the security context of the client. If hToken is a restricted version of the caller's primary token, the SE_ASSIGNPRIMARYTOKEN_NAME privilege is not required. If the necessary privileges are not already enabled,\nCreateProcessAsUser enables them for the duration of the call. For more information, see\nRunning with Special Privileges. Terminal Services:\u00a0\u00a0The process is run in the session specified in the token. By default, this is the same session that called LogonUser. To change the session, use the\nSetTokenInformation function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpApplicationName",
+                    "type": "LPCWSTR",
+                    "description": "The name of the module to be executed. This module can be a Windows-based application. It can be some other type of module (for example, MS-DOS or OS/2) if the appropriate subsystem is available on the local computer. The string can specify the full path and file name of the module to execute or it can specify a partial name. In the case of a partial name, the function uses the current drive and current directory to complete the specification. The function will not use the search path. This parameter must include the file name extension; no default extension is assumed. The lpApplicationName parameter can be NULL. In that case, the module name must be the first white space\u00e2\u0080\u0093delimited token in the lpCommandLine string. If you are using a long file name that contains a space, use quoted strings to indicate where the file name ends and the arguments begin; otherwise, the file name is ambiguous. For example, consider the string \"c:\\program files\\sub dir\\program name\". This string can be interpreted in a number of ways. The system tries to interpret the possibilities in the following order: c:\\program.exe\nc:\\program files\\sub.exe\nc:\\program files\\sub dir\\program.exe\nc:\\program files\\sub dir\\program name.exe\nIf the executable module is a 16-bit application, lpApplicationName should be NULL, and the string pointed to by lpCommandLine should specify the executable module as well as its arguments. By default, all 16-bit Windows-based applications created by\nCreateProcessAsUser are run in a separate VDM (equivalent to CREATE_SEPARATE_WOW_VDM in\nCreateProcess).",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCommandLine",
+                    "type": "LPWSTR",
+                    "description": "The command line to be executed. The maximum length of this string is 32K characters. If lpApplicationName is NULL, the module name portion of lpCommandLine is limited to MAX_PATH characters. The Unicode version of this function, CreateProcessAsUserW, can modify the contents of this string. Therefore, this parameter cannot be a pointer to read-only memory (such as a const variable or a literal string). If this parameter is a constant string, the function may cause an access violation. The lpCommandLine parameter can be NULL. In that case, the function uses the string pointed to by lpApplicationName as the command line. If both lpApplicationName and lpCommandLine are non-NULL, *lpApplicationName specifies the module to execute, and *lpCommandLine specifies the command line. The new process can use\nGetCommandLine to retrieve the entire command line. Console processes written in C can use the argc and argv arguments to parse the command line. Because argv[0] is the module name, C programmers generally repeat the module name as the first token in the command line. If lpApplicationName is NULL, the first white space\u00e2\u0080\u0093delimited token of the command line specifies the module name. If you are using a long file name that contains a space, use quoted strings to indicate where the file name ends and the arguments begin (see the explanation for the lpApplicationName parameter). If the file name does not contain an extension, .exe is appended. Therefore, if the file name extension is .com, this parameter must include the .com extension. If the file name ends in a period (.) with no extension, or if the file name contains a path, .exe is not appended. If the file name does not contain a directory path, the system searches for the executable file in the following sequence:",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpProcessAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a\nSECURITY_ATTRIBUTES structure that specifies a security descriptor for the new process object and determines whether child processes can inherit the returned handle to the process. If lpProcessAttributes is NULL or lpSecurityDescriptor is NULL, the process gets a default security descriptor and the handle cannot be inherited. The default security descriptor is that of the user referenced in the hToken parameter. This security descriptor may not allow access for the caller, in which case the process may not be opened again after it is run. The process handle is valid and will continue to have full access rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a SECURITY_ATTRIBUTES structure that specifies a security descriptor for the new thread object and determines whether child processes can inherit the returned handle to the thread. If lpThreadAttributes is NULL or lpSecurityDescriptor is NULL, the thread gets a default security descriptor and the handle cannot be inherited. The default security descriptor is that of the user referenced in the hToken parameter. This security descriptor may not allow access for the caller.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bInheritHandles",
+                    "type": "BOOL",
+                    "description": "If this parameter is TRUE, each inheritable handle in the calling process is inherited by the new process. If the parameter is FALSE, the handles are not inherited. Note that inherited handles have the same value and access rights as the original handles.\nFor additional discussion of inheritable handles, see Remarks. Terminal Services:\u00a0\u00a0You cannot inherit handles across sessions. Additionally, if this parameter is TRUE, you must create the process in the same session as the caller. Protected Process Light (PPL) processes:\u00a0\u00a0The generic handle inheritance is blocked when a PPL process creates a non-PPL process since PROCESS_DUP_HANDLE is not allowed from a non-PPL process to a PPL process. See Process Security and Access Rights",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCreationFlags",
+                    "type": "DWORD",
+                    "description": "The flags that control the priority class and the creation of the process. For a list of values, see\nProcess Creation Flags. This parameter also controls the new process's priority class, which is used to determine the scheduling priorities of the process's threads. For a list of values, see\nGetPriorityClass. If none of the priority class flags is specified, the priority class defaults to NORMAL_PRIORITY_CLASS unless the priority class of the creating process is IDLE_PRIORITY_CLASS or BELOW_NORMAL_PRIORITY_CLASS. In this case, the child process receives the default priority class of the calling process. If the dwCreationFlags parameter has a value of 0:",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpEnvironment",
+                    "type": "LPVOID",
+                    "description": "A pointer to an environment block for the new process. If this parameter is NULL, the new process uses the environment of the calling process. An environment block consists of a null-terminated block of null-terminated strings. Each string is in the following form: name=value\\0 Because the equal sign is used as a separator, it must not be used in the name of an environment variable. An environment block can contain either Unicode or ANSI characters. If the environment block pointed to by lpEnvironment contains Unicode characters, be sure that dwCreationFlags includes CREATE_UNICODE_ENVIRONMENT. The ANSI version of this function, CreateProcessAsUserA fails if the total size of the environment block for the process exceeds 32,767 characters. Note that an ANSI environment block is terminated by two zero bytes: one for the last string, one more to terminate the block. A Unicode environment block is terminated by four zero bytes: two for the last string, two more to terminate the block. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0If the size of the combined user and system environment variable exceeds 8192 bytes, the process created by CreateProcessAsUser no longer runs with the environment block passed to the function by the parent process. Instead, the child process runs with the environment block returned by the CreateEnvironmentBlock function. To retrieve a copy of the environment block for a given user, use the\nCreateEnvironmentBlock function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCurrentDirectory",
+                    "type": "LPCWSTR",
+                    "description": "The full path to the current directory for the process. The string can also specify a UNC path. If this parameter is NULL, the new process will have the same current drive and directory as the calling process. (This feature is provided primarily for shells that need to start an application and specify its initial drive and working directory.)",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpStartupInfo",
+                    "type": "LPSTARTUPINFOW",
+                    "description": "A pointer to a\nSTARTUPINFO or STARTUPINFOEX structure. The user must have full access to both the specified window station and desktop. If you want the process to be interactive, specify winsta0\\default. If the lpDesktop member is NULL, the new process inherits the desktop and window station of its parent process.\nIf this member is an empty string, \"\", the new process connects to a window station using the rules described in Process Connection to a Window Station. To set extended attributes, use a STARTUPINFOEX structure and specify EXTENDED_STARTUPINFO_PRESENT in the dwCreationFlags parameter. Handles in\nSTARTUPINFO or STARTUPINFOEX must be closed with\nCloseHandle when they are no longer needed. [out] lpProcessInformation A pointer to a\nPROCESS_INFORMATION structure that receives identification information about the new process. Handles in\nPROCESS_INFORMATION must be closed with\nCloseHandle when they are no longer needed.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpProcessInformation",
+                    "type": "LPPROCESS_INFORMATION",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "CreateProcessW",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpApplicationName",
+                    "type": "LPCWSTR",
+                    "description": "The name of the module to be executed. This module can be a Windows-based application. It can be some other type of module (for example, MS-DOS or OS/2) if the appropriate subsystem is available on the local computer. The string can specify the full path and file name of the module to execute or it can specify a partial name. In the case of a partial name, the function uses the current drive and current directory to complete the specification. The function will not use the search path. This parameter must include the file name extension; no default extension is assumed. The lpApplicationName parameter can be NULL. In that case, the module name must be the first white space\u00e2\u0080\u0093delimited token in the lpCommandLine string. If you are using a long file name that contains a space, use quoted strings to indicate where the file name ends and the arguments begin; otherwise, the file name is ambiguous. For example, consider the string \"c:\\program files\\sub dir\\program name\". This string can be interpreted in a number of ways. The system tries to interpret the possibilities in the following order: If the executable module is a 16-bit application, lpApplicationName should be NULL, and the string pointed to by lpCommandLine should specify the executable module as well as its arguments. To run a batch file, you must start the command interpreter; set lpApplicationName to cmd.exe and set lpCommandLine to the following arguments: /c plus the name of the batch file.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCommandLine",
+                    "type": "LPWSTR",
+                    "description": "The command line to be executed. The maximum length of this string is 32,767 characters, including the Unicode terminating null character. If lpApplicationName is NULL, the module name portion of lpCommandLine is limited to MAX_PATH characters. The Unicode version of this function, CreateProcessW, can modify the contents of this string. Therefore, this parameter cannot be a pointer to read-only memory (such as a const variable or a literal string). If this parameter is a constant string, the function may cause an access violation. The lpCommandLine parameter can be NULL. In that case, the function uses the string pointed to by lpApplicationName as the command line. If both lpApplicationName and lpCommandLine are non-NULL,  the null-terminated string pointed to by lpApplicationName specifies the module to execute, and the null-terminated string pointed to by  lpCommandLine specifies the command line. The new process can use\nGetCommandLine to retrieve the entire command line. Console processes written in C can use the argc and argv arguments to parse the command line. Because argv[0] is the module name, C programmers generally repeat the module name as the first token in the command line. If lpApplicationName is NULL, the first white space\u00e2\u0080\u0093delimited token of the command line specifies the module name. If you are using a long file name that contains a space, use quoted strings to indicate where the file name ends and the arguments begin (see the explanation for the lpApplicationName parameter). If the file name does not contain an extension, .exe is appended. Therefore, if the file name extension is .com, this parameter must include the .com extension. If the file name ends in a period (.) with no extension, or if the file name contains a path, .exe is not appended. If the file name does not contain a directory path, the system searches for the executable file in the following sequence:",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpProcessAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a\nSECURITY_ATTRIBUTES structure that determines whether the returned handle to the new process object can be inherited by child processes. If lpProcessAttributes is NULL, the handle cannot be inherited. The lpSecurityDescriptor member of the structure specifies a security descriptor for the new process. If lpProcessAttributes is NULL or lpSecurityDescriptor is NULL, the process gets a default security descriptor. The ACLs in the default security descriptor for a process come from the primary token of the creator.Windows\u00a0XP:\u00a0\u00a0The ACLs in the default security descriptor for a process come from the primary or impersonation token of the creator. This behavior changed with Windows\u00a0XP with SP2 and Windows Server\u00a02003.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a\nSECURITY_ATTRIBUTES structure that determines whether the returned handle to the new thread object can be inherited by child processes. If lpThreadAttributes is NULL, the handle cannot be inherited. The lpSecurityDescriptor member of the structure specifies a security descriptor for the main thread. If lpThreadAttributes is NULL or lpSecurityDescriptor is NULL, the thread gets a default security descriptor. The ACLs in the default security descriptor for a thread come from the process token.Windows\u00a0XP:\u00a0\u00a0The ACLs in the default security descriptor for a thread come from the primary or impersonation token of the creator. This behavior changed with Windows\u00a0XP with SP2 and Windows Server\u00a02003.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bInheritHandles",
+                    "type": "BOOL",
+                    "description": "If this parameter is TRUE, each inheritable handle in the calling process is inherited by the new process. If the parameter is FALSE, the handles are not inherited. Note that inherited handles have the same value and access rights as the original handles.\nFor additional discussion of inheritable handles, see Remarks. Terminal Services:\u00a0\u00a0You cannot inherit handles across sessions. Additionally, if this parameter is TRUE, you must create the process in the same session as the caller. Protected Process Light (PPL) processes:\u00a0\u00a0The generic handle inheritance is blocked when a PPL process creates a non-PPL process since PROCESS_DUP_HANDLE is not allowed from a non-PPL process to a PPL process. See Process Security and Access Rights",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCreationFlags",
+                    "type": "DWORD",
+                    "description": "The flags that control the priority class and the creation of the process. For a list of values, see\nProcess Creation Flags. This parameter also controls the new process's priority class, which is used to determine the scheduling priorities of the process's threads. For a list of values, see\nGetPriorityClass. If none of the priority class flags is specified, the priority class defaults to NORMAL_PRIORITY_CLASS unless the priority class of the creating process is IDLE_PRIORITY_CLASS or BELOW_NORMAL_PRIORITY_CLASS. In this case, the child process receives the default priority class of the calling process. If the dwCreationFlags parameter has a value of 0:",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpEnvironment",
+                    "type": "LPVOID",
+                    "description": "A pointer to the environment block for the new process. If this parameter is NULL, the new process uses the environment of the calling process. An environment block consists of a null-terminated block of null-terminated strings. Each string is in the following form: name=value\\0 Because the equal sign is used as a separator, it must not be used in the name of an environment variable. An environment block can contain either Unicode or ANSI characters. If the environment block pointed to by lpEnvironment contains Unicode characters, be sure that dwCreationFlags includes CREATE_UNICODE_ENVIRONMENT. The ANSI version of this function, CreateProcessA fails if the total size of the environment block for the process exceeds 32,767 characters. Note that an ANSI environment block is terminated by two zero bytes: one for the last string, one more to terminate the block. A Unicode environment block is terminated by four zero bytes: two for the last string, two more to terminate the block.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCurrentDirectory",
+                    "type": "LPCWSTR",
+                    "description": "The full path to the current directory for the process. The string can also specify a UNC path. If this parameter is NULL, the new process will have the same current drive and directory as the calling process. (This feature is provided primarily for shells that need to start an application and specify its initial drive and working directory.)",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpStartupInfo",
+                    "type": "LPSTARTUPINFOW",
+                    "description": "A pointer to a\nSTARTUPINFO or STARTUPINFOEX structure. To set extended attributes, use a STARTUPINFOEX structure and specify EXTENDED_STARTUPINFO_PRESENT in the dwCreationFlags parameter. Handles in\nSTARTUPINFO or STARTUPINFOEX must be closed with\nCloseHandle when they are no longer needed. [out] lpProcessInformation A pointer to a\nPROCESS_INFORMATION structure that receives identification information about the new process. Handles in\nPROCESS_INFORMATION must be closed with\nCloseHandle when they are no longer needed.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpProcessInformation",
+                    "type": "LPPROCESS_INFORMATION",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "CreateRemoteThread",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createremotethread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process in which the thread is to be created. The handle must have the PROCESS_CREATE_THREAD, PROCESS_QUERY_INFORMATION, PROCESS_VM_OPERATION, PROCESS_VM_WRITE, and PROCESS_VM_READ access rights, and may fail without these rights on certain platforms. For more information, see\nProcess Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a\nSECURITY_ATTRIBUTES structure that specifies a security descriptor for the new thread and determines whether child processes can inherit the returned handle. If lpThreadAttributes is NULL, the thread gets a default security descriptor and the handle cannot be inherited. The access control lists (ACL) in the default security descriptor for a thread come from the primary token of the creator. Windows\u00a0XP:\u00a0\u00a0The ACLs in the default security descriptor for a thread come from the primary or impersonation token of the creator. This behavior changed with Windows\u00a0XP with SP2 and Windows Server\u00a02003.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwStackSize",
+                    "type": "SIZE_T",
+                    "description": "The initial size of the stack, in bytes. The system rounds this value to the nearest page. If this parameter is 0 (zero), the new thread uses the default size for the executable. For more information, see\nThread Stack Size.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpStartAddress",
+                    "type": "LPTHREAD_START_ROUTINE",
+                    "description": "A pointer to the application-defined function of type LPTHREAD_START_ROUTINE to be executed by the thread and represents the starting address of the thread in the remote process. The function must exist in the remote process. For more information, see\nThreadProc.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpParameter",
+                    "type": "LPVOID",
+                    "description": "A pointer to a variable to be passed to the thread function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCreationFlags",
+                    "type": "DWORD",
+                    "description": "The flags that control the creation of the thread. [out] lpThreadId A pointer to a variable that receives the thread identifier. If this parameter is NULL, the thread identifier is not returned.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadId",
+                    "type": "LPDWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "CreateRemoteThreadEx",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createremotethreadex",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process in which the thread is to be created. The handle must have the PROCESS_CREATE_THREAD, PROCESS_QUERY_INFORMATION, PROCESS_VM_OPERATION, PROCESS_VM_WRITE, and PROCESS_VM_READ access rights. In Windows\u00a010, version 1607, your code must obtain these access rights for the new handle. However, starting in Windows\u00a010, version 1703, if the new handle is entitled to these access rights, the system obtains them for you. For more information, see\nProcess Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a\nSECURITY_ATTRIBUTES structure that specifies a security descriptor for the new thread and determines whether child processes can inherit the returned handle. If lpThreadAttributes is NULL, the thread gets a default security descriptor and the handle cannot be inherited. The access control lists (ACL) in the default security descriptor for a thread come from the primary token of the creator.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwStackSize",
+                    "type": "SIZE_T",
+                    "description": "The initial size of the stack, in bytes. The system rounds this value to the nearest page. If this parameter is 0 (zero), the new thread uses the default size for the executable. For more information, see\nThread Stack Size.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpStartAddress",
+                    "type": "LPTHREAD_START_ROUTINE",
+                    "description": "A pointer to the application-defined function of type LPTHREAD_START_ROUTINE to be executed by the thread and represents the starting address of the thread in the remote process. The function must exist in the remote process. For more information, see\nThreadProc.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpParameter",
+                    "type": "LPVOID",
+                    "description": "A pointer to a variable to be passed to the thread function pointed to by lpStartAddress. This parameter can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCreationFlags",
+                    "type": "DWORD",
+                    "description": "The flags that control the creation of the thread.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpAttributeList",
+                    "type": "LPPROC_THREAD_ATTRIBUTE_LIST",
+                    "description": "An attribute list that contains additional parameters for the new thread. This list is created by the InitializeProcThreadAttributeList function. [out, optional] lpThreadId A pointer to a variable that receives the thread identifier. If this parameter is NULL, the thread identifier is not returned.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadId",
+                    "type": "LPDWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "CreateThread",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createthread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpThreadAttributes",
+                    "type": "LPSECURITY_ATTRIBUTES",
+                    "description": "A pointer to a SECURITY_ATTRIBUTES\nstructure that determines whether the returned handle can be inherited by child processes. If\nlpThreadAttributes is NULL, the handle cannot be inherited. The lpSecurityDescriptor member of the structure specifies a security descriptor for the new thread. If lpThreadAttributes is NULL, the thread gets a default security descriptor. The ACLs in the default security descriptor for a thread come from the primary token of the creator.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwStackSize",
+                    "type": "SIZE_T",
+                    "description": "The initial size of the stack, in bytes. The system rounds this value to the nearest page. If this parameter is zero, the new thread uses the default size for the executable. For more information, see\nThread Stack Size.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpStartAddress",
+                    "type": "LPTHREAD_START_ROUTINE",
+                    "description": "A pointer to the application-defined function to be executed by the thread. This pointer represents the starting address of the thread. For more information on the thread function, see\nThreadProc.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpParameter",
+                    "type": "__drv_aliasesMem LPVOID",
+                    "description": "A pointer to a variable to be passed to the thread.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwCreationFlags",
+                    "type": "DWORD",
+                    "description": "The flags that control the creation of the thread. [out, optional] lpThreadId A pointer to a variable that receives the  thread identifier. If this parameter is\nNULL, the thread identifier is not returned.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadId",
+                    "type": "LPDWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "DeleteProcThreadAttributeList",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-deleteprocthreadattributelist",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpAttributeList",
+                    "type": "LPPROC_THREAD_ATTRIBUTE_LIST",
+                    "description": "The attribute list. This list is created by the InitializeProcThreadAttributeList function.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExitProcess",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitprocess",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "uExitCode",
+                    "type": "UINT",
+                    "description": "The exit code for the process and all threads.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ExitThread",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-exitthread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwExitCode",
+                    "type": "DWORD",
+                    "description": "The exit code for the thread.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "FlushInstructionCache",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-flushinstructioncache",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to a process whose instruction cache is to be flushed.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpBaseAddress",
+                    "type": "LPCVOID",
+                    "description": "A pointer to the base of the region to be flushed. This parameter can be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwSize",
+                    "type": "SIZE_T",
+                    "description": "The size of the region to be flushed if the lpBaseAddress parameter is not NULL, in bytes.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "FlushProcessWriteBuffers",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-flushprocesswritebuffers",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetCurrentProcess",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocess",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetCurrentProcessId",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocessid",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetCurrentProcessorNumber",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocessornumber",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetCurrentProcessorNumberEx",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocessornumberex",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "ProcNumber",
+                    "type": "PPROCESSOR_NUMBER",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetCurrentProcessToken",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentprocesstoken",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetCurrentThread",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentthread",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetCurrentThreadEffectiveToken",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentthreadeffectivetoken",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetCurrentThreadId",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentthreadid",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetCurrentThreadStackLimits",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentthreadstacklimits",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "LowLimit",
+                    "type": "PULONG_PTR",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "HighLimit",
+                    "type": "PULONG_PTR",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetCurrentThreadToken",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getcurrentthreadtoken",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "GetExitCodeProcess",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodeprocess",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. The handle must have the PROCESS_QUERY_INFORMATION or PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see\nProcess Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the PROCESS_QUERY_INFORMATION access right. [out] lpExitCode A pointer to a variable to receive the process termination status. For more information, see Remarks.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpExitCode",
+                    "type": "LPDWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetExitCodeThread",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getexitcodethread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread. The handle must have the THREAD_QUERY_INFORMATION or THREAD_QUERY_LIMITED_INFORMATION access right. For more information, see\nThread Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the THREAD_QUERY_INFORMATION access right. [out] lpExitCode A pointer to a variable to receive the thread termination status. For more information, see Remarks.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpExitCode",
+                    "type": "LPDWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetMachineTypeAttributes",
-            "return_type": "",
+            "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getmachinetypeattributes",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Machine",
+                    "type": "USHORT",
+                    "description": "TypeAttributes Output parameter receives a pointer to a value from the MACHINE_ATTRIBUTES enumeration indicating if the specified code architecture can run in user mode, kernel mode, and/or under WOW64 on the host operating system.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*MachineTypeAttributes",
+                    "type": "MACHINE_ATTRIBUTES",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetPriorityClass",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getpriorityclass",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. The handle must have the PROCESS_QUERY_INFORMATION or PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see\nProcess Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the PROCESS_QUERY_INFORMATION access right.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessDefaultCpuSetMasks",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessdefaultcpusetmasks",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Process",
+                    "type": "HANDLE",
+                    "description": " Specifies a process handle for the process to query. This handle must have the PROCESS_QUERY_LIMITED_INFORMATION access right. The value returned by GetCurrentProcess can also be specified here.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetMasks",
+                    "type": "PGROUP_AFFINITY",
+                    "description": " Specifies an optional buffer to retrieve a list of GROUP_AFFINITY structures representing the process default CPU Sets.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetMaskCount",
+                    "type": "USHORT",
+                    "description": " Specifies the size of the CpuSetMasks array, in elements.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "RequiredMaskCount",
+                    "type": "PUSHORT",
+                    "description": " On successful return, specifies the number of affinity structures written to the array. If the CpuSetMasks array is too small, the function fails with ERROR_INSUFFICIENT_BUFFER and sets the RequiredMaskCount parameter to the number of elements required. The number of required elements is always less than or equal to the maximum group count returned by GetMaximumProcessorGroupCount.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessDefaultCpuSets",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessdefaultcpusets",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Process",
+                    "type": "HANDLE",
+                    "description": " Specifies a process handle for the process to query. This handle must have the PROCESS_QUERY_LIMITED_INFORMATION access right. The value returned by GetCurrentProcess can also be specified here.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetIds",
+                    "type": "PULONG",
+                    "description": " Specifies an optional buffer to retrieve the list of CPU Set identifiers.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetIdCount",
+                    "type": "ULONG",
+                    "description": " Specifies the capacity of the buffer specified in CpuSetIds. If the buffer is NULL, this must be 0.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "RequiredIdCount",
+                    "type": "PULONG",
+                    "description": " Specifies the required capacity of the buffer to hold the entire list of process default CPU Sets. On successful return, this specifies the number of IDs filled into the buffer.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessHandleCount",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesshandlecount",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process whose handle count is being requested.  The\nhandle must have the PROCESS_QUERY_INFORMATION\nor PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see Process Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the PROCESS_QUERY_INFORMATION access right.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pdwHandleCount",
+                    "type": "PDWORD",
+                    "description": "A pointer to a variable that receives the number of open handles that belong to the specified process.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessId",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessid",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Process",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. The handle must have the PROCESS_QUERY_INFORMATION or PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see\nProcess Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the PROCESS_QUERY_INFORMATION access right.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessIdOfThread",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessidofthread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Thread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread. The handle must have the THREAD_QUERY_INFORMATION or THREAD_QUERY_LIMITED_INFORMATION access right. For more information, see\nThread Security and Access Rights. Windows Server\u00a02003:\u00a0\u00a0The handle must have the THREAD_QUERY_INFORMATION access right.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessInformation",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessinformation",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. This handle must have at least the PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see Process Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ProcessInformationClass",
+                    "type": "PROCESS_INFORMATION_CLASS",
+                    "description": "A member of the PROCESS_INFORMATION_CLASS enumeration specifying the kind of information to retrieve.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ProcessInformation",
+                    "type": "LPVOID",
+                    "description": "The size in bytes of the structure specified by the ProcessInformation parameter. If the ProcessInformationClass parameter is ProcessMemoryPriority, this parameter must be sizeof(MEMORY_PRIORITY_INFORMATION). If the ProcessInformationClass parameter is ProcessPowerThrottling, this parameter must be sizeof(PROCESS_POWER_THROTTLING_STATE). If the ProcessInformationClass parameter is ProcessProtectionLevelInfo, this parameter must be sizeof(PROCESS_PROTECTION_LEVEL_INFORMATION). If the ProcessInformationClass parameter is ProcessLeapSecondInfo, this parameter must be sizeof(PROCESS_LEAP_SECOND_INFO). If the ProcessInformationClass parameter is ProcessAppMemoryInfo, this parameter must be sizeof(APP_MEMORY_INFORMATION).",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ProcessInformationSize",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessMitigationPolicy",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessmitigationpolicy",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. This handle must have the PROCESS_QUERY_INFORMATION access right. For more information, see Process Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "MitigationPolicy",
+                    "type": "PROCESS_MITIGATION_POLICY",
+                    "description": "The mitigation policy to retrieve. This parameter can be one of the following values. [out] lpBuffer If the MitigationPolicy parameter is ProcessDEPPolicy, this parameter points to a PROCESS_MITIGATION_DEP_POLICY structure that receives the DEP policy flags. If the MitigationPolicy parameter is ProcessASLRPolicy, this parameter points to a PROCESS_MITIGATION_ASLR_POLICY structure that receives the ASLR policy flags. If the MitigationPolicy parameter is ProcessDynamicCodePolicy, this parameter points to a PROCESS_MITIGATION_DYNAMIC_CODE_POLICY structure that receives the dynamic code policy flags. If the MitigationPolicy parameter is ProcessStrictHandleCheckPolicy, this parameter points to a PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY structure that specifies the handle check policy flags. If the MitigationPolicy parameter is ProcessSystemCallDisablePolicy, this parameter points to a PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY structure that specifies the system call disable policy flags. If the MitigationPolicy parameter is ProcessMitigationOptionsMask, this parameter points to a ULONG64 bit vector for the mask or a two-element array of ULONG64 bit vectors. If the MitigationPolicy parameter is ProcessExtensionPointDisablePolicy, this parameter points to a PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY structure that specifies the extension point disable policy flags. If the MitigationPolicy parameter is ProcessControlFlowGuardPolicy, this parameter points to a PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY structure that specifies the CFG policy flags. If the MitigationPolicy parameter is ProcessSignaturePolicy, this parameter points to a PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY structure that receives the signature policy flags. If the MitigationPolicy parameter is ProcessFontDisablePolicy, this parameter points to a PROCESS_MITIGATION_FONT_DISABLE_POLICY structure that receives the policy flags for font loading. If the MitigationPolicy parameter is ProcessImageLoadPolicy, this parameter points to a PROCESS_MITIGATION_IMAGE_LOAD_POLICY structure that receives the policy flags for image loading. If the MitigationPolicy parameter is ProcessRedirectionTrustPolicy, this parameter points to a PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY structure that specifies the mitigation mode. If the MitigationPolicy parameter is ProcessUserShadowStackPolicy, this parameter points to a PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY structure that receives the policy flags for user-mode Hardware-enforced Stack Protection.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpBuffer",
+                    "type": "PVOID",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwLength",
+                    "type": "SIZE_T",
+                    "description": "The size of lpBuffer, in bytes.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessPriorityBoost",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesspriorityboost",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. This handle must have the PROCESS_QUERY_INFORMATION or PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see\nProcess Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the PROCESS_QUERY_INFORMATION access right. [out] pDisablePriorityBoost A pointer to a variable that receives the priority boost control state. A value of TRUE indicates that dynamic boosting is disabled. A value of FALSE indicates normal behavior.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pDisablePriorityBoost",
+                    "type": "PBOOL",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessShutdownParameters",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessshutdownparameters",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpdwLevel",
+                    "type": "LPDWORD",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpdwFlags",
+                    "type": "LPDWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessTimes",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocesstimes",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process whose timing information is sought. The handle must have the PROCESS_QUERY_INFORMATION or PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see\nProcess Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the PROCESS_QUERY_INFORMATION access right. [out] lpCreationTime A pointer to a\nFILETIME structure that receives the creation time of the process. [out] lpExitTime A pointer to a FILETIME structure that receives the exit time of the process. If the process has not exited, the content of this structure is undefined. [out] lpKernelTime A pointer to a\nFILETIME structure that receives the amount of time that the process has executed in kernel mode. The time that each of the threads of the process has executed in kernel mode is determined, and then all of those times are summed together to obtain this value. [out] lpUserTime A pointer to a FILETIME structure that receives the amount of time that the process has executed in user mode. The time that each of the threads of the process has executed in user mode is determined, and then all of those times are summed together to obtain this value. Note that this value can exceed the amount of real time elapsed (between lpCreationTime and lpExitTime) if the process executes across multiple CPU cores.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCreationTime",
+                    "type": "LPFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpExitTime",
+                    "type": "LPFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpKernelTime",
+                    "type": "LPFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpUserTime",
+                    "type": "LPFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetProcessVersion",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getprocessversion",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "ProcessId",
+                    "type": "DWORD",
+                    "description": "The process identifier of the process of interest. A value of zero specifies the calling process.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetStartupInfoW",
-            "return_type": "",
+            "return_type": "void",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getstartupinfow",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpStartupInfo",
+                    "type": "LPSTARTUPINFOW",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetSystemCpuSetInformation",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getsystemcpusetinformation",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Information",
+                    "type": "PSYSTEM_CPU_SET_INFORMATION",
+                    "description": " A pointer to a SYSTEM_CPU_SET_INFORMATION structure that receives the CPU Set data. Pass NULL with a buffer length of 0 to determine the required buffer size.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "BufferLength",
+                    "type": "ULONG",
+                    "description": " The length, in bytes, of the output buffer passed as the Information argument.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ReturnedLength",
+                    "type": "PULONG",
+                    "description": " The length, in bytes, of the valid data in the output buffer if the buffer is large enough, or the required size of the output buffer. If no CPU Sets exist, this value will be 0.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Process",
+                    "type": "HANDLE",
+                    "description": " An optional handle to a process. This process is used to determine the value of the AllocatedToTargetProcess flag in the SYSTEM_CPU_SET_INFORMATION structure. If a CPU Set is allocated to the specified process, the flag is set. Otherwise, it is clear. This handle must have the PROCESS_QUERY_LIMITED_INFORMATION access right. The value returned by GetCurrentProcess may also be specified here.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Flags",
+                    "type": "ULONG",
+                    "description": " Reserved, must be 0.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetSystemTimes",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getsystemtimes",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpIdleTime",
+                    "type": "PFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpKernelTime",
+                    "type": "PFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpUserTime",
+                    "type": "PFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadContext",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadcontext",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread whose context is to be retrieved. The handle must have THREAD_GET_CONTEXT access to the thread. For more information, see Thread Security and Access Rights. Windows\u00a0XP or Windows Server 2003: The handle must also have THREAD_QUERY_INFORMATION access.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpContext",
+                    "type": "LPCONTEXT",
+                    "description": "A pointer to a CONTEXT structure (such as ARM64_NT_CONTEXT) that receives the appropriate context of the specified thread. The value of the ContextFlags member of this structure specifies which portions of a thread's context are retrieved. The       CONTEXT structure is highly processor specific. Refer to the WinNT.h header file for processor-specific definitions of this structures and any alignment requirements.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadDescription",
-            "return_type": "",
+            "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreaddescription",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread for which to retrieve the description. The handle must have THREAD_QUERY_LIMITED_INFORMATION access. [out] ppszThreadDescription A Unicode string that contains the description of the thread.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*ppszThreadDescription",
+                    "type": "PWSTR",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadId",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadid",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Thread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread. The handle must have the THREAD_QUERY_INFORMATION or THREAD_QUERY_LIMITED_INFORMATION access right. For more information about access rights, see\nThread Security and Access Rights. Windows Server\u00a02003:\u00a0\u00a0The handle must have the THREAD_QUERY_INFORMATION access right.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadIdealProcessorEx",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadidealprocessorex",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread for which to retrieve the ideal processor. This handle must have been created with the THREAD_QUERY_LIMITED_INFORMATION access right. For more information, see Thread Security and Access Rights. [out] lpIdealProcessor Points to PROCESSOR_NUMBER structure to receive the number of the ideal processor.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpIdealProcessor",
+                    "type": "PPROCESSOR_NUMBER",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadInformation",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadinformation",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread. The handle must have THREAD_QUERY_INFORMATION access rights. For more information, see Thread Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ThreadInformationClass",
+                    "type": "THREAD_INFORMATION_CLASS",
+                    "description": "The class of information to retrieve. This value can be ThreadMemoryPriority, ThreadAbsoluteCpuPriority or ThreadDynamicCodePolicy.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ThreadInformation",
+                    "type": "LPVOID",
+                    "description": "The size in bytes of the structure specified by the ThreadInformation parameter. If the ThreadInformationClass parameter is ThreadMemoryPriority, this parameter must be sizeof(MEMORY_PRIORITY_INFORMATION). If the ThreadInformationClass parameter is ThreadAbsoluteCpuPriority, this parameter must be sizeof(LONG). If the ThreadInformationClass parameter is ThreadDynamicCodePolicy, this parameter must be sizeof(DWORD).",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ThreadInformationSize",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadIOPendingFlag",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadiopendingflag",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread in question. This handle must have been created with the THREAD_QUERY_INFORMATION access right. For more information, see Thread Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpIOIsPending",
+                    "type": "PBOOL",
+                    "description": "A pointer to a  variable which the function sets to TRUE if the specified thread has one or more I/O requests pending, or to FALSE otherwise.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadPriority",
-            "return_type": "",
+            "return_type": "int",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadpriority",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread. The handle must have the THREAD_QUERY_INFORMATION or THREAD_QUERY_LIMITED_INFORMATION access right. For more information, see\nThread Security and Access Rights. Windows Server\u00a02003:\u00a0\u00a0The handle must have the THREAD_QUERY_INFORMATION access right.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadPriorityBoost",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadpriorityboost",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread. The handle must have the THREAD_QUERY_INFORMATION or THREAD_QUERY_LIMITED_INFORMATION access right. For more information, see\nThread Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the THREAD_QUERY_INFORMATION access right. [out] pDisablePriorityBoost A pointer to a variable that receives the priority boost control state. A value of TRUE indicates that dynamic boosting is disabled. A value of FALSE indicates normal behavior.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "pDisablePriorityBoost",
+                    "type": "PBOOL",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadSelectedCpuSetMasks",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadselectedcpusetmasks",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Thread",
+                    "type": "HANDLE",
+                    "description": " Specifies the thread for which to query the selected CPU Sets. This handle must have the PROCESS_QUERY_LIMITED_INFORMATION access right. The value returned by GetCurrentProcess can also be specified here.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetMasks",
+                    "type": "PGROUP_AFFINITY",
+                    "description": " Specifies an optional buffer to retrieve a list of GROUP_AFFINITY structures representing the thread selected CPU Sets.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetMaskCount",
+                    "type": "USHORT",
+                    "description": " Specifies the size of the CpuSetMasks array, in elements.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "RequiredMaskCount",
+                    "type": "PUSHORT",
+                    "description": " On successful return, specifies the number of affinity structures written to the array.\nIf the array is too small, the function fails with ERROR_INSUFFICIENT_BUFFER and sets the RequiredMaskCount parameter to the number of elements required.\nThe number of required elements is always less than or equal to the maximum group count returned by GetMaximumProcessorGroupCount.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadSelectedCpuSets",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadselectedcpusets",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Thread",
+                    "type": "HANDLE",
+                    "description": " Specifies the thread for which to query the selected CPU Sets. This handle must have the THREAD_QUERY_LIMITED_INFORMATION access right. The value returned by GetCurrentThread can also be specified here.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetIds",
+                    "type": "PULONG",
+                    "description": " Specifies an optional buffer to retrieve the list of CPU Set identifiers.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetIdCount",
+                    "type": "ULONG",
+                    "description": " Specifies the capacity of the buffer specified in CpuSetIds. If the buffer is NULL, this must be 0.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "RequiredIdCount",
+                    "type": "PULONG",
+                    "description": " Specifies the required capacity of the buffer to hold the entire list of thread selected CPU Sets. On successful return, this specifies the number of IDs filled into the buffer.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "GetThreadTimes",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-getthreadtimes",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread whose timing information is sought. The handle must have the THREAD_QUERY_INFORMATION or THREAD_QUERY_LIMITED_INFORMATION access right. For more information, see\nThread Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the THREAD_QUERY_INFORMATION access right. [out] lpCreationTime A pointer to a\nFILETIME structure that receives the creation time of the thread. [out] lpExitTime A pointer to a FILETIME structure that receives the exit time of the thread. If the thread has not exited, the content of this structure is undefined. [out] lpKernelTime A pointer to a\nFILETIME structure that receives the amount of time that the thread has executed in kernel mode. [out] lpUserTime A pointer to a FILETIME structure that receives the amount of time that the thread has executed in user mode.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpCreationTime",
+                    "type": "LPFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpExitTime",
+                    "type": "LPFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpKernelTime",
+                    "type": "LPFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpUserTime",
+                    "type": "LPFILETIME",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "InitializeProcThreadAttributeList",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-initializeprocthreadattributelist",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpAttributeList",
+                    "type": "LPPROC_THREAD_ATTRIBUTE_LIST",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwAttributeCount",
+                    "type": "DWORD",
+                    "description": "The count of attributes to be added to the list.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFlags",
+                    "type": "DWORD",
+                    "description": " This parameter is reserved and must be zero.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpSize",
+                    "type": "PSIZE_T",
+                    "description": "If lpAttributeList is not NULL, this parameter specifies the size in bytes of the lpAttributeList buffer on input. On output, this parameter receives the size in bytes of the initialized attribute list. If lpAttributeList is NULL, this parameter receives the required buffer size in bytes.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "IsProcessCritical",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-isprocesscritical",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process to query. The process must have been          opened with PROCESS_QUERY_LIMITED_INFORMATION access. [out] Critical A pointer to the BOOL value this function will use to indicate whether the process          is considered critical.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Critical",
+                    "type": "PBOOL",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "IsProcessorFeaturePresent",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-isprocessorfeaturepresent",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "ProcessorFeature",
+                    "type": "DWORD",
+                    "description": "The processor feature to be tested. This parameter can be one of the following values.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "OpenProcess",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocess",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwDesiredAccess",
+                    "type": "DWORD",
+                    "description": "The access to the process object. This access right is checked against the  security descriptor for the process. This parameter can be one or more of the\nprocess access rights. If the caller has enabled the SeDebugPrivilege privilege, the requested access is granted regardless of the contents of the security descriptor.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bInheritHandle",
+                    "type": "BOOL",
+                    "description": "If this value is TRUE, processes created by this process will inherit the handle. Otherwise, the processes do not inherit this handle.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwProcessId",
+                    "type": "DWORD",
+                    "description": "The identifier of the local process to be opened. If the specified process is the System Idle Process (0x00000000), the function fails and the last error code is ERROR_INVALID_PARAMETER. If the specified process is the System process or one of the Client Server Run-Time Subsystem (CSRSS) processes, this function fails and the last error code is ERROR_ACCESS_DENIED because their access restrictions prevent user-level code from opening them. If you are using GetCurrentProcessId as an argument to this function, consider using GetCurrentProcess instead of OpenProcess, for improved performance.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "OpenProcessToken",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openprocesstoken",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "ProcessHandle",
+                    "type": "HANDLE",
+                    "description": "A handle to the process whose access token is opened. The process must have the PROCESS_QUERY_LIMITED_INFORMATION access permission. See Process Security and Access Rights for more info.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "DesiredAccess",
+                    "type": "DWORD",
+                    "description": "Specifies an access mask that specifies the requested types of access to the access token. These requested access types are compared with the discretionary access control list (DACL) of the token to determine which accesses are granted or denied. For a list of access rights for access tokens, see\nAccess Rights for Access-Token Objects. [out] TokenHandle A pointer to a handle that identifies the newly opened access token when the function returns.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "TokenHandle",
+                    "type": "PHANDLE",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "OpenThread",
-            "return_type": "",
+            "return_type": "HANDLE",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openthread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwDesiredAccess",
+                    "type": "DWORD",
+                    "description": "The access to the thread object. This access right is checked against the security descriptor for the thread. This parameter can be one or more of the\nthread access rights. If the caller has enabled the SeDebugPrivilege privilege, the requested access is  granted regardless of the contents of the security descriptor.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bInheritHandle",
+                    "type": "BOOL",
+                    "description": "If this value is TRUE, processes created by this process will inherit the handle. Otherwise, the processes do not inherit this handle.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwThreadId",
+                    "type": "DWORD",
+                    "description": "The identifier of the thread to be opened.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "OpenThreadToken",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-openthreadtoken",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "ThreadHandle",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread whose access token is opened.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "DesiredAccess",
+                    "type": "DWORD",
+                    "description": "Specifies an access mask that specifies the requested types of access to the access token. These requested access types are reconciled against the token's discretionary access control list (DACL) to determine which accesses are granted or denied. For a list of access rights for access tokens, see\nAccess Rights for Access-Token Objects.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "OpenAsSelf",
+                    "type": "BOOL",
+                    "description": "TRUE if the access check is to be made against the  process-level security context. FALSE if the access check is to be made against the current security context of the thread calling the OpenThreadToken function. The OpenAsSelf parameter allows the caller of this function to open the access token of a specified thread when the caller is impersonating a token at SecurityIdentification level. Without this parameter, the calling thread cannot open the access token on the specified thread because it is impossible to open executive-level objects by using the SecurityIdentification impersonation level. [out] TokenHandle A pointer to a variable that receives the handle to the newly opened access token.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "TokenHandle",
+                    "type": "PHANDLE",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ProcessIdToSessionId",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-processidtosessionid",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwProcessId",
+                    "type": "DWORD",
+                    "description": "Specifies a process identifier. Use the\nGetCurrentProcessId function to retrieve the\nprocess identifier for the current process. [out] pSessionId Pointer to a variable that receives the identifier of the Remote Desktop Services session under which the\nspecified process is running. To retrieve the identifier of the session currently attached to the console, use\nthe WTSGetActiveConsoleSessionId\nfunction.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*pSessionId",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "QueryProcessAffinityUpdateMode",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-queryprocessaffinityupdatemode",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. The handle must have the PROCESS_QUERY_INFORMATION or PROCESS_QUERY_LIMITED_INFORMATION access right. For more information, see\nProcess Security and Access Rights. [out, optional] lpdwFlags The affinity update mode. This parameter can be one of the following values.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpdwFlags",
+                    "type": "LPDWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "QueryProtectedPolicy",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-queryprotectedpolicy",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "PolicyGuid",
+                    "type": "LPCGUID",
+                    "description": "The globally-unique identifier of the policy to query. [out] PolicyValue Receives the value that the supplied policy is set to.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "PolicyValue",
+                    "type": "PULONG_PTR",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "QueueUserAPC",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-queueuserapc",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "pfnAPC",
+                    "type": "PAPCFUNC",
+                    "description": "A pointer to the application-supplied APC function to be called when the specified thread performs an alertable wait operation. For more information, see PAPCFUNC callback function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread. The handle must have the THREAD_SET_CONTEXT access right. For more information, see Synchronization Object Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwData",
+                    "type": "ULONG_PTR",
+                    "description": "A single value that is passed to the APC function pointed to by the pfnAPC parameter.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "QueueUserAPC2",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-queueuserapc2",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "ApcRoutine",
+                    "type": "PAPCFUNC",
+                    "description": " A pointer to the application-supplied APC function to be called when the specified thread performs an alertable wait operation. For more information, see APCProc. For special user-mode APCs, an alertable wait is not required. See Remarks for more information about special user-mode APCs.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Thread",
+                    "type": "HANDLE",
+                    "description": " A handle to the thread. The handle must have THREAD_SET_CONTEXT access permission. For more information, see Synchronization Object Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Data",
+                    "type": "ULONG_PTR",
+                    "description": " A single value that is passed to the APC function pointed to by the ApcRoutine parameter.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Flags",
+                    "type": "QUEUE_USER_APC_FLAGS",
+                    "description": " A value from QUEUE_USER_APC_FLAGS enumeration that modifies the behavior of the user-mode APC.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "ResumeThread",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-resumethread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread to be restarted. This handle must have the THREAD_SUSPEND_RESUME access right. For more information, see\nThread Security and Access Rights.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetPriorityClass",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setpriorityclass",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. The handle must have the PROCESS_SET_INFORMATION access right. For more information, see\nProcess Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwPriorityClass",
+                    "type": "DWORD",
+                    "description": "The priority class for the process. This parameter can be one of the following values.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessAffinityUpdateMode",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessaffinityupdatemode",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. This handle must be returned by the GetCurrentProcess function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFlags",
+                    "type": "DWORD",
+                    "description": "The affinity update mode. This parameter can be one of the following values.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessDefaultCpuSetMasks",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessdefaultcpusetmasks",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Process",
+                    "type": "HANDLE",
+                    "description": " Specifies the process for which to set the default CPU Sets. This handle must have the PROCESS_SET_LIMITED_INFORMATION access right. The value returned by GetCurrentProcess can also be specified here.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetMasks",
+                    "type": "PGROUP_AFFINITY",
+                    "description": " Specifies an optional buffer of GROUP_AFFINITY structures representing the CPU Sets to set as the process default CPU set. If this is NULL, the SetProcessDefaultCpuSetMasks function clears out any assignment.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetMaskCount",
+                    "type": "USHORT",
+                    "description": " Specifies the size of the CpuSetMasks array, in elements. If the buffer is NULL, this value must be zero.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessDefaultCpuSets",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessdefaultcpusets",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Process",
+                    "type": "HANDLE",
+                    "description": " Specifies the process for which to set the default CPU Sets. This handle must have the PROCESS_SET_LIMITED_INFORMATION access right. The value returned by GetCurrentProcess can also be specified here. CpuSetIds Specifies the list of CPU Set IDs to set as the process default CPU set. If this is NULL, the SetProcessDefaultCpuSets clears out any assignment.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*CpuSetIds",
+                    "type": "const ULONG",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetIdCount",
+                    "type": "ULONG",
+                    "description": " Specifies the number of IDs in the list passed in the CpuSetIds argument. If that value is NULL, this should be 0.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessDynamicEHContinuationTargets",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessdynamicehcontinuationtargets",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Process",
+                    "type": "HANDLE",
+                    "description": " A handle to the process. This handle must have the PROCESS_SET_INFORMATION access right.\nFor more information, see Process Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "NumberOfTargets",
+                    "type": "USHORT",
+                    "description": " Supplies the number of dynamic exception handling continuation targets to set.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Targets",
+                    "type": "PPROCESS_DYNAMIC_EH_CONTINUATION_TARGET",
+                    "description": " A pointer to an array of dynamic exception handling continuation targets. For more information on this structure, see PROCESS_DYNAMIC_EH_CONTINUATION_TARGET.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessDynamicEnforcedCetCompatibleRanges",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessdynamicenforcedcetcompatibleranges",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Process",
+                    "type": "HANDLE",
+                    "description": " A handle to the process. This handle must have the PROCESS_SET_INFORMATION access right.\nFor more information, see Process Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "NumberOfRanges",
+                    "type": "USHORT",
+                    "description": " Supplies the number of dynamic enforced CETCOMPAT ranges to set.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Ranges",
+                    "type": "PPROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE",
+                    "description": " A pointer to an array of dynamic enforced CETCOMPAT ranges. For more information on this structure, see PROCESS_DYNAMIC_ENFORCED_ADDRESS_RANGE.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessInformation",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessinformation",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. This handle must have the PROCESS_SET_INFORMATION access right. For more information, see Process Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ProcessInformationClass",
+                    "type": "PROCESS_INFORMATION_CLASS",
+                    "description": "A member of the PROCESS_INFORMATION_CLASS enumeration specifying the kind of information to set.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ProcessInformation",
+                    "type": "LPVOID",
+                    "description": "The size in bytes of the structure specified by the ProcessInformation parameter. If the ProcessInformationClass parameter is ProcessMemoryPriority, this parameter must be sizeof(MEMORY_PRIORITY_INFORMATION). If the ProcessInformationClass parameter is ProcessPowerThrottling, this parameter must be sizeof(PROCESS_POWER_THROTTLING_STATE). If the ProcessInformationClass parameter is ProcessLeapSecondInfo, this parameter must be sizeof(PROCESS_LEAP_SECOND_INFO).",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ProcessInformationSize",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessMitigationPolicy",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessmitigationpolicy",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "MitigationPolicy",
+                    "type": "PROCESS_MITIGATION_POLICY",
+                    "description": "The mitigation policy to apply. This parameter can be one of the following values.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpBuffer",
+                    "type": "PVOID",
+                    "description": "If the MitigationPolicy parameter is ProcessDEPPolicy, this parameter points to a PROCESS_MITIGATION_DEP_POLICY structure that specifies the DEP policy flags. If the MitigationPolicy parameter is ProcessASLRPolicy, this parameter points to a PROCESS_MITIGATION_ASLR_POLICY structure that specifies the ASLR policy flags. If the MitigationPolicy parameter is ProcessImageLoadPolicy, this parameter points to a PROCESS_MITIGATION_IMAGE_LOAD_POLICY structure that receives the policy flags for image loading. If the MitigationPolicy parameter is ProcessStrictHandleCheckPolicy, this parameter points to a PROCESS_MITIGATION_STRICT_HANDLE_CHECK_POLICY structure that specifies the handle check policy flags. If the MitigationPolicy parameter is ProcessSystemCallDisablePolicy, this parameter points to a PROCESS_MITIGATION_SYSTEM_CALL_DISABLE_POLICY structure that specifies the system call disable policy flags. If the MitigationPolicy parameter is ProcessMitigationOptionsMask, this parameter points to a ULONG64 bit vector for the mask, or to accommodate more than 64 bits, a two-element array of ULONG64 bit vectors. If the MitigationPolicy parameter is ProcessExtensionPointDisablePolicy, this parameter points to a PROCESS_MITIGATION_EXTENSION_POINT_DISABLE_POLICY structure that specifies the extension point disable policy flags. If the MitigationPolicy parameter is ProcessControlFlowGuardPolicy, this parameter points to a PROCESS_MITIGATION_CONTROL_FLOW_GUARD_POLICY structure that specifies the CFG policy flags. If the MitigationPolicy parameter is ProcessSignaturePolicy, this parameter points to a PROCESS_MITIGATION_BINARY_SIGNATURE_POLICY structure that specifies the signature policy flags. If the MitigationPolicy parameter is ProcessFontDisablePolicy, this parameter points to a PROCESS_MITIGATION_FONT_DISABLE_POLICY structure that specifies the policy flags for font loading. If the MitigationPolicy parameter is ProcessImageLoadPolicy, this parameter points to a PROCESS_MITIGATION_IMAGE_LOAD_POLICY structure that specifies the policy flags for image loading. If the MitigationPolicy parameter is ProcessRedirectionTrustPolicy, this parameter points to a PROCESS_MITIGATION_REDIRECTION_TRUST_POLICY structure that specifies the mitigation mode. If the MitigationPolicy parameter is ProcessUserShadowStackPolicy, this parameter points to a PROCESS_MITIGATION_USER_SHADOW_STACK_POLICY structure that specifies the policy flags for user-mode Hardware-enforced Stack Protection.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwLength",
+                    "type": "SIZE_T",
+                    "description": "The size of lpBuffer, in bytes.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessPriorityBoost",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocesspriorityboost",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process. This handle must have the PROCESS_SET_INFORMATION access right. For more information, see\nProcess Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bDisablePriorityBoost",
+                    "type": "BOOL",
+                    "description": "If this parameter is TRUE, dynamic boosting is disabled. If the parameter is FALSE, dynamic boosting is enabled.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProcessShutdownParameters",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprocessshutdownparameters",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwLevel",
+                    "type": "DWORD",
+                    "description": "The shutdown priority for a process relative to other processes in the system. The system shuts down processes from high dwLevel values to low. The highest and lowest shutdown priorities are reserved for system components. This parameter must be in the following range of values. All processes start at shutdown level 0x280.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFlags",
+                    "type": "DWORD",
+                    "description": "This parameter can be the following value.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetProtectedPolicy",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setprotectedpolicy",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "PolicyGuid",
+                    "type": "LPCGUID",
+                    "description": "The globally-unique identifier of the policy to set.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "PolicyValue",
+                    "type": "ULONG_PTR",
+                    "description": "The value to set the policy to. [out] OldPolicyValue Optionally receives the original value that was associated with the supplied policy.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "OldPolicyValue",
+                    "type": "PULONG_PTR",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadContext",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadcontext",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread whose context is to be set. The handle must have the\nTHREAD_SET_CONTEXT access right to the thread. For more information, see\nThread Security and Access Rights. [in] lpContext A pointer to a CONTEXT structure that contains the\ncontext to be set in the specified thread. The value of the ContextFlags member of\nthis structure specifies which portions of a thread's context to set. Some values in the\nCONTEXT structure that cannot be specified are silently\nset to the correct value. This includes bits in the CPU status register that specify the privileged processor\nmode, global enabling bits in the debugging register, and other states that must be controlled by the operating\nsystem.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*lpContext",
+                    "type": "const CONTEXT",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadDescription",
-            "return_type": "",
+            "return_type": "HRESULT",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreaddescription",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle for the thread for which you want to set the description. The handle must have THREAD_SET_LIMITED_INFORMATION access.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpThreadDescription",
+                    "type": "PCWSTR",
+                    "description": "A Unicode string that specifies the description of the thread.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadIdealProcessor",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadidealprocessor",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread whose preferred processor is to be set. The handle must have the THREAD_SET_INFORMATION access right. For more information, see\nThread Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwIdealProcessor",
+                    "type": "DWORD",
+                    "description": "The number of the preferred processor for the thread. This value is zero-based. If this parameter is MAXIMUM_PROCESSORS, the function returns the current ideal processor without changing it.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadIdealProcessorEx",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadidealprocessorex",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread for which to set the ideal processor. This handle must have been created with the THREAD_SET_INFORMATION access right. For more information, see Thread Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpIdealProcessor",
+                    "type": "PPROCESSOR_NUMBER",
+                    "description": "A pointer to a PROCESSOR_NUMBER structure that specifies the processor number of the desired ideal processor. [out, optional] lpPreviousIdealProcessor A pointer to a PROCESSOR_NUMBER structure to receive the previous ideal processor. This parameter can point to the same memory location as the lpIdealProcessor parameter. This parameter can be NULL if the previous ideal processor is not required.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpPreviousIdealProcessor",
+                    "type": "PPROCESSOR_NUMBER",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadInformation",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadinformation",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread. The handle must have THREAD_SET_INFORMATION access right. For more information, see  Thread Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ThreadInformationClass",
+                    "type": "THREAD_INFORMATION_CLASS",
+                    "description": "The class of information to set. The only supported values are ThreadMemoryPriority and ThreadPowerThrottling.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ThreadInformation",
+                    "type": "LPVOID",
+                    "description": "The size in bytes of the structure specified by the ThreadInformation parameter. If the ThreadInformationClass parameter is ThreadMemoryPriority, this parameter must be sizeof(MEMORY_PRIORITY_INFORMATION). If the ThreadInformationClass parameter is ThreadPowerThrottling, this parameter must be sizeof(THREAD_POWER_THROTTLING_STATE).",
+                    "possible_constants": []
+                },
+                {
+                    "name": "ThreadInformationSize",
+                    "type": "DWORD",
+                    "description": "",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadPriority",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadpriority",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread whose priority value is to be set. The handle must have the THREAD_SET_INFORMATION or THREAD_SET_LIMITED_INFORMATION access right. For more information, see\nThread Security and Access Rights.Windows Server\u00a02003:\u00a0\u00a0The handle must have the THREAD_SET_INFORMATION access right.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "nPriority",
+                    "type": "int",
+                    "description": "The priority value for the thread. This parameter can be one of the following values. If the thread has the REALTIME_PRIORITY_CLASS base class, this parameter can also be -7, -6, -5, -4, -3, 3, 4, 5, or 6. For more information, see\nScheduling Priorities.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadPriorityBoost",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadpriorityboost",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread whose priority is to be boosted. The handle must have the THREAD_SET_INFORMATION or THREAD_SET_LIMITED_INFORMATION access right. For more information, see\nThread Security and Access Rights. Windows Server\u00a02003 and Windows\u00a0XP:\u00a0\u00a0The handle must have the THREAD_SET_INFORMATION access right.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "bDisablePriorityBoost",
+                    "type": "BOOL",
+                    "description": "If this parameter is TRUE, dynamic boosting is disabled. If the parameter is FALSE, dynamic boosting is enabled.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadSelectedCpuSetMasks",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadselectedcpusetmasks",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Thread",
+                    "type": "HANDLE",
+                    "description": " Specifies the thread on which to set the CPU Set assignment. PROCESS_SET_LIMITED_INFORMATION access right. The value returned by GetCurrentProcess can also be specified here.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetMasks",
+                    "type": "PGROUP_AFFINITY",
+                    "description": " Specifies an optional buffer of GROUP_AFFINITY structures representing the CPU Sets to set as the thread selected CPU set. If this is NULL, the SetThreadSelectedCpuSetMasks function clears out any assignment, reverting to process default assignment if one is set.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetMaskCount",
+                    "type": "USHORT",
+                    "description": " Specifies the number of GROUP_AFFINITY structures in the list passed in the GroupCpuSets argument. If the buffer is NULL, this value must be zero.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadSelectedCpuSets",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadselectedcpusets",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Thread",
+                    "type": "HANDLE",
+                    "description": " Specifies the thread on which to set the CPU Set assignment. This handle must have the THREAD_SET_LIMITED_INFORMATION access right. The value returned by GetCurrentThread can also be used. CpuSetIds Specifies the list of CPU Set IDs to set as the thread selected CPU set. If this is NULL, the API clears out any assignment, reverting to process default assignment if one is set.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "*CpuSetIds",
+                    "type": "const ULONG",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "CpuSetIdCount",
+                    "type": "ULONG",
+                    "description": " Specifies the number of IDs in the list passed in the CpuSetIds argument. If that value is NULL, this should be 0.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadStackGuarantee",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadstackguarantee",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "StackSizeInBytes",
+                    "type": "PULONG",
+                    "description": "The size of the stack, in bytes. On return, this value is set to the size of the previous stack, in bytes. If this parameter is 0 (zero), the function succeeds and the parameter contains the size of the current stack. If the specified size is less than the current size, the function succeeds but ignores this request. Therefore, you cannot use this function to reduce the size of the stack. This value cannot be larger than the reserved stack size.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SetThreadToken",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadtoken",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "Thread",
+                    "type": "PHANDLE",
+                    "description": "A pointer to a handle to the thread to which the function assigns the impersonation token. If Thread is NULL, the function assigns the impersonation token to the calling thread.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Token",
+                    "type": "HANDLE",
+                    "description": "A handle to the impersonation token to assign to the thread. This handle must have been opened with TOKEN_IMPERSONATE access rights. For more information, see\nAccess Rights for Access-Token Objects. If Token is NULL, the function causes the thread to stop using an impersonation token.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SuspendThread",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-suspendthread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread that is to be suspended. The handle must have the THREAD_SUSPEND_RESUME access right. For more information, see\nThread Security and Access Rights.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "SwitchToThread",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-switchtothread",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "TerminateProcess",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminateprocess",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hProcess",
+                    "type": "HANDLE",
+                    "description": "A handle to the process to be terminated. The handle must have the PROCESS_TERMINATE access right. For more information, see Process Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "uExitCode",
+                    "type": "UINT",
+                    "description": "The exit code to be used by the process and threads terminated as a result of this call. Use the GetExitCodeProcess function to retrieve a process's exit value. Use the GetExitCodeThread function to retrieve a thread's exit value.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "TerminateThread",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-terminatethread",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "hThread",
+                    "type": "HANDLE",
+                    "description": "A handle to the thread to be terminated. The handle must have the THREAD_TERMINATE access right. For more information, see\nThread Security and Access Rights.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwExitCode",
+                    "type": "DWORD",
+                    "description": "The exit code for the thread. Use the\nGetExitCodeThread function to retrieve a thread's exit value.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "TlsAlloc",
-            "return_type": "",
+            "return_type": "DWORD",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-tlsalloc",
             "description": "",
-            "parameters": []
+            "parameters": [],
+            "flags": []
         },
         {
             "name": "TlsFree",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-tlsfree",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwTlsIndex",
+                    "type": "DWORD",
+                    "description": "The TLS index that was allocated by the TlsAlloc function.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "TlsGetValue",
-            "return_type": "",
+            "return_type": "LPVOID",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-tlsgetvalue",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwTlsIndex",
+                    "type": "DWORD",
+                    "description": "The TLS index that was allocated by the TlsAlloc function.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "TlsGetValue2",
-            "return_type": "",
+            "return_type": "LPVOID",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-tlsgetvalue2",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwTlsIndex",
+                    "type": "DWORD",
+                    "description": "The TLS index that was allocated by the TlsAlloc function.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "TlsSetValue",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-tlssetvalue",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "dwTlsIndex",
+                    "type": "DWORD",
+                    "description": "The TLS index that was allocated by the TlsAlloc function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpTlsValue",
+                    "type": "LPVOID",
+                    "description": "The value to be stored in the calling thread's TLS slot for the index.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         },
         {
             "name": "UpdateProcThreadAttribute",
-            "return_type": "",
+            "return_type": "BOOL",
             "msdn": "https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-updateprocthreadattribute",
             "description": "",
-            "parameters": []
+            "parameters": [
+                {
+                    "name": "lpAttributeList",
+                    "type": "LPPROC_THREAD_ATTRIBUTE_LIST",
+                    "description": "A pointer to an attribute list created by the InitializeProcThreadAttributeList function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "dwFlags",
+                    "type": "DWORD",
+                    "description": "This parameter is reserved and must be zero.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "Attribute",
+                    "type": "DWORD_PTR",
+                    "description": "The attribute key to update in the attribute list. This parameter can be one of the following values.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpValue",
+                    "type": "PVOID",
+                    "description": "A pointer to the attribute value. This value must persist until the attribute list is destroyed using the DeleteProcThreadAttributeList function.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "cbSize",
+                    "type": "SIZE_T",
+                    "description": "The size of the attribute value specified by the lpValue parameter. [out, optional] lpPreviousValue This parameter is reserved and must be NULL.",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpPreviousValue",
+                    "type": "PVOID",
+                    "description": "",
+                    "possible_constants": []
+                },
+                {
+                    "name": "lpReturnSize",
+                    "type": "PSIZE_T",
+                    "description": "This parameter is reserved and must be NULL.",
+                    "possible_constants": []
+                }
+            ],
+            "flags": []
         }
     ]
 }
